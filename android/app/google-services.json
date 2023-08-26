@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "520203771626",
+    "firebase_url": "https://truckchat2-515da.firebaseio.com",
+    "project_id": "truckchat2-515da",
+    "storage_bucket": "truckchat2-515da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520203771626:android:70362d9878cc38270bc193",
+        "android_client_info": {
+          "package_name": "com.teletype.truckchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520203771626-d9modrpps1vc2o725jjottpl3uhp0d90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFTgS3Pu3VaC9pYqwn0jHGzh6nnyhC-jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520203771626-d9modrpps1vc2o725jjottpl3uhp0d90.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "520203771626-3l8bqigis6o0on4bmfc8r5rsd8cign50.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.truckchat.app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520203771626:android:3b55a7389ca9e40e0bc193",
+        "android_client_info": {
+          "package_name": "com.teletype.truckchat2.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520203771626-d9modrpps1vc2o725jjottpl3uhp0d90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFTgS3Pu3VaC9pYqwn0jHGzh6nnyhC-jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520203771626-d9modrpps1vc2o725jjottpl3uhp0d90.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "520203771626-3l8bqigis6o0on4bmfc8r5rsd8cign50.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.truckchat.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
