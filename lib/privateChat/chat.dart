@@ -59,7 +59,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
 
-   // AdHelper().showInterstitialAd();
+    // AdHelper().showInterstitialAd();
 
     SharedPrefs.setBool('isUserOnChatScreen', true);
 
@@ -77,8 +77,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void dispose() {
-   // AdHelper().disposeInterstitialAd();
-    
+    // AdHelper().disposeInterstitialAd();
+
     SharedPrefs.setBool('isUserOnChatScreen', false);
 
     super.dispose();
@@ -327,8 +327,6 @@ class _ChatScreenState extends State<ChatScreen> {
           'timestamp': timestamp,
         });
 
-      
-
         // Update the chat list for the receiver (widget.receiverId)
         _updateChatList(widget.receiverId, widget.userId, imageUrl, timestamp);
       } catch (error) {
@@ -377,8 +375,6 @@ class _ChatScreenState extends State<ChatScreen> {
           'message': imageUrl,
           'timestamp': timestamp,
         });
-
-       
 
         // Update the chat list for the sender (widget.userId)
         // _updateChatList(widget.userId, widget.receiverId, imageUrl, timestamp);
@@ -637,7 +633,6 @@ class _ChatScreenState extends State<ChatScreen> {
                       timestamp: timestamp,
                     );
                   }
-                
                 },
               ),
             ),
@@ -790,8 +785,7 @@ class _ChatScreenState extends State<ChatScreen> {
       String senderId, String receiverId, String message) async {
     print('receiver token $receiverFCMToken');
     // Replace 'YOUR_SERVER_KEY' with your FCM server key
-    String serverKey =
-        MyFirebase.FIREBASE_CLOUD_MESSAGING_KEY_NOTIFICATION;
+    String serverKey = MyFirebase.FIREBASE_CLOUD_MESSAGING_KEY_NOTIFICATION;
     String url = MyFirebase.FIREBASE_NOTIFICATION_URL;
 
     // Replace 'YOUR_NOTIFICATION_TITLE' and 'YOUR_NOTIFICATION_BODY' with your desired notification title and body
@@ -833,7 +827,6 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 }
-
 
 class DateDivider extends StatelessWidget {
   final String formattedDate;
@@ -929,17 +922,106 @@ class MessageBubble extends StatelessWidget {
   }
 }
 
+// void _showFullImage(BuildContext context, String imageUrl) {
+//   Navigator.push(
+//     context,
+//     MaterialPageRoute(
+//       builder: (context) => Scaffold(
+//         body: Center(
+//           child: PhotoView(
+//             imageProvider: NetworkImage(imageUrl),
+//             minScale: PhotoViewComputedScale.contained,
+//             maxScale: PhotoViewComputedScale.covered * 2.0,
+//           ),
+//         ),
+//       ),
+//     ),
+//   );
+// }
+
+// void _showFullImage(BuildContext context, String imageUrl) {
+//   Navigator.push(
+//     context,
+//     MaterialPageRoute(
+//       builder: (context) => Scaffold(
+//         appBar: AppBar(
+//           actions: [
+//             IconButton(
+//               icon: Icon(Icons.close),
+//               onPressed: () {
+//                 Navigator.pop(context); // Close the image viewer
+//               },
+//             ),
+//           ],
+//         ),
+//         body: Center(
+//           child: PhotoView(
+//             imageProvider: NetworkImage(imageUrl),
+//             minScale: PhotoViewComputedScale.contained,
+//             maxScale: PhotoViewComputedScale.covered * 2.0,
+//           ),
+//         ),
+//       ),
+//     ),
+//   );
+// }
+// void _showFullImage(BuildContext context, String imageUrl) {
+//   Navigator.push(
+//     context,
+//     MaterialPageRoute(
+//       builder: (context) => Scaffold(
+//         appBar: AppBar(
+//           automaticallyImplyLeading: false, // Remove the back button
+
+//           actions: [
+//             IconButton(
+//               icon: Icon(Icons.close),
+//               onPressed: () {
+//                 Navigator.pop(context); // Close the image viewer
+//               },
+//             ),
+//           ],
+//         ),
+//         body: Center(
+//           child: PhotoView(
+//             imageProvider: NetworkImage(imageUrl),
+//             minScale: PhotoViewComputedScale.contained,
+//             maxScale: PhotoViewComputedScale.covered * 2.0,
+//           ),
+//         ),
+//       ),
+//     ),
+//   );
+// }
 void _showFullImage(BuildContext context, String imageUrl) {
   Navigator.push(
     context,
     MaterialPageRoute(
       builder: (context) => Scaffold(
-        body: Center(
-          child: PhotoView(
-            imageProvider: NetworkImage(imageUrl),
-            minScale: PhotoViewComputedScale.contained,
-            maxScale: PhotoViewComputedScale.covered * 2.0,
-          ),
+        backgroundColor: Colors.black, // Set background color to black
+        body: Stack(
+          children: [
+            Center(
+              child: PhotoView(
+                imageProvider: NetworkImage(imageUrl),
+                minScale: PhotoViewComputedScale.contained,
+                maxScale: PhotoViewComputedScale.covered * 2.0,
+              ),
+            ),
+            Positioned(
+              top: 16,
+              right: 16,
+              child: IconButton(
+                icon: Icon(
+                  Icons.close,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Navigator.pop(context); // Close the image viewer
+                },
+              ),
+            ),
+          ],
         ),
       ),
     ),

@@ -223,15 +223,10 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
 
     // _permissionGranted = await location.hasPermission();
 
-    if (_locationPermission == LocationPermission.denied ||
-        _locationPermission == LocationPermission.deniedForever) {
-                   showLocationPermissionDialog(context);
-
-        }
-
-   else  {
-   
-
+    // if (_locationPermission == LocationPermission.denied ||
+    //     _locationPermission == LocationPermission.deniedForever) {
+    //   showLocationPermissionDialog(context);
+    // } else {
       String? userId = SharedPrefs.getString(SharedPrefsKeys.USER_ID);
 
       if (userId == null) {
@@ -285,7 +280,7 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
           );
         }
       }
-    }
+   // }
   }
 
   void _toggleListening() {

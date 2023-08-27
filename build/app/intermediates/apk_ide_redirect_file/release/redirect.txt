@@ -1,0 +1,2 @@
+#- File Locator -
+listingFile=../../../../../../../Truck_Chat/android/app/release/output-metadata.json
