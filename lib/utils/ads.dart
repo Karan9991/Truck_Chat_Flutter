@@ -1,144 +1,15 @@
 import 'dart:io';
 
 //import 'package:admob_flutter/admob_flutter.dart';
+import 'package:chat/utils/shared_pref.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
-// import 'package:google_mobile_ads/google_mobile_ads.dart';
-// import 'dart:io' show Platform;
-
-// class AppOpenAdManager {
-//   String adUnitId = Platform.isAndroid
-//       ? 'ca-app-pub-7181343877669077/8346499195'
-//       : 'ca-app-pub-7181343877669077/7556177613';
-
-//   AppOpenAd? _appOpenAd;
-//   bool _isShowingAd = false;
-
-//   /// Whether an ad is available to be shown.
-//   bool get isAdAvailable {
-//     return _appOpenAd != null;
-//   }
-
-//     /// Load an AppOpenAd.
-//   void loadAd() {
-//     AppOpenAd.load(
-//       adUnitId: adUnitId,
-//       orientation: AppOpenAd.orientationPortrait,
-//       request: AdRequest(),
-//       adLoadCallback: AppOpenAdLoadCallback(
-//         onAdLoaded: (ad) {
-//           _appOpenAd = ad;
-//         },
-//         onAdFailedToLoad: (error) {
-//           print('AppOpenAd failed to load: $error');
-//           // Handle the error.
-//         },
-//       ),
-//     );
-//   }
-
-//      void showAdIfAvailable() {
-//     if (!isAdAvailable) {
-//       print('Tried to show ad before available.');
-//       loadAd();
-//       return;
-//     }
-//     if (_isShowingAd) {
-//       print('Tried to show ad while already showing an ad.');
-//       return;
-//     }
-//     // Set the fullScreenContentCallback and show the ad.
-//     _appOpenAd!.fullScreenContentCallback = FullScreenContentCallback(
-//       onAdShowedFullScreenContent: (ad) {
-//         _isShowingAd = true;
-//         print('$ad onAdShowedFullScreenContent');
-//       },
-//       onAdFailedToShowFullScreenContent: (ad, error) {
-//         print('$ad onAdFailedToShowFullScreenContent: $error');
-//         _isShowingAd = false;
-//         ad.dispose();
-//         _appOpenAd = null;
-//       },
-//       onAdDismissedFullScreenContent: (ad) {
-//         print('$ad onAdDismissedFullScreenContent');
-//         _isShowingAd = false;
-//         ad.dispose();
-//         _appOpenAd = null;
-//         loadAd();
-//       },
-//     );
-//   }
-// }
-
-// /// Listens for app foreground events and shows app open ads.
-// class AppLifecycleReactor {
-//   final AppOpenAdManager appOpenAdManager;
-
-//   AppLifecycleReactor({required this.appOpenAdManager});
-
-//   void listenToAppStateChanges() {
-//     AppStateEventNotifier.startListening();
-//     AppStateEventNotifier.appStateStream
-//         .forEach((state) => _onAppStateChanged(state));
-//   }
-
-//   void _onAppStateChanged(AppState appState) {
-//     // Try to show an app open ad if the app is being resumed and
-//     // we're not already showing an app open ad.
-//     if (appState == AppState.foreground) {
-//       appOpenAdManager.showAdIfAvailable();
-//     }
-//   }
-// }
-
-// class InterstitialAdManager {
-
-//   static AdmobInterstitial? _interstitialAd;
-//   static bool _isAdLoaded = false;
-//   static bool _isAdShowing = false;
-
-//   static Future<void> initialize() async {
-//     _interstitialAd = AdmobInterstitial(
-//       adUnitId: AdHelper.interstitialAdUnitId,
-//     );
-
-//     _interstitialAd?.load();
-//   }
-
-//   static Future<void> showInterstitialAd() async {
-//     if (_interstitialAd != null) {
-//       _interstitialAd!.show();
-//       _interstitialAd = AdmobInterstitial(
-//         adUnitId: AdHelper.interstitialAdUnitId,
-//       );
-//       _interstitialAd?.load();
-//     } else {
-//       print('Interstitial ad is not yet loaded');
-//     }
-//   }
-
-//   static void dispose() {
-//     _interstitialAd?.dispose();
-//   }
-// }
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AdHelper {
-  // static String get bannerAdUnitId {
-  //   if (Platform.isAndroid) {
-  //     //working banner id ca-app-pub-7181343877669077/1377492143   ca-app-pub-7181343877669077/1377492143
-  //     // return 'ca-app-pub-3940256099942544/6300978111';
-  //     return 'ca-app-pub-7181343877669077/5678624787';
-  //   } else if (Platform.isIOS) {
-  //     // return 'ca-app-pub-7181343877669077/5410197832';
-  //     return 'ca-app-pub-7181343877669077/2375844027';
-  //     // return 'ca-app-pub-3940256099942544/2934735716';
-  //   } else {
-  //     throw new UnsupportedError('Unsupported platform');
-  //   }
-  // }
-
   static InterstitialAd? _interstitialAd;
+  static const String _lastAdDisplayKey = 'last_ad_display';
+  static const String _adDisplayCountKey = 'ad_display_count';
 
   static String get bannerAdUnitId {
     if (Platform.isAndroid) {
@@ -209,8 +80,17 @@ class AdHelper {
         ));
   }
 
-  // Show Interstitial Ads for Non VIP Users
   void showInterstitialAd() async {
+    print(
+        '*********************************************************showInterstitialAd');
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    // Retrieve saved values
+    int lastAdTimestamp = prefs.getInt(_lastAdDisplayKey) ?? 0;
+    int adDisplayCount = prefs.getInt(_adDisplayCountKey) ?? 0;
+    // Calculate time difference
+    int currentTime = DateTime.now().millisecondsSinceEpoch;
+    int timeDifference = currentTime - lastAdTimestamp;
+
     // Load Interstitial Ad
     await createInterstitialAd();
 
@@ -234,8 +114,78 @@ class AdHelper {
         createInterstitialAd();
       },
     );
-    _interstitialAd!.show();
-    _interstitialAd = null;
+
+    // _interstitialAd!.show();
+    // _interstitialAd = null;
+
+    //start
+
+    print('-----------------------ad count $adDisplayCount');
+
+    // Display ad if conditions are met
+    if (adDisplayCount < 2) {
+      print(
+          '*********************************************************if adDisplayCount < 3');
+      // Show the interstitial ad here
+      //  AdHelper().showInterstitialAd();
+      _interstitialAd!.show();
+      _interstitialAd = null;
+
+      // Update values
+      await prefs.setInt(_lastAdDisplayKey, currentTime);
+      await prefs.setInt(_adDisplayCountKey, adDisplayCount + 1);
+    }
+
+    if (timeDifference >= 24 * 60 * 60 * 1000) {
+      print(
+          '*********************************************************if timeDifference >= 24 * 60 * 60 * 1000');
+      adDisplayCount = 0;
+      await prefs.setInt(_lastAdDisplayKey, currentTime);
+      await prefs.setInt(_adDisplayCountKey, adDisplayCount);
+      disposeInterstitialAd();
+    }
+  }
+
+  Future<void> showInterstitialAdWithLimit() async {
+    int adCounter = SharedPrefs.getInt('interstitialAdCounter') ?? 0;
+
+    if (adCounter >= 3) {
+      // Show ad every 3rd time
+      // Show the interstitial ad here
+      AdHelper().showInterstitialAd();
+
+      adCounter = 0; // Reset the counter after showing the ad
+    } else {
+      adCounter++; // Increment the counter
+    }
+    await SharedPrefs.setInt('interstitialAdCounter', adCounter);
+  }
+
+  static Future<void> showInterstitialAd2TimesIn24Hours() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    // Retrieve saved values
+    int lastAdTimestamp = prefs.getInt(_lastAdDisplayKey) ?? 0;
+    int adDisplayCount = prefs.getInt(_adDisplayCountKey) ?? 0;
+
+    // Calculate time difference
+    int currentTime = DateTime.now().millisecondsSinceEpoch;
+    int timeDifference = currentTime - lastAdTimestamp;
+
+    // Display ad if conditions are met
+    if (adDisplayCount < 2) {
+      // Show the interstitial ad here
+      AdHelper().showInterstitialAd();
+      // Update values
+      await prefs.setInt(_lastAdDisplayKey, currentTime);
+      await prefs.setInt(_adDisplayCountKey, adDisplayCount + 1);
+    }
+
+    if (timeDifference >= 24 * 60 * 60 * 1000) {
+      adDisplayCount = 0;
+      await prefs.setInt(_lastAdDisplayKey, currentTime);
+      await prefs.setInt(_adDisplayCountKey, adDisplayCount);
+    }
   }
 
   // Dispose Interstitial Ad
@@ -243,198 +193,7 @@ class AdHelper {
     _interstitialAd?.dispose();
     _interstitialAd = null;
   }
-
-  //new
-  // Initialize the interstitial ad during app initialization or at a relevant point
-  // void createInterstitialAd() async {
-  //   await _createInterstitialAds();
-  // }
-
-// ... Other code ...
-
-// Load Interstitial Ad
-//   Future<void> _createInterstitialAds() async {
-//     await InterstitialAd.load(
-//       adUnitId: AdHelper.interstitialAdUnitId,
-//       request: const AdRequest(),
-//       adLoadCallback: InterstitialAdLoadCallback(
-//         onAdLoaded: (InterstitialAd ad) {
-//           debugPrint('$ad loaded');
-//           _interstitialAd = ad;
-//           _interstitialAd!.setImmersiveMode(true);
-//         },
-//         onAdFailedToLoad: (LoadAdError error) {
-//           debugPrint('InterstitialAd failed to load: $error.');
-//           _interstitialAd = null; // Set ad to null upon failure
-//         },
-//       ),
-//     );
-//   }
-
-// // Show Interstitial Ads for Non VIP Users
-//   void showInterstitialAd() {
-//     if (_interstitialAd == null) {
-//       debugPrint('Warning: attempt to show interstitial before loaded.');
-//       return;
-//     }
-
-//     // Run callbacks
-//     _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
-//       onAdShowedFullScreenContent: (InterstitialAd ad) =>
-//           debugPrint('ad onAdShowedFullScreenContent.'),
-//       onAdDismissedFullScreenContent: (InterstitialAd ad) {
-//         debugPrint('$ad onAdDismissedFullScreenContent.');
-//         ad.dispose();
-//         _createInterstitialAds(); // Load a new ad after dismissal
-//       },
-//       onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
-//         debugPrint('$ad onAdFailedToShowFullScreenContent: $error');
-//         ad.dispose();
-//         _createInterstitialAds(); // Load a new ad after failure
-//       },
-//     );
-
-//     _interstitialAd!.show();
-//     _interstitialAd = null;
-//   }
-
-// // Dispose Interstitial Ad
-//   void disposeInterstitialAd() {
-//     _interstitialAd?.dispose();
-//     _interstitialAd = null;
-//   }
 }
-// class AdBannerWidget extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     // Implement your ad banner widget here
-//     // For example:
-//     return AdmobBanner(
-//       adUnitId: AdHelper.bannerAdUnitId,
-//       adSize: AdmobBannerSize.ADAPTIVE_BANNER(
-//         width: MediaQuery.of(context).size.width.toInt(),
-//       ),
-//     );
-//   }
-// }
-
-// class AdBannerWidget extends StatefulWidget {
-//   @override
-//   _AdBannerWidgetState createState() => _AdBannerWidgetState();
-// }
-
-// class _AdBannerWidgetState extends State<AdBannerWidget> {
-//   late AdmobBanner _admobBanner;
-
-//   @override
-//   void initState() {
-//     super.initState();
-
-//     _admobBanner = AdmobBanner(
-//       adUnitId: AdHelper.bannerAdUnitId,
-//       adSize: AdmobBannerSize.ADAPTIVE_BANNER(
-//         width: MediaQuery.of(context).size.width.toInt(),
-//       ),
-//     );
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return _admobBanner;
-//   }
-// }
-
-//new
-// import 'package:google_mobile_ads/google_mobile_ads.dart';
-// import 'dart:io' show Platform;
-
-// class AppOpenAdManager {
-
-//   String adUnitId = Platform.isAndroid
-//     ? 'ca-app-pub-7181343877669077/8346499195'
-//     : 'ca-app-pub-7181343877669077/7556177613';
-
-//   AppOpenAd? _appOpenAd;
-//   bool _isShowingAd = false;
-
-//   /// Load an AppOpenAd.
-//    void loadAd() {
-//     AppOpenAd.load(
-//       adUnitId: adUnitId,
-//       orientation: AppOpenAd.orientationPortrait,
-//       request: AdRequest(),
-//       adLoadCallback: AppOpenAdLoadCallback(
-//         onAdLoaded: (ad) {
-//           _appOpenAd = ad;
-//         },
-//         onAdFailedToLoad: (error) {
-//           print('AppOpenAd failed to load: $error');
-//           // Handle the error.
-//         },
-//       ),
-//     );
-//   }
-
-//   /// Whether an ad is available to be shown.
-//   bool get isAdAvailable {
-//     return _appOpenAd != null;
-//   }
-
-//      void showAdIfAvailable() {
-//     if (!isAdAvailable) {
-//       print('Tried to show ad before available.');
-//       loadAd();
-//       return;
-//     }
-//     if (_isShowingAd) {
-//       print('Tried to show ad while already showing an ad.');
-//       return;
-//     }
-//     // Set the fullScreenContentCallback and show the ad.
-//     _appOpenAd!.fullScreenContentCallback = FullScreenContentCallback(
-//       onAdShowedFullScreenContent: (ad) {
-//         _isShowingAd = true;
-//         print('$ad onAdShowedFullScreenContent');
-//       },
-//       onAdFailedToShowFullScreenContent: (ad, error) {
-//         print('$ad onAdFailedToShowFullScreenContent: $error');
-//         _isShowingAd = false;
-//         ad.dispose();
-//         _appOpenAd = null;
-//       },
-//       onAdDismissedFullScreenContent: (ad) {
-//         print('$ad onAdDismissedFullScreenContent');
-//         _isShowingAd = false;
-//         ad.dispose();
-//         _appOpenAd = null;
-//         loadAd();
-//       },
-//     );
-//   }
-// }
-
-// /// Listens for app foreground events and shows app open ads.
-// class AppLifecycleReactor {
-//   final AppOpenAdManager appOpenAdManager;
-
-//   AppLifecycleReactor({required this.appOpenAdManager});
-
-//   void listenToAppStateChanges() {
-//     AppStateEventNotifier.startListening();
-//     AppStateEventNotifier.appStateStream
-//         .forEach((state) => _onAppStateChanged(state));
-//   }
-
-//   void _onAppStateChanged(AppState appState) {
-//     // Try to show an app open ad if the app is being resumed and
-//     // we're not already showing an app open ad.
-//     if (appState == AppState.foreground) {
-//       appOpenAdManager.showAdIfAvailable();
-//     }
-//   }
-// }
-
-//
 
 class AppOpenAdManager {
   AppOpenAd? _appOpenAd;
@@ -512,12 +271,17 @@ class _CustomBannerAdState extends State<CustomBannerAd> {
   late BannerAd bannerAd;
   bool isBannerAdLoaded = false;
 
+  double _adHeight = 0;
+
   @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
     bannerAd = BannerAd(
-      size: AdSize.fullBanner,
+      size: AdSize.getInlineAdaptiveBannerAdSize(
+          MediaQuery.of(context).size.width.toInt(), 60),
+      //  size: AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(MediaQuery.of(context).size.width.toInt(),),
+
       adUnitId: AdHelper.bannerAdUnitId,
       listener: BannerAdListener(onAdFailedToLoad: (ad, error) {
         print("Ad Failed to Load");
@@ -545,24 +309,4 @@ class _CustomBannerAdState extends State<CustomBannerAd> {
           )
         : SizedBox();
   }
-// @override
-//   Widget build(BuildContext context) {
-//    return isBannerAdLoaded
-//     ? SafeArea(
-//         child: Container(
-//           height: 60,
-//           width: double.infinity,
-//           child: Align(
-//             alignment: Alignment.bottomCenter,
-//             child: AdWidget(
-//               ad: bannerAd,
-//               key: UniqueKey(),
-//             ),
-//           ),
-//         ),
-//       )
-//     : SizedBox();
-
-//   }
 }
-

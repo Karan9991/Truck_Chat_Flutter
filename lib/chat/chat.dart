@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:chat/chat/new_conversation.dart';
 import 'package:chat/chat/starred_chat_list.dart';
 import 'package:chat/home_screen.dart';
@@ -74,18 +76,25 @@ class _ChatState extends State<Chat> {
   List<String> starredConversationList = [];
   bool isLoading = true;
   InterstitialAd? _interstitialAd;
+  bool _isInterstitialAdReady = false; // Track whether the ad is loaded
+  static const int maxFailedLoadAttempts = 3;
+  int _numInterstitialLoadAttempts = 0;
 
   @override
   void initState() {
     super.initState();
 
-   // AdHelper().showInterstitialAd();
+    // showInterstitialAd();
+
+    //AdHelper.showInterstitialAd2TimesIn24Hours();
 
     // InterstitialAdManager.initialize();
-    //AdHelper().showInterstitialAd();
+     AdHelper().showInterstitialAd();
+    //AdHelper().createInterstitialAd();
 
     // _createInterstitialAd();
     //showAd();
+
 
     SharedPrefs.setBool('isUserOnPublicChatScreen', true);
 
@@ -110,37 +119,17 @@ class _ChatState extends State<Chat> {
     _refreshChat();
 
     checkChatStarredStatus();
+
+
   }
 
-  Future<void> showAd() async {
-    await _createInterstitialAd();
-  }
 
-  Future<void> _createInterstitialAd() async {
-    await InterstitialAd.load(
-      adUnitId: AdHelper.interstitialAdUnitId,
-      request: const AdRequest(),
-      adLoadCallback: InterstitialAdLoadCallback(
-        onAdLoaded: (InterstitialAd ad) {
-          debugPrint('$ad loaded');
-          _interstitialAd = ad;
-          _interstitialAd!.setImmersiveMode(true);
-          // The ad is fully loaded here, so you can choose to show it immediately
-          _interstitialAd!.show();
-        },
-        onAdFailedToLoad: (LoadAdError error) {
-          debugPrint('InterstitialAd failed to load: $error.');
-          _interstitialAd = null;
-        },
-      ),
-    );
-  }
 
   @override
   void dispose() {
     //   InterstitialAdManager.dispose();
 
-  //  AdHelper().disposeInterstitialAd();
+   // AdHelper().disposeInterstitialAd();
     _scrollController.dispose();
 
     SharedPrefs.setBool('isUserOnPublicChatScreen', false);
@@ -277,8 +266,6 @@ class _ChatState extends State<Chat> {
     DataSnapshot dataSnapshot = event.snapshot;
 
     String? token = dataSnapshot.value as String?;
-
-  
 
     return token;
   }
@@ -570,6 +557,8 @@ class _ChatState extends State<Chat> {
 
   @override
   Widget build(BuildContext context) {
+    // Trigger showing the ad once it's loaded
+
     bool isPrivateChatEnabled =
         SharedPrefs.getBool(SharedPrefsKeys.PRIVATE_CHAT) ?? false;
     Color brightGreen =
@@ -1448,7 +1437,3 @@ class _ChatState extends State<Chat> {
     });
   }
 }
-
-
-
-

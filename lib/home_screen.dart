@@ -88,6 +88,7 @@ class HomeScreenState extends State<HomeScreen>
     // TODO: implement initState
     super.initState();
     // AdHelper().createInterstitialAd();
+    loadInterstitialAd();
     //Load AppOpen Ad
 
     //  AppOpenAdManager appOpenAdManager = AppOpenAdManager()..loadAd();
@@ -117,6 +118,10 @@ class HomeScreenState extends State<HomeScreen>
     _refreshChatListWithFCM();
 
     //  _loadAndShowInterstitialAd();
+  }
+
+  Future<void> loadInterstitialAd() async {
+    await AdHelper().createInterstitialAd();
   }
 
   Future<void> registAndreqPermis() async {
@@ -555,7 +560,6 @@ class HomeScreenState extends State<HomeScreen>
     });
   }
 }
-
 
 class SponsorsTab extends StatelessWidget {
   final Key key;

@@ -1,4 +1,3 @@
-
 import 'package:chat/privateChat/chat.dart';
 import 'package:chat/utils/ads.dart';
 import 'package:chat/utils/alert_dialog.dart';
@@ -31,7 +30,11 @@ class _ChatListScreenState extends State<ChatListScreen>
   @override
   void initState() {
     super.initState();
-   // InterstitialAdManager.initialize();
+    // InterstitialAdManager.initialize();
+      print('init called on chatlist screen');
+
+
+    loadInterstitialAd();
 
     currentUserId = SharedPrefs.getString(SharedPrefsKeys.USER_ID);
 
@@ -46,11 +49,15 @@ class _ChatListScreenState extends State<ChatListScreen>
     //_delayedDisplay();
   }
 
+  Future<void> loadInterstitialAd() async {
+    await AdHelper().createInterstitialAd();
+  }
+
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-  //  InterstitialAdManager.dispose();
+    //  InterstitialAdManager.dispose();
   }
 
   Future<void> _loadChatList(String userId) async {
@@ -116,7 +123,6 @@ class _ChatListScreenState extends State<ChatListScreen>
 
   void _deleteChat(int index) {
     print('deleteChat');
- 
 
     // Get the chat item corresponding to the selected index
     Map<dynamic, dynamic> chatItem = _chatList[index];

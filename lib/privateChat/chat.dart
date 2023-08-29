@@ -59,7 +59,8 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
 
-    // AdHelper().showInterstitialAd();
+    AdHelper().showInterstitialAd();
+    // AdHelper.showInterstitialAd2TimesIn24Hours();
 
     SharedPrefs.setBool('isUserOnChatScreen', true);
 
@@ -77,7 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   void dispose() {
-    // AdHelper().disposeInterstitialAd();
+  //  AdHelper().disposeInterstitialAd();
 
     SharedPrefs.setBool('isUserOnChatScreen', false);
 
@@ -922,77 +923,6 @@ class MessageBubble extends StatelessWidget {
   }
 }
 
-// void _showFullImage(BuildContext context, String imageUrl) {
-//   Navigator.push(
-//     context,
-//     MaterialPageRoute(
-//       builder: (context) => Scaffold(
-//         body: Center(
-//           child: PhotoView(
-//             imageProvider: NetworkImage(imageUrl),
-//             minScale: PhotoViewComputedScale.contained,
-//             maxScale: PhotoViewComputedScale.covered * 2.0,
-//           ),
-//         ),
-//       ),
-//     ),
-//   );
-// }
-
-// void _showFullImage(BuildContext context, String imageUrl) {
-//   Navigator.push(
-//     context,
-//     MaterialPageRoute(
-//       builder: (context) => Scaffold(
-//         appBar: AppBar(
-//           actions: [
-//             IconButton(
-//               icon: Icon(Icons.close),
-//               onPressed: () {
-//                 Navigator.pop(context); // Close the image viewer
-//               },
-//             ),
-//           ],
-//         ),
-//         body: Center(
-//           child: PhotoView(
-//             imageProvider: NetworkImage(imageUrl),
-//             minScale: PhotoViewComputedScale.contained,
-//             maxScale: PhotoViewComputedScale.covered * 2.0,
-//           ),
-//         ),
-//       ),
-//     ),
-//   );
-// }
-// void _showFullImage(BuildContext context, String imageUrl) {
-//   Navigator.push(
-//     context,
-//     MaterialPageRoute(
-//       builder: (context) => Scaffold(
-//         appBar: AppBar(
-//           automaticallyImplyLeading: false, // Remove the back button
-
-//           actions: [
-//             IconButton(
-//               icon: Icon(Icons.close),
-//               onPressed: () {
-//                 Navigator.pop(context); // Close the image viewer
-//               },
-//             ),
-//           ],
-//         ),
-//         body: Center(
-//           child: PhotoView(
-//             imageProvider: NetworkImage(imageUrl),
-//             minScale: PhotoViewComputedScale.contained,
-//             maxScale: PhotoViewComputedScale.covered * 2.0,
-//           ),
-//         ),
-//       ),
-//     ),
-//   );
-// }
 void _showFullImage(BuildContext context, String imageUrl) {
   Navigator.push(
     context,

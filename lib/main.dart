@@ -78,6 +78,8 @@ void main() async {
 
   FirebaseMessaging.onBackgroundMessage(backgroundHandler);
 
+  await AdHelper().createInterstitialAd();
+
   runApp(MyApp());
 }
 
@@ -186,6 +188,7 @@ Future<void> initNotificationsAndSoundPrefs() async {
   SharedPrefs.setBool('isUserOnChatScreen', false);
   SharedPrefs.setBool('isUserOnPublicChatScreen', false);
   SharedPrefs.setBool('isPendingRequestScreenOpen', false);
+  SharedPrefs.setInt('interstitialAdCounter', 0);
 }
 
 final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
@@ -197,16 +200,14 @@ void _configureFCM() {
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     print('Foreground notification received');
     print('data ${message.data}');
- 
+
     bool? notifications = SharedPrefs.getBool(SharedPrefsKeys.NOTIFICATIONS);
     if (notifications!) {
       handleFCMMessage(message.data, message);
     }
-
   });
   FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
     print('onMessageOpenedApp----------------->');
-
   });
 }
 

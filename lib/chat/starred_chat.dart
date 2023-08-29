@@ -75,7 +75,7 @@ class _StarredChatState extends State<StarredChat> {
   void initState() {
     super.initState();
 
-  //  AdHelper().showInterstitialAd();
+    AdHelper().showInterstitialAd();
 
     _firebaseMessaging.subscribeToTopic('all');
 
@@ -109,7 +109,7 @@ class _StarredChatState extends State<StarredChat> {
 
   @override
   void dispose() {
-  //  AdHelper().disposeInterstitialAd();
+   // AdHelper().disposeInterstitialAd();
     
     _scrollController.dispose();
     SharedPrefs.setBool('isUserOnPublicChatScreen', false);
