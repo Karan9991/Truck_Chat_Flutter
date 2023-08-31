@@ -152,6 +152,13 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
     Map<String, double> locationData = await getLocation();
     double latitude = locationData[Constants.LATITUDE]!;
     double longitude = locationData[Constants.LONGITUDE]!;
+    String? userId = SharedPrefs.getString(SharedPrefsKeys.USER_ID) ?? '';
+    bool? privateChat =
+        SharedPrefs.getBool(SharedPrefsKeys.PRIVATE_CHAT) ?? false;
+    String? chatHandle =
+        SharedPrefs.getString(SharedPrefsKeys.CURRENT_USER_CHAT_HANDLE) ?? '';
+
+    String privateChatStatus = privateChat ? '1' : '0';
 
     if (SharedPrefs.getInt(SharedPrefsKeys.CURRENT_USER_AVATAR_ID) != null) {
       emojiId =
@@ -172,6 +179,11 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
         API.MESSAGE_LATITUDE: latitude.toString(),
         API.MESSAGE_LONGITUDE: longitude.toString(),
         API.EMOJI_ID: emojiId,
+        // "device_package": "com.teletype.truckchat",
+        "device_package": "com.teletype.truckchat2.android",
+        "user_id": userId,
+        "private_chat": privateChatStatus,
+        "driver_name": chatHandle,
       };
 
       http.Response response = await http.post(
@@ -227,60 +239,60 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
     //     _locationPermission == LocationPermission.deniedForever) {
     //   showLocationPermissionDialog(context);
     // } else {
-      String? userId = SharedPrefs.getString(SharedPrefsKeys.USER_ID);
+    String? userId = SharedPrefs.getString(SharedPrefsKeys.USER_ID);
 
-      if (userId == null) {
-        print('4');
-        setState(() {
-          _isSending = true;
-        });
-        await registerDevice();
+    if (userId == null) {
+      print('4');
+      setState(() {
+        _isSending = true;
+      });
+      await registerDevice();
 
-        bool sent = await send();
+      bool sent = await send();
 
-        setState(() {
-          _isSending = false;
-        });
+      setState(() {
+        _isSending = false;
+      });
 
-        if (sent) {
-          print('5');
-          await sendFCMNotification('all', 'message');
+      if (sent) {
+        print('5');
+        await sendFCMNotification('all', 'message');
 
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => HomeScreen(
-                      initialTabIndex: 1,
-                    )),
-          );
-        }
-      } else {
-        print('6');
-
-        setState(() {
-          _isSending = true;
-        });
-
-        bool sent = await send();
-
-        setState(() {
-          _isSending = false;
-        });
-
-        if (sent) {
-          print('7');
-          await sendFCMNotification('all', 'message');
-
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => HomeScreen(
-                      initialTabIndex: 1,
-                    )),
-          );
-        }
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => HomeScreen(
+                    initialTabIndex: 1,
+                  )),
+        );
       }
-   // }
+    } else {
+      print('6');
+
+      setState(() {
+        _isSending = true;
+      });
+
+      bool sent = await send();
+
+      setState(() {
+        _isSending = false;
+      });
+
+      if (sent) {
+        print('7');
+        await sendFCMNotification('all', 'message');
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => HomeScreen(
+                    initialTabIndex: 1,
+                  )),
+        );
+      }
+    }
+    // }
   }
 
   void _toggleListening() {

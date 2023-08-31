@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:chat/chat/new_conversation.dart';
-import 'package:chat/chat/starred_chat_list.dart';
+import 'package:chat/starredChat/starred_chat_list.dart';
 import 'package:chat/home_screen.dart';
 import 'package:chat/settings/settings.dart';
 import 'package:chat/utils/ads.dart';
@@ -89,12 +89,11 @@ class _ChatState extends State<Chat> {
     //AdHelper.showInterstitialAd2TimesIn24Hours();
 
     // InterstitialAdManager.initialize();
-     AdHelper().showInterstitialAd();
+     AdHelper().showInterstitialAd(); //original ad
     //AdHelper().createInterstitialAd();
 
     // _createInterstitialAd();
     //showAd();
-
 
     SharedPrefs.setBool('isUserOnPublicChatScreen', true);
 
@@ -119,17 +118,13 @@ class _ChatState extends State<Chat> {
     _refreshChat();
 
     checkChatStarredStatus();
-
-
   }
-
-
 
   @override
   void dispose() {
     //   InterstitialAdManager.dispose();
 
-   // AdHelper().disposeInterstitialAd();
+    // AdHelper().disposeInterstitialAd();
     _scrollController.dispose();
 
     SharedPrefs.setBool('isUserOnPublicChatScreen', false);
@@ -321,8 +316,8 @@ class _ChatState extends State<Chat> {
             final rid = jsonReply[API.SERVER_MSG_REPLY_ID];
             final replyMsg = jsonReply[API.REPLY_MSG];
             final uid = jsonReply[API.USER_ID];
-            final emojiId = jsonReply[API.EMOJI_ID];
-            final driverName = jsonReply['driver_name'];
+            final emojiId = jsonReply[API.EMOJI_ID] ?? 0;
+            final driverName = jsonReply['driver_name'] ?? '';
             final privateChat = jsonReply['private_chat'];
 
             print("server_msg_reply_id  $rid");
@@ -337,12 +332,12 @@ class _ChatState extends State<Chat> {
             try {
               //  timestamp = int.tryParse(jsonReply['timestamp']) ?? 0;
               timestamp = jsonReply[API.TIMESTAMP] ?? 0;
-              // print('try in for $timestamp');
+              print('try in for $timestamp');
             } catch (e) {
               timestamp = 0;
-              //print('catch $timestamp');
+              print('catch $timestamp');
             }
-//format code to separate chat handle with colon : with message
+            //format code to separate chat handle with colon : with message
 
             String decodedMessage = replyMsg.replaceAll('%3A', ':');
 
@@ -365,6 +360,10 @@ class _ChatState extends State<Chat> {
         } catch (e) {
           print('catch 2 $e');
           statusMessage = e.toString();
+//  final lineNumber = stackTrace.toString().split("\n")[1];
+//       print("Error occurred at: $lineNumber");
+          //     final errorDetails = FlutterErrorDetails(exception: e, stack: stackTrace);
+          // FlutterError.reportError(errorDetails);
         }
       } else {
         statusMessage = 'Connection Error';
@@ -395,6 +394,13 @@ class _ChatState extends State<Chat> {
     setState(() {
       sendingMessage = true; // Set sending state to true
     });
+
+    String? deviceId = SharedPrefs.getString(
+          SharedPrefsKeys.SERIAL_NUMBER,
+        ) ??
+        '';
+
+    String deviceType = getDeviceType();
 
     if (SharedPrefs.getInt(SharedPrefsKeys.CURRENT_USER_AVATAR_ID) != null) {
       emojiId =
@@ -443,6 +449,11 @@ class _ChatState extends State<Chat> {
       API.EMOJI_ID: emojiId,
       'driver_name': driverName,
       'private_chat': privateChatStatus,
+      "device_id": deviceId,
+      // "device_package": "com.teletype.truckchat",
+
+      "device_package": "com.teletype.truckchat2.android",
+      "message_device_type": deviceType,
     });
 
     try {
@@ -461,7 +472,7 @@ class _ChatState extends State<Chat> {
         final jsonResult = jsonDecode(response.body);
         print('---------------Send Message Response---------------');
 
-        print(response.body);
+        print('send message response ${response.body}');
         int statusCode = jsonResult[API.STATUS] as int;
 
         /// print('status code $statusCode');

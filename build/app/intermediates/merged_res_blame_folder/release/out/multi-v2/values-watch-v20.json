@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.teletype.truckchat.app-mergeReleaseResources-41:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.teletype.truckchat.app-mergeReleaseResources-42:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/karandeepsingh/.gradle/caches/transforms-3/bd1c79c5812417eb58705badfbb86e2a/transformed/appcompat-1.5.1/res/values-watch-v20/values-watch-v20.xml",

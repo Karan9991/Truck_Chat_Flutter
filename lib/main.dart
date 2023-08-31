@@ -281,13 +281,14 @@ void handleFCMMessage(Map<String, dynamic> data, RemoteMessage message) async {
     print('if newchat');
 
     showNotification(title, body);
-  } else if (notificationType == null) {
-    print('null notificatoin');
-
-    if (!SharedPrefs.getBool('isUserOnPublicChatScreen')!) {
-      showNotification(title, body);
-    }
   }
+  //  else if (notificationType == null) {
+  //   print('null notificatoin');
+
+  //   if (!SharedPrefs.getBool('isUserOnPublicChatScreen')!) {
+  //     showNotification(title, body);
+  //   }
+  // }
 }
 
 Future<String> getNotificationChannelId() async {

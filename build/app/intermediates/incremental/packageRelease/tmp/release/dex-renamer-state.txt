@@ -1,4 +1,4 @@
-#Mon Aug 28 13:31:22 ADT 2023
+#Wed Aug 30 14:36:12 ADT 2023
 base.0=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 base.1=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/release/minifyReleaseWithR8/classes2.dex
 path.0=classes.dex

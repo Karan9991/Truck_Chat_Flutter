@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		kI26pOXXbY/95Z04Fd4XJULwfQM=
+		K2k/W4BzJrnrl7PTXMwIk0qbej8=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		K1QJ+dYDnmID9jKU4br4QeWix50=
+		g3hXpFifGnihQjc1315f+RFMqrQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		9ovh1aQB64Hr/k83JcjKVpuwm8w=
+		QWKz01KgstitbqxDt4hGWL0MEQI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/add_blog.png</key>
 		<data>
@@ -306,7 +306,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		bJ7whhx9Tqop6d1E7rqxxvev3rw=
+		lg/RHiboddazTbTFM+5EjKuqX/Q=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -474,7 +474,7 @@
 		</data>
 		<key>Frameworks/FirebaseDatabase.framework/FirebaseDatabase</key>
 		<data>
-		zO9RSRW/GEn7ZpnGDKn+7MU+BtM=
+		xJr53HPlK0TSYQeIwGU/hna8IoI=
 		</data>
 		<key>Frameworks/FirebaseDatabase.framework/Info.plist</key>
 		<data>
@@ -892,6 +892,18 @@
 		<data>
 		cNWNCT4XR1rAiY4q8XHHomSrl1o=
 		</data>
+		<key>Frameworks/video_player_avfoundation.framework/Info.plist</key>
+		<data>
+		n/T5XJnt/m3rl5irhIfZ0oSPwj4=
+		</data>
+		<key>Frameworks/video_player_avfoundation.framework/_CodeSignature/CodeResources</key>
+		<data>
+		gp6IdPadsW/DYPQvdENRHk6uXN0=
+		</data>
+		<key>Frameworks/video_player_avfoundation.framework/video_player_avfoundation</key>
+		<data>
+		5cpKTNhhPgd+cIPAWlvNBxzyXVw=
+		</data>
 		<key>Frameworks/webview_flutter_wkwebview.framework/Info.plist</key>
 		<data>
 		ud9JwDXU4mm2y/kffm7/9v7RYdU=
@@ -1009,7 +1021,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r9wG6TnKfTSqhXaIfEY+U8bS3CkZ773BdrhFSuK99GE=
+			6/4rKwlCIQEVdsx1qAGPefyCvGM8FQq2fBogSCaIy0I=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -1023,7 +1035,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			c39RK3WmdLL4QjmnrlFeaPd5FAu6YvlKwXISkJNBGKo=
+			sTrpBtXHaN+JBBI5P5buQ+ObpbrRue/Nv9CFORPBTNA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -1051,7 +1063,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S+UF7dJ2oTz/uy1UpjCxFhS0OUkj2a0Sx6YHfe2mVS4=
+			AKDoWXmtxV63LH/gSKzr/04w0sdMhLybVoZaNfjYEv0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/add_blog.png</key>
@@ -1464,7 +1476,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+vrYkOQk/NKVnwuKzR8u3GqDonGAeR4GDgRPGI8E7hM=
+			pxE56yePIEfYmk6ZDGGUZfBrDj7IW7g/k4WaeQHwqGg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -1758,7 +1770,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JQ8K9X228FXAR4FZsWhZ4WwL2Hn+531kOoT2bDTn/Gg=
+			GxlRwGmC4hxuELlsVqQlJHCjzaRx+goEP2uqW1wvr6c=
 			</data>
 		</dict>
 		<key>Frameworks/FirebaseDatabase.framework/Info.plist</key>
@@ -2487,6 +2499,27 @@
 			<key>hash2</key>
 			<data>
 			xIJAqRI7+q0x0iGiKZdQD6eG2madUdnIj4D+oOM39cw=
+			</data>
+		</dict>
+		<key>Frameworks/video_player_avfoundation.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+QcDqqDeKc1S+NIBkLqzY40E5THAoriQuHWsFGUfQ1o=
+			</data>
+		</dict>
+		<key>Frameworks/video_player_avfoundation.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			q80fuMMZr/c8A0iBqp1Y8+ES5olvg3eEwMXx6jKmme0=
+			</data>
+		</dict>
+		<key>Frameworks/video_player_avfoundation.framework/video_player_avfoundation</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fbxum5KXeozKAsFIFNUv1oe4ups+n4KNdM3X7Dhaiho=
 			</data>
 		</dict>
 		<key>Frameworks/webview_flutter_wkwebview.framework/Info.plist</key>

@@ -3,7 +3,7 @@ import 'package:chat/chat/new_conversation.dart';
 import 'package:chat/main.dart';
 import 'package:chat/privateChat/pending_requests.dart';
 import 'package:chat/privateChat/private_chat_homescreen.dart';
-import 'package:chat/chat/starred_chat_list.dart';
+import 'package:chat/starredChat/starred_chat_list.dart';
 import 'package:chat/news_tab.dart';
 import 'package:chat/chat/chat_list.dart';
 import 'package:chat/settings/settings.dart';
@@ -258,12 +258,13 @@ class HomeScreenState extends State<HomeScreen>
         if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
           FlutterBeep.beep();
         }
-      } else if (notificationType == null) {
-        _refreshChatList();
-        if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
-          FlutterBeep.beep();
-        }
-      }
+      } 
+      // else if (notificationType == null) {
+      //   _refreshChatList();
+      //   if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
+      //     FlutterBeep.beep();
+      //   }
+      // }
     });
   }
 
