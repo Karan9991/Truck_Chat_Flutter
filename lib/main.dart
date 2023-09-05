@@ -60,25 +60,24 @@ void main() async {
 
   MobileAds.instance.initialize();
 
-  await loadAppOpenAd();
+  //await loadAppOpenAd();
 
   configLocalNotification();
   _configureFCM();
 
   await SharedPrefs.init();
 
-  await registerDevice();
-
   SharedPreferences prefs = await SharedPreferences.getInstance();
   bool isAppInstalled = prefs.getBool('isAppInstalled') ?? false;
 
   if (!isAppInstalled) {
     await initNotificationsAndSoundPrefs();
+    await registerDevice();
   }
 
   FirebaseMessaging.onBackgroundMessage(backgroundHandler);
 
-  await AdHelper().createInterstitialAd();
+  //await AdHelper().createInterstitialAd();
 
   runApp(MyApp());
 }
@@ -282,13 +281,13 @@ void handleFCMMessage(Map<String, dynamic> data, RemoteMessage message) async {
 
     showNotification(title, body);
   }
-  //  else if (notificationType == null) {
-  //   print('null notificatoin');
+   else if (notificationType == null) {
+    print('null notificatoin');
 
-  //   if (!SharedPrefs.getBool('isUserOnPublicChatScreen')!) {
-  //     showNotification(title, body);
-  //   }
-  // }
+    // if (!SharedPrefs.getBool('isUserOnPublicChatScreen')!) {
+    //   showNotification(title, body);
+    // }
+  }
 }
 
 Future<String> getNotificationChannelId() async {

@@ -166,9 +166,9 @@ class _StarredChatListState extends State<StarredChatList>
       API.USER_ID: userId,
       API.LATITUDE: storedLatitude.toString(),
       API.LONGITUDE: storedLongitude.toString(),
-      "max_hours": "36",
-      "max_posts": "80",
-      "device_package": "com.teletype.truckchat2.android",
+      // "max_hours": "36",
+      // "max_posts": "80",
+      // "device_package": "com.teletype.truckchat2.android",
     };
 
     try {
@@ -392,8 +392,8 @@ class _StarredChatListState extends State<StarredChatList>
                                 ),
                               ).then((_) {
                                 // Called when returning from the chat screen
-                                setState(
-                                    () {}); // Trigger a rebuild of the widget
+                                // setState(
+                                //     () {}); // Trigger a rebuild of the widget
                               });
                             },
                             onLongPress: () {

@@ -569,8 +569,6 @@ class ChatListrState extends State<ChatListr>
   void initState() {
     super.initState();
 
-    // WidgetsBinding.instance.addObserver(this);
-
     getData().then((_) {
       setState(() {
         isLoading = false;
@@ -580,8 +578,6 @@ class ChatListrState extends State<ChatListr>
 
   @override
   void dispose() {
-    //  WidgetsBinding.instance.removeObserver(this);
-
     super.dispose();
   }
 
@@ -614,11 +610,10 @@ class ChatListrState extends State<ChatListr>
       API.USER_ID: userId,
       API.LATITUDE: storedLatitude.toString(),
       API.LONGITUDE: storedLongitude.toString(),
-      "max_hours": "36",
-      "max_posts": "80",
-      // "device_package": "com.teletype.truckchat",
+      //   "max_hours": "36",
+      //   "max_posts": "80",
 
-      "device_package": "com.teletype.truckchat2.android",
+      //   "device_package": "com.teletype.truckchat2.android",
     };
 
     try {
@@ -847,7 +842,7 @@ class ChatListrState extends State<ChatListr>
                             ),
                           ).then((_) {
                             // Called when returning from the chat screen
-                            setState(() {}); // Trigger a rebuild of the widget
+                            // setState(() {}); // Trigger a rebuild of the widget
                           });
                         },
                         onLongPress: () {

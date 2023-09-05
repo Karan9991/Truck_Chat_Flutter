@@ -59,7 +59,7 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
 
-    AdHelper().showInterstitialAd();
+   // AdHelper().showInterstitialAd();
     // AdHelper.showInterstitialAd2TimesIn24Hours();
 
     SharedPrefs.setBool('isUserOnChatScreen', true);
@@ -967,7 +967,6 @@ void _showFullImage(BuildContext context, String imageUrl) {
   );
 }
 
-
 // import 'dart:convert';
 // import 'dart:io';
 
@@ -1030,7 +1029,7 @@ void _showFullImage(BuildContext context, String imageUrl) {
 //   void initState() {
 //     super.initState();
 
-//     AdHelper().showInterstitialAd();
+//     //AdHelper().showInterstitialAd();
 //     // AdHelper.showInterstitialAd2TimesIn24Hours();
 
 //     SharedPrefs.setBool('isUserOnChatScreen', true);
@@ -1933,10 +1932,14 @@ void _showFullImage(BuildContext context, String imageUrl) {
 //       alignment: isCurrentUser ? Alignment.centerRight : Alignment.centerLeft,
 //       child: GestureDetector(
 //         onTap: () {
-//           if (isImageMessage) {
+//           if (mediaType == null) {
 //             _showFullImage(context, imageUrl);
+//             print('media type image  if');
 //           } else if (mediaType == 'video') {
+//             print('media type video else if');
 //             _showVideo(context, imageUrl); // Show the video player
+//           } else {
+//             print('media type else');
 //           }
 //         },
 //         child: Container(
@@ -1949,7 +1952,7 @@ void _showFullImage(BuildContext context, String imageUrl) {
 //           child: Column(
 //             crossAxisAlignment: CrossAxisAlignment.end,
 //             children: [
-//               if (isImageMessage)
+//               if (mediaType == null)
 //                 Image.network(
 //                   imageUrl,
 //                   width: 200,

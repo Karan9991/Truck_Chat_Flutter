@@ -1,5 +1,5 @@
 class API {
-  static const String BASE_URL = 'http://smarttruckroute.com/';
+  static const String BASE_URL = 'https://smarttruckroute.com/';
   static const String VERSION = 'bb/v1';
 
   static const String DEVICE_REGISTER = BASE_URL + VERSION + '/device_register';
@@ -13,11 +13,11 @@ class API {
   static const String REPORT_ABUSE = BASE_URL + VERSION + '/add_user_flags';
   static const String IGNORE_USER = BASE_URL + VERSION + '/update_user_ignored';
 
-  static const String VISIT_WEBSITE = 'http://truckchatapp.com';
-  static const String CONTACT = 'http://truckchatapp.com/index.html#Contact';
-  static const String SPONSORS = 'http://truckchatapp.com/sponsors.html';
-  static const String REVIEWS = 'http://truckchatapp.com/reviews/mobile';
-  static const String HELP = 'http://truckchatapp.com/index.html#FAQ';
+  static const String VISIT_WEBSITE = 'https://truckchatapp.com';
+  static const String CONTACT = 'https://truckchatapp.com/index.html#Contact';
+  static const String SPONSORS = 'https://truckchatapp.com/sponsors.html';
+  static const String REVIEWS = 'https://truckchatapp.com/reviews/mobile';
+  static const String HELP = 'https://truckchatapp.com/index.html#FAQ';
   static const String CONTENT_TYPE = 'Content-Type';
   static const String APPLICATION_JSON = 'application/json';
   static const String SERVER_MSG_ID = 'server_msg_id';
@@ -168,7 +168,7 @@ class Constants {
   static const String REFRESH = 'Refresh';
   static const String CHECK_OUT_TRUCKCHAT = 'Check out TruckChat';
   static const String I_AM_USING_TRUCKCHAT =
-      'I am using TruckChat right now, check it out at:\n\nhttp://play.google.com/store/apps/details?id=com.teletype.truckchat\n\nhttp://truckchatapp.com';
+      'I am using TruckChat right now, check it out at:\n\nhttps://play.google.com/store/apps/details?id=com.teletype.truckchat\n\nhttp://truckchatapp.com';
   static const String CONVERSATION_ID = 'conversationId';
   static const String REPLY_COUNT = 'replyCount';
   static const String IS_READ = 'isRead';
@@ -181,7 +181,7 @@ class Constants {
       '© TeleType Co. All Rights Reserved';
   static const String VISIT_THE_WEBSITE = 'Visit the website';
   static const String CONTACT_US = 'Contact us';
-  static const String VERSION = 'Version 58.3.0.0';
+  static const String VERSION = 'Version 61.3.0.0';
   static const String TERMS_OF_SERVICE = 'Terms of Service';
   static const String MESSAGES = 'Messages';
   static const String NOTIFICATIONS_AND_SOUND = 'Notifications and Sound';

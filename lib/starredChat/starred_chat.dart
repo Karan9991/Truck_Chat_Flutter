@@ -75,7 +75,7 @@ class _StarredChatState extends State<StarredChat> {
   void initState() {
     super.initState();
 
-    AdHelper().showInterstitialAd();
+   // AdHelper().showInterstitialAd();
 
     _firebaseMessaging.subscribeToTopic('all');
 

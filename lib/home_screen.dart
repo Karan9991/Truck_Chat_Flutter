@@ -88,7 +88,7 @@ class HomeScreenState extends State<HomeScreen>
     // TODO: implement initState
     super.initState();
     // AdHelper().createInterstitialAd();
-    loadInterstitialAd();
+    //loadInterstitialAd();
     //Load AppOpen Ad
 
     //  AppOpenAdManager appOpenAdManager = AppOpenAdManager()..loadAd();
@@ -217,7 +217,7 @@ class HomeScreenState extends State<HomeScreen>
   @override
   void dispose() {
     print('-----------------dddddddd-------------------------');
-    AdHelper().disposeInterstitialAd();
+    //  AdHelper().disposeInterstitialAd();
     super.dispose();
     //InterstitialAdManager.dispose();
     _tabController.dispose();
@@ -258,13 +258,13 @@ class HomeScreenState extends State<HomeScreen>
         if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
           FlutterBeep.beep();
         }
-      } 
-      // else if (notificationType == null) {
-      //   _refreshChatList();
-      //   if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
-      //     FlutterBeep.beep();
-      //   }
-      // }
+      } else if (notificationType == null) {
+        print('notification null homescreen');
+        // _refreshChatList();
+        // if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
+        //   FlutterBeep.beep();
+        // }
+      }
     });
   }
 

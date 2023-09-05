@@ -179,11 +179,10 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
         API.MESSAGE_LATITUDE: latitude.toString(),
         API.MESSAGE_LONGITUDE: longitude.toString(),
         API.EMOJI_ID: emojiId,
-        // "device_package": "com.teletype.truckchat",
-        "device_package": "com.teletype.truckchat2.android",
-        "user_id": userId,
-        "private_chat": privateChatStatus,
-        "driver_name": chatHandle,
+        // "device_package": "com.teletype.truckchat2.android",
+        // "user_id": userId,
+        // "private_chat": privateChatStatus,
+        // "driver_name": chatHandle,
       };
 
       http.Response response = await http.post(

@@ -74,7 +74,7 @@ class _ChatState extends State<Chat> {
   double? longitude;
   FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
   List<String> starredConversationList = [];
-  bool isLoading = true;
+  bool isLoading = false;
   InterstitialAd? _interstitialAd;
   bool _isInterstitialAdReady = false; // Track whether the ad is loaded
   static const int maxFailedLoadAttempts = 3;
@@ -83,17 +83,6 @@ class _ChatState extends State<Chat> {
   @override
   void initState() {
     super.initState();
-
-    // showInterstitialAd();
-
-    //AdHelper.showInterstitialAd2TimesIn24Hours();
-
-    // InterstitialAdManager.initialize();
-     AdHelper().showInterstitialAd(); //original ad
-    //AdHelper().createInterstitialAd();
-
-    // _createInterstitialAd();
-    //showAd();
 
     SharedPrefs.setBool('isUserOnPublicChatScreen', true);
 
@@ -122,9 +111,6 @@ class _ChatState extends State<Chat> {
 
   @override
   void dispose() {
-    //   InterstitialAdManager.dispose();
-
-    // AdHelper().disposeInterstitialAd();
     _scrollController.dispose();
 
     SharedPrefs.setBool('isUserOnPublicChatScreen', false);
@@ -158,6 +144,9 @@ class _ChatState extends State<Chat> {
   }
 
   Future<void> getData(dynamic conversationId) async {
+    setState(() {
+      isLoading = true;
+    });
     Map<String, double> locationData = await getLocation();
     latitude = locationData[Constants.LATITUDE]!;
     longitude = locationData[Constants.LONGITUDE]!;
@@ -736,6 +725,7 @@ class _ChatState extends State<Chat> {
                           return CustomBannerAd(
                             key: UniqueKey(),
                           );
+                          // return Container();
                         } else {
                           // Calculate the actual index in the news list
                           final newIndex = index - (index ~/ 5);
