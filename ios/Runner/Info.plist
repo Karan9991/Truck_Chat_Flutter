@@ -49,7 +49,8 @@
 	<string>TruckChat app utilizes speech recognition to transcribe voice input, enabling hands-free communication and seamless messaging experience.</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>TruckChat app uses a unique identifier to deliver personalized ads, helping to support the app's development and continue offering it for free.</string>
-	<key>NSWebKitWebContentUsageDescription</key>
+	
+<key>NSWebKitWebContentUsageDescription</key>
 	<string>TruckChat app requires permission to access web content in order to provide features like viewing sponsors and reviews, enhancing your understanding of the app's offerings.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

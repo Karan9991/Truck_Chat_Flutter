@@ -28,6 +28,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:chat/utils/navigator_key.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 
 Future<void> backgroundHandler(RemoteMessage message) async {
   print("backgroundHandler: ${message.notification}");
@@ -57,6 +58,8 @@ loadAppOpenAd() {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
+  await AppTrackingTransparency.requestTrackingAuthorization();
 
   MobileAds.instance.initialize();
 
@@ -280,8 +283,7 @@ void handleFCMMessage(Map<String, dynamic> data, RemoteMessage message) async {
     print('if newchat');
 
     showNotification(title, body);
-  }
-   else if (notificationType == null) {
+  } else if (notificationType == null) {
     print('null notificatoin');
 
     // if (!SharedPrefs.getBool('isUserOnPublicChatScreen')!) {

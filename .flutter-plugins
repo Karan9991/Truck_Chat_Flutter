@@ -1,5 +1,7 @@
 # This is a generated file; do not edit or check into version control.
 app_settings=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/app_settings-5.0.0/
+app_tracking_transparency=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/app_tracking_transparency-2.0.4/
+cached_video_player=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/cached_video_player-2.0.4/
 cloud_firestore=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/cloud_firestore-4.8.3/
 cloud_firestore_web=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/cloud_firestore_web-3.6.3/
 device_info=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/device_info-2.0.3/
@@ -33,6 +35,9 @@ image_picker_ios=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/image_picker_io
 image_picker_linux=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/image_picker_linux-0.2.1/
 image_picker_macos=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/image_picker_macos-0.2.1/
 image_picker_windows=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/image_picker_windows-0.2.1/
+path_provider=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/path_provider-2.0.15/
+path_provider_android=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/path_provider_android-2.0.27/
+path_provider_foundation=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/path_provider_foundation-2.2.4/
 path_provider_linux=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/path_provider_linux-2.1.11/
 path_provider_windows=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.7/
 shared_preferences=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/shared_preferences-2.1.2/
@@ -43,6 +48,7 @@ shared_preferences_web=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/shared_pr
 shared_preferences_windows=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/shared_preferences_windows-2.2.0/
 speech_to_text=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/speech_to_text-6.3.0/
 speech_to_text_macos=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/speech_to_text_macos-1.0.2/
+sqflite=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/sqflite-2.3.0/
 url_launcher=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/url_launcher-6.1.11/
 url_launcher_android=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/url_launcher_android-6.0.36/
 url_launcher_ios=/Users/karandeepsingh/.pub-cache/hosted/pub.dev/url_launcher_ios-6.1.4/

@@ -31,8 +31,7 @@ class _ChatListScreenState extends State<ChatListScreen>
   void initState() {
     super.initState();
     // InterstitialAdManager.initialize();
-      print('init called on chatlist screen');
-
+    print('init called on chatlist screen');
 
     loadInterstitialAd();
 
@@ -183,19 +182,49 @@ class _ChatListScreenState extends State<ChatListScreen>
                           backgroundImage: AssetImage(matchingAvatar.imagePath),
                         ),
                         title: Text(chatItem['userName']),
-                        subtitle: Text(
-                          isImageMessage ? 'Image' : chatItem['lastMessage'],
-                          style: TextStyle(
-                              fontWeight: chatItem['newMessages']
-                                  ? FontWeight.bold
-                                  : FontWeight.normal,
-                              color: chatItem['newMessages']
-                                  ? Colors.blue
-                                  : Colors.grey),
-                          overflow: TextOverflow
-                              .ellipsis, // Show ellipsis if the text overflows
-                          maxLines: 2,
+                        // subtitle: isImageMessage
+                        //     ? Icon(
+                        //         Icons.image,
+                        //         // size: 10,
+                        //         color: Colors.blue[300],
+                        //       )
+                        //     : Text(
+                        //         chatItem['lastMessage'],
+                        //         style: TextStyle(
+                        //             fontWeight: chatItem['newMessages']
+                        //                 ? FontWeight.bold
+                        //                 : FontWeight.normal,
+                        //             color: chatItem['newMessages']
+                        //                 ? Colors.blue
+                        //                 : Colors.grey),
+                        //         overflow: TextOverflow
+                        //             .ellipsis, // Show ellipsis if the text overflows
+                        //         maxLines: 2,
+                        //       ),
+                        subtitle: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            isImageMessage
+                                ? Icon(
+                                    Icons.image,
+                                    color: Colors.blue[300],
+                                  )
+                                : Text(
+                                    chatItem['lastMessage'],
+                                    style: TextStyle(
+                                      fontWeight: chatItem['newMessages']
+                                          ? FontWeight.bold
+                                          : FontWeight.normal,
+                                      color: chatItem['newMessages']
+                                          ? Colors.blue
+                                          : Colors.grey,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 2,
+                                  ),
+                          ],
                         ),
+
                         trailing: chatItem['newMessages']
                             ? Column(
                                 children: [

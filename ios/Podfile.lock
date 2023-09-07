@@ -630,17 +630,23 @@ PODS:
     - abseil/meta/type_traits
   - app_settings (4.3.0):
     - Flutter
+  - app_tracking_transparency (0.0.1):
+    - Flutter
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
     - BoringSSL-GRPC/Interface (= 0.0.24)
   - BoringSSL-GRPC/Implementation (0.0.24):
     - BoringSSL-GRPC/Interface (= 0.0.24)
   - BoringSSL-GRPC/Interface (0.0.24)
+  - cached_video_player (0.0.2):
+    - Flutter
+    - KTVHTTPCache (~> 2.0.0)
   - cloud_firestore (4.8.3):
     - Firebase/Firestore (= 10.12.0)
     - firebase_core
     - Flutter
     - nanopb (< 2.30910.0, >= 2.30908.0)
+  - CocoaAsyncSocket (7.6.5)
   - device_info (0.0.1):
     - Flutter
   - Firebase/Auth (10.12.0):
@@ -743,6 +749,9 @@ PODS:
     - OrderedSet (~> 5.0)
   - flutter_local_notifications (0.0.1):
     - Flutter
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - geolocator_apple (1.2.0):
     - Flutter
   - Google-Mobile-Ads-SDK (10.4.0):
@@ -860,6 +869,10 @@ PODS:
   - GTMSessionFetcher/Core (3.1.1)
   - image_picker_ios (0.0.1):
     - Flutter
+  - KTVCocoaHTTPServer (1.0.0):
+    - CocoaAsyncSocket
+  - KTVHTTPCache (2.0.1):
+    - KTVCocoaHTTPServer
   - leveldb-library (1.22.2)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
@@ -867,6 +880,9 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - OrderedSet (5.0.0)
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - PromisesObjC (2.2.0)
   - shared_preferences_foundation (0.0.1):
     - Flutter
@@ -874,6 +890,9 @@ PODS:
   - speech_to_text (0.0.1):
     - Flutter
     - Try
+  - sqflite (0.0.3):
+    - Flutter
+    - FMDB (>= 2.7.5)
   - Try (2.1.1)
   - url_launcher_ios (0.0.1):
     - Flutter
@@ -884,6 +903,8 @@ PODS:
 
 DEPENDENCIES:
   - app_settings (from `.symlinks/plugins/app_settings/ios`)
+  - app_tracking_transparency (from `.symlinks/plugins/app_tracking_transparency/ios`)
+  - cached_video_player (from `.symlinks/plugins/cached_video_player/ios`)
   - cloud_firestore (from `.symlinks/plugins/cloud_firestore/ios`)
   - device_info (from `.symlinks/plugins/device_info/ios`)
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
@@ -898,8 +919,10 @@ DEPENDENCIES:
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
   - google_mobile_ads (from `.symlinks/plugins/google_mobile_ads/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - speech_to_text (from `.symlinks/plugins/speech_to_text/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
   - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/ios`)
   - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
@@ -908,6 +931,7 @@ SPEC REPOS:
   trunk:
     - abseil
     - BoringSSL-GRPC
+    - CocoaAsyncSocket
     - Firebase
     - FirebaseAppCheckInterop
     - FirebaseAuth
@@ -920,6 +944,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseMessaging
     - FirebaseStorage
+    - FMDB
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -928,6 +953,8 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - KTVCocoaHTTPServer
+    - KTVHTTPCache
     - leveldb-library
     - nanopb
     - OrderedSet
@@ -937,6 +964,10 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   app_settings:
     :path: ".symlinks/plugins/app_settings/ios"
+  app_tracking_transparency:
+    :path: ".symlinks/plugins/app_tracking_transparency/ios"
+  cached_video_player:
+    :path: ".symlinks/plugins/cached_video_player/ios"
   cloud_firestore:
     :path: ".symlinks/plugins/cloud_firestore/ios"
   device_info:
@@ -965,10 +996,14 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_mobile_ads/ios"
   image_picker_ios:
     :path: ".symlinks/plugins/image_picker_ios/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
   speech_to_text:
     :path: ".symlinks/plugins/speech_to_text/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
   url_launcher_ios:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
   video_player_avfoundation:
@@ -979,8 +1014,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
   app_settings: ee4ae4d1c9a907a23b81c40e5c56a5ca8a20a62b
+  app_tracking_transparency: 5b1745ef9ade815f7455cb6a0848349589afb7c5
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
+  cached_video_player: 9f225ed1c46bda0fe287b8288742329d441e2cc5
   cloud_firestore: ac09bcf42ed1f477cb6eeb1d5937255023862e29
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
   Firebase: 07150e75d142fb9399f6777fa56a187b17f833a0
   firebase_auth: 887426c05a8a301e6432ad1e194f16cc55888a13
@@ -1003,6 +1041,7 @@ SPEC CHECKSUMS:
   flutter_beep: 54fb393b22dfa0f0e4573c81b1c74dd71c4e5af8
   flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
   flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   geolocator_apple: cc556e6844d508c95df1e87e3ea6fa4e58c50401
   Google-Mobile-Ads-SDK: 32fe7836431a06a29f7734ae092b600137c8108d
   google_mobile_ads: 53b1f0d74445963e5810e34ac38dfb27aabe278e
@@ -1014,12 +1053,16 @@ SPEC CHECKSUMS:
   gRPC-Core: 17108291d84332196d3c8466b48f016fc17d816d
   GTMSessionFetcher: e8647203b65cee28c5f73d0f473d096653945e72
   image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
+  KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
+  KTVHTTPCache: 588c3eb16f6bd1e6fde1e230dabfb7bd4e490a4d
   leveldb-library: f03246171cce0484482ec291f88b6d563699ee06
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   shared_preferences_foundation: e2dae3258e06f44cc55f49d42024fd8dd03c590c
   speech_to_text: b43a7d99aef037bd758ed8e45d79bbac035d2dfe
+  sqflite: 31f7eba61e3074736dff8807a9b41581e4f7f15a
   Try: 5ef669ae832617b3cee58cb2c6f99fb767a4ff96
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
   video_player_avfoundation: 81e49bb3d9fb63dccf9fa0f6d877dc3ddbeac126

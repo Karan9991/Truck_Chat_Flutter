@@ -108,7 +108,7 @@ class DialogStrings {
   static const String PRIVATE_CHAT_YOU_REQUESTED =
       'You have requested for private chat now any person in group will able to chat with you privately. A green indicator to show user is ready for private chat.';
   static const String PRIVATE_CHAT_YOU_NO_LONGER =
-      'You no longer accepting private messages.';
+      'You no longer receiving private chat requests.';
 
   static const String IGNORE_USER = 'Ignore User';
   static const String SEND_PRIVATE_CHAT_REQUEST = 'Send Private Chat Request';
@@ -181,7 +181,7 @@ class Constants {
       '© TeleType Co. All Rights Reserved';
   static const String VISIT_THE_WEBSITE = 'Visit the website';
   static const String CONTACT_US = 'Contact us';
-  static const String VERSION = 'Version 61.3.0.0';
+  static const String VERSION = 'Version 63.4.0.0';
   static const String TERMS_OF_SERVICE = 'Terms of Service';
   static const String MESSAGES = 'Messages';
   static const String NOTIFICATIONS_AND_SOUND = 'Notifications and Sound';
@@ -204,7 +204,7 @@ class Constants {
       'This app is provided as a free service for trucking professionals.\n\nWe want the commercial truck driving community to have a pleasant and useful experience using the free TruckChat app, so that means no posting of explicit or offensive content. More specifically: no porn, no racism, no homophobia, no threats, no abuse, no bullying, no profanity, no sexual advances, no solicitation or personal services. No advertising of your business (unless you are a paying Sponsor of the app with written permission from the developer).\n\nIf we feel you are violating these terms, we can remove your content and/or delete your profile without question. We encourage checking with drivers about weather, traffic, parking, company reviews, delivery discussions between drivers and dispatchers.';
 
   static const String ANDROID = 'Android';
-  static const String IOS = 'iOS';
+  static const String IOS = 'iPhone';
   static const String APP_BAR_TITLE = 'TruckChat';
   static const String CHAT_HANDLE = 'Chat Handle';
   static const String PREPEND_YOUR_MESSAGES =
