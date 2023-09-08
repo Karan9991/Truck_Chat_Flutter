@@ -240,7 +240,7 @@ class _TermsOfServiceDialogState extends State<TermsOfServiceDialog> {
             SharedPrefs.setBool(SharedPrefsKeys.TERMS_AGREED, true);
             print('Terms Agreed');
             Navigator.of(context).pop();
-          //  showLocationAccessDialog(context, () => null);
+            //  showLocationAccessDialog(context, () => null);
           },
           child: Text(DialogStrings.I_AGREE),
         ),
@@ -289,7 +289,6 @@ void showExitConversationDialog(BuildContext context) async {
   }
 }
 
-
 void showLocationAccessDialog(BuildContext context, Function() onOk) {
   showDialog(
     barrierDismissible: false,
@@ -310,7 +309,7 @@ void showLocationAccessDialog(BuildContext context, Function() onOk) {
 
               onOk();
             },
-            child: Text(DialogStrings.OK),
+            child: Text('Next'),
           ),
         ],
       );
@@ -318,7 +317,8 @@ void showLocationAccessDialog(BuildContext context, Function() onOk) {
   );
 }
 
-void showLocationAccessDialogGlobalKey(GlobalKey<NavigatorState> navigatorKey, Function() onOk) {
+void showLocationAccessDialogGlobalKey(
+    GlobalKey<NavigatorState> navigatorKey, Function() onOk) {
   showDialog(
     barrierDismissible: false,
     context: navigatorKey.currentContext!,
@@ -695,6 +695,75 @@ void sendImageDialog(
                   ],
                 ),
               ),
+              SizedBox(height: 8),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+void showPhotoOrVideoDialog(
+  BuildContext context,
+  Function() onPhoto,
+  Function() onVideo,
+) {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Container(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center, // Center the options
+            children: [
+              SizedBox(height: 10),
+              // Text(
+              //   DialogStrings.CHOOSE_AN_OPTION,
+              //   style: TextStyle(
+              //     fontWeight: FontWeight.bold,
+              //     fontSize: 18,
+              //   ),
+              // ),
+              SizedBox(height: 16),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  onPhoto();
+                },
+                icon: Icon(Icons.photo),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      Colors.cyan[400],
+                       shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        20), ),
+                ),
+                label: Text('Photo'),
+              ),
+      
+              SizedBox(height: 16),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  onVideo();
+                },
+                icon: Icon(Icons.videocam),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.cyan[400],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        20), 
+                  ),
+                ),
+                label: Text('Video'),
+              ),
+           
               SizedBox(height: 8),
             ],
           ),

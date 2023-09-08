@@ -991,7 +991,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 import 'package:video_player/video_player.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cached_video_player/cached_video_player.dart' as cachedVideoPlayer;
+import 'package:cached_video_player/cached_video_player.dart'
+    as cachedVideoPlayer;
 
 class ChatScreen extends StatefulWidget {
   final String userId;
@@ -1026,6 +1027,8 @@ class _ChatScreenState extends State<ChatScreen> {
       FlutterLocalNotificationsPlugin();
   String? _currentDate;
   String? _lastDisplayedDate;
+  double _uploadProgress = 0.0;
+  bool _uploading = false; // Add this line to track the upload status
 
   @override
   void initState() {
@@ -1153,7 +1156,7 @@ class _ChatScreenState extends State<ChatScreen> {
           'receiverId': widget.receiverId,
           'message': messageText,
           'timestamp': timestamp,
-          // 'mediaType': 'text',
+          'mediaType': 'text',
         });
 
         _databaseReference
@@ -1184,8 +1187,8 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  void _updateChatList(String userId, String otherUserId, String lastMessage,
-      int timestamp) async {
+  Future<void> _updateChatList(String userId, String otherUserId,
+      String lastMessage, int timestamp) async {
     try {
       DataSnapshot snapshot = await _databaseReference
           .child('chatList')
@@ -1231,34 +1234,6 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  // Future<void> _sendImage() async {
-  //   String? chatHandle =
-  //   SharedPrefs.getString(SharedPrefsKeys.CURRENT_USER_CHAT_HANDLE);
-  //   int? avatarId = SharedPrefs.getInt(SharedPrefsKeys.CURRENT_USER_AVATAR_ID);
-  //   if (chatHandle == null) {
-  //     showChatHandleDialog(context);
-  //   } else if (avatarId == null) {
-  //     showAvatarSelectionDialog(context);
-  //   } else {
-  //     bool isSenderBlocked =
-  //     await isUserBlocked(widget.userId, widget.receiverId);
-  //     bool isReceiverBlocked =
-  //     await isUserBlocked(widget.receiverId, widget.userId);
-  //
-  //     if (isSenderBlocked) {
-  //       // Show a snackbar message indicating that the sender has blocked the receiver
-  //       _showBlockedMessage("You blocked this user. Cannot send a message.");
-  //       return;
-  //     } else if (isReceiverBlocked) {
-  //       // Show a snackbar message indicating that the receiver has blocked the sender
-  //       _showBlockedMessage(
-  //           "This user has blocked you. Cannot send a message.");
-  //       return;
-  //     }
-  //     sendImageDialog(context, () => _openCamera(), () => _openGallery());
-  //   }
-  // }
-
   Future<void> _sendMedia() async {
     String? chatHandle =
         SharedPrefs.getString(SharedPrefsKeys.CURRENT_USER_CHAT_HANDLE);
@@ -1281,7 +1256,11 @@ class _ChatScreenState extends State<ChatScreen> {
             "This user has blocked you. Cannot send a message.");
         return;
       }
-      sendImageDialog(context, () => _openCamera(), () => _openGallery());
+      sendImageDialog(
+          context,
+          () => showPhotoOrVideoDialog(context, () => _openCameraWithImage(),
+              () => _openCameraWithVideo()),
+          () => _openGallery());
     }
   }
 
@@ -1309,12 +1288,19 @@ class _ChatScreenState extends State<ChatScreen> {
         // It's neither a photo nor a video
         print('Unsupported file type');
 
+        _showErrorMessage('Unsupported file type. Pick Only Photo or Video');
+
         // Handle or display an error message
       }
     }
   }
 
   Future<void> _uploadMedia(XFile pickedFile, String mediaType) async {
+    setState(() {
+      _uploadProgress = 0.0;
+      _uploading = true;
+    });
+
     String fileName = DateTime.now().millisecondsSinceEpoch.toString();
     Reference storageRef = FirebaseStorage.instance
         .ref()
@@ -1323,12 +1309,17 @@ class _ChatScreenState extends State<ChatScreen> {
         .child(fileName);
     UploadTask uploadTask = storageRef.putFile(File(pickedFile.path));
 
+    uploadTask.snapshotEvents.listen((TaskSnapshot snapshot) {
+      double progress = snapshot.bytesTransferred / snapshot.totalBytes;
+      _updateUploadProgress(progress);
+    });
+
     try {
       TaskSnapshot taskSnapshot = await uploadTask;
       String videoUrl = await taskSnapshot.ref.getDownloadURL();
       var timestamp = DateTime.now().millisecondsSinceEpoch;
 
-      _databaseReference
+      await _databaseReference
           .child('messages')
           .child(widget.userId)
           .child(widget.receiverId)
@@ -1341,7 +1332,7 @@ class _ChatScreenState extends State<ChatScreen> {
         'mediaType': mediaType,
       });
 
-      _databaseReference
+      await _databaseReference
           .child('messages')
           .child(widget.receiverId)
           .child(widget.userId)
@@ -1354,72 +1345,35 @@ class _ChatScreenState extends State<ChatScreen> {
         'mediaType': mediaType, // Add media type to differentiate videos
       });
 
-      _updateChatList(widget.receiverId, widget.userId, videoUrl, timestamp);
+      await _updateChatList(
+          widget.receiverId, widget.userId, videoUrl, timestamp);
+
+      await _updateUploadProgress(0.0);
+
+      setState(() {
+        _uploading = false;
+      });
     } catch (error) {
       print('Error uploading video: $error');
+      await _updateUploadProgress(0.0);
+      setState(() {
+        _uploading = false;
+      });
     }
   }
 
-  // Future<void> _openGallery() async {
-  //   final ImagePicker _picker = ImagePicker();
-  //   XFile? pickedFile = await _picker.pickImage(
-  //     source: ImageSource
-  //         .gallery, // Change this to ImageSource.camera for camera access
-  //   );
-  //
-  //   if (pickedFile != null) {
-  //     String fileName = DateTime.now().millisecondsSinceEpoch.toString();
-  //     Reference storageRef = FirebaseStorage.instance.ref().child(fileName);
-  //     UploadTask uploadTask = storageRef.putFile(File(pickedFile.path));
-  //
-  //     try {
-  //       TaskSnapshot taskSnapshot = await uploadTask;
-  //       String imageUrl = await taskSnapshot.ref.getDownloadURL();
-  //       var timestamp = DateTime.now().millisecondsSinceEpoch;
-  //
-  //       _databaseReference
-  //           .child('messages')
-  //           .child(widget.userId)
-  //           .child(widget.receiverId)
-  //           .push()
-  //           .set({
-  //         'senderId': widget.userId,
-  //         'receiverId': widget.receiverId,
-  //         'message': imageUrl,
-  //         'timestamp': timestamp,
-  //       });
-  //
-  //       _databaseReference
-  //           .child('messages')
-  //           .child(widget.receiverId)
-  //           .child(widget.userId)
-  //           .push()
-  //           .set({
-  //         'senderId': widget.userId,
-  //         'receiverId': widget.receiverId,
-  //         'message': imageUrl,
-  //         'timestamp': timestamp,
-  //       });
-  //
-  //       // Update the chat list for the sender (widget.userId)
-  //       // _updateChatList(widget.userId, widget.receiverId, imageUrl, timestamp);
-  //
-  //       // Update the chat list for the receiver (widget.receiverId)
-  //       _updateChatList(widget.receiverId, widget.userId, imageUrl, timestamp);
-  //     } catch (error) {
-  //       print('Error uploading image: $error');
-  //     }
-  //   }
-  // }
-
-  Future<void> _openCamera() async {
+  Future<void> _openCameraWithImage() async {
     final ImagePicker _picker = ImagePicker();
-    XFile? pickedFile = await _picker.pickVideo(
-      source: ImageSource
-          .camera, // Change this to ImageSource.camera for camera access
+    XFile? pickedFile = await _picker.pickImage(
+      source: ImageSource.camera,
     );
 
     if (pickedFile != null) {
+      setState(() {
+        _uploadProgress = 0.0;
+        _uploading = true;
+      });
+
       String fileName = DateTime.now().millisecondsSinceEpoch.toString();
       Reference storageRef = FirebaseStorage.instance
           .ref()
@@ -1428,6 +1382,11 @@ class _ChatScreenState extends State<ChatScreen> {
           .child(fileName);
       UploadTask uploadTask = storageRef.putFile(File(pickedFile.path));
 
+      uploadTask.snapshotEvents.listen((TaskSnapshot snapshot) {
+        double progress = snapshot.bytesTransferred / snapshot.totalBytes;
+        _updateUploadProgress(progress);
+      });
+
       try {
         TaskSnapshot taskSnapshot = await uploadTask;
         String imageUrl = await taskSnapshot.ref.getDownloadURL();
@@ -1435,7 +1394,7 @@ class _ChatScreenState extends State<ChatScreen> {
         var timestamp = DateTime.now().millisecondsSinceEpoch;
 
         // Send the message to the receiver
-        _databaseReference
+        await _databaseReference
             .child('messages')
             .child(widget.userId)
             .child(widget.receiverId)
@@ -1445,9 +1404,10 @@ class _ChatScreenState extends State<ChatScreen> {
           'receiverId': widget.receiverId,
           'message': imageUrl,
           'timestamp': timestamp,
+          'mediaType': 'image',
         });
 
-        _databaseReference
+        await _databaseReference
             .child('messages')
             .child(widget.receiverId)
             .child(widget.userId)
@@ -1457,14 +1417,112 @@ class _ChatScreenState extends State<ChatScreen> {
           'receiverId': widget.receiverId,
           'message': imageUrl,
           'timestamp': timestamp,
+          'mediaType': 'image',
         });
 
         // Update the chat list for the receiver (widget.receiverId)
-        _updateChatList(widget.receiverId, widget.userId, imageUrl, timestamp);
+        await _updateChatList(
+            widget.receiverId, widget.userId, imageUrl, timestamp);
+
+        await _updateUploadProgress(0.0);
+
+        setState(() {
+          _uploading = false;
+        });
       } catch (error) {
         print('Error uploading image: $error');
+        await _updateUploadProgress(0.0);
+
+        setState(() {
+          _uploading = false;
+        });
       }
     }
+  }
+
+  Future<void> _openCameraWithVideo() async {
+    final ImagePicker _picker = ImagePicker();
+    XFile? pickedFile = await _picker.pickVideo(
+      source: ImageSource.camera,
+    );
+
+    if (pickedFile != null) {
+      setState(() {
+        _uploadProgress = 0.0;
+        _uploading = true;
+      });
+
+      String fileName = DateTime.now().millisecondsSinceEpoch.toString();
+      Reference storageRef = FirebaseStorage.instance
+          .ref()
+          .child('privatechatdata')
+          .child(SharedPrefs.getString(SharedPrefsKeys.USER_ID)!)
+          .child(fileName);
+      UploadTask uploadTask = storageRef.putFile(File(pickedFile.path));
+
+         uploadTask.snapshotEvents.listen((TaskSnapshot snapshot) {
+        double progress = snapshot.bytesTransferred / snapshot.totalBytes;
+        _updateUploadProgress(progress);
+      });
+
+      try {
+        TaskSnapshot taskSnapshot = await uploadTask;
+        String imageUrl = await taskSnapshot.ref.getDownloadURL();
+
+        var timestamp = DateTime.now().millisecondsSinceEpoch;
+
+        // Send the message to the receiver
+        await _databaseReference
+            .child('messages')
+            .child(widget.userId)
+            .child(widget.receiverId)
+            .push()
+            .set({
+          'senderId': widget.userId,
+          'receiverId': widget.receiverId,
+          'message': imageUrl,
+          'timestamp': timestamp,
+          'mediaType': 'video',
+        });
+
+        await _databaseReference
+            .child('messages')
+            .child(widget.receiverId)
+            .child(widget.userId)
+            .push()
+            .set({
+          'senderId': widget.userId,
+          'receiverId': widget.receiverId,
+          'message': imageUrl,
+          'timestamp': timestamp,
+          'mediaType': 'video',
+        });
+
+        // Update the chat list for the receiver (widget.receiverId)
+        await _updateChatList(
+            widget.receiverId, widget.userId, imageUrl, timestamp);
+
+        await _updateUploadProgress(0.0);
+
+        setState(() {
+          _uploading = false;
+        });
+      } catch (error) {
+        print('Error uploading image: $error');
+        await _updateUploadProgress(0.0);
+
+        setState(() {
+          _uploading = false;
+        });
+      }
+    }
+  }
+
+  Future<void> _updateUploadProgress(double progress) async {
+    // Update your UI with the upload progress (e.g., set it in a progress bar)
+    setState(() {
+      _uploadProgress = progress;
+    });
   }
 
   void _showBlockedMessage(String message) {
@@ -1635,156 +1693,203 @@ class _ChatScreenState extends State<ChatScreen> {
           return true; // Return true to allow the screen to be popped
         },
 
-        child: Column(
+        child: Stack(
           children: [
-            Expanded(
-              child: ListView.builder(
-                reverse: true,
-                itemCount: _messages.length,
-                itemBuilder: (context, index) {
-                  Map<dynamic, dynamic> message = _messages[index];
-                  bool isSender = message['senderId'] == widget.userId;
+            Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    reverse: true,
+                    itemCount: _messages.length,
+                    itemBuilder: (context, index) {
+                      Map<dynamic, dynamic> message = _messages[index];
+                      bool isSender = message['senderId'] == widget.userId;
 
-                  //testing start
-                  String messages = message['message'] ?? '';
-                  String imageUrl =
-                      messages.startsWith('https') ? messages : '';
-                  bool isImageMessage = imageUrl.isNotEmpty;
+                      //testing start
+                      String messages = message['message'] ?? '';
+                      String imageUrl =
+                          messages.startsWith('https') ? messages : '';
+                      bool isImageMessage = imageUrl.isNotEmpty;
 
-                  int timestamp = message['timestamp'];
-                  String mediaType = message['mediaType'] ?? 'none';
+                      int timestamp = message['timestamp'];
+                      String mediaType = message['mediaType'] ?? 'none';
 
-                  String formattedDate = DateFormat('MMM d, yyyy').format(
-                    DateTime.fromMillisecondsSinceEpoch(timestamp),
-                  );
-                  DateTime messageDateTime =
-                      DateTime.fromMillisecondsSinceEpoch(timestamp);
+                      String formattedDate = DateFormat('MMM d, yyyy').format(
+                        DateTime.fromMillisecondsSinceEpoch(timestamp),
+                      );
+                      DateTime messageDateTime =
+                          DateTime.fromMillisecondsSinceEpoch(timestamp);
 
-                  // Get the timestamp of the previous message (if available)
-                  int previousTimestamp = index + 1 < _messages.length
-                      ? _messages[index + 1]['timestamp']
-                      : 0;
-                  DateTime previousMessageDateTime =
-                      DateTime.fromMillisecondsSinceEpoch(previousTimestamp);
+                      // Get the timestamp of the previous message (if available)
+                      int previousTimestamp = index + 1 < _messages.length
+                          ? _messages[index + 1]['timestamp']
+                          : 0;
+                      DateTime previousMessageDateTime =
+                          DateTime.fromMillisecondsSinceEpoch(
+                              previousTimestamp);
 
-                  // Check if the current message and the previous message belong to the same date
-                  bool showDateDivider =
-                      !isSameDate(messageDateTime, previousMessageDateTime);
+                      // Check if the current message and the previous message belong to the same date
+                      bool showDateDivider =
+                          !isSameDate(messageDateTime, previousMessageDateTime);
 
-                  if (showDateDivider) {
-                    // Format the date to show only the date (MMM dd, yyyy)
-                    String formattedDate =
-                        DateFormat('MMM dd, yyyy').format(messageDateTime);
+                      if (showDateDivider) {
+                        // Format the date to show only the date (MMM dd, yyyy)
+                        String formattedDate =
+                            DateFormat('MMM dd, yyyy').format(messageDateTime);
 
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        ClipRRect(
-                          // Wrap with ClipRRect to make it circular
-                          borderRadius: BorderRadius.circular(8),
-                          child: Container(
-                            color: Colors.grey[200],
-                            padding: EdgeInsets.symmetric(
-                                vertical: 8, horizontal: 16),
-                            child: Text(
-                              formattedDate,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.grey),
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              // Wrap with ClipRRect to make it circular
+                              borderRadius: BorderRadius.circular(8),
+                              child: Container(
+                                color: Colors.grey[200],
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 8, horizontal: 16),
+                                child: Text(
+                                  formattedDate,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                        MessageBubble(
+                            MessageBubble(
+                              message: messages,
+                              isCurrentUser: isSender,
+                              isImageMessage: isImageMessage,
+                              imageUrl: imageUrl,
+                              timestamp: timestamp,
+                              mediaType: mediaType,
+                            ),
+                          ],
+                        );
+                      } else {
+                        // If the current message and the previous message belong to the same date, don't show the date divider
+                        return MessageBubble(
                           message: messages,
                           isCurrentUser: isSender,
                           isImageMessage: isImageMessage,
                           imageUrl: imageUrl,
                           timestamp: timestamp,
                           mediaType: mediaType,
-                        ),
-                      ],
-                    );
-                  } else {
-                    // If the current message and the previous message belong to the same date, don't show the date divider
-                    return MessageBubble(
-                      message: messages,
-                      isCurrentUser: isSender,
-                      isImageMessage: isImageMessage,
-                      imageUrl: imageUrl,
-                      timestamp: timestamp,
-                      mediaType: mediaType,
-                    );
-                  }
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.mic),
-                    onPressed: () {
-                      _toggleListening();
+                        );
+                      }
                     },
                   ),
-                  Expanded(
-                    child: TextField(
-                      minLines: 1,
-                      maxLines: 7,
-                      controller: _messageController,
-                      decoration: InputDecoration(
-                        hintText: 'Type a message...',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide.none,
-                        ),
-                        filled: true,
-                        fillColor: Colors.grey[200],
-                        contentPadding:
-                            EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        icon: Icon(Icons.mic),
+                        onPressed: () {
+                          _toggleListening();
+                        },
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                      width:
-                          8), // Add some space between the text field and the send button
-                  IconButton(
-                    onPressed:
-                        _sendMedia, // Call the function to open the gallery
-                    icon: Icon(
-                      Icons.image,
-                      color: Colors.blue[300],
-                    ), // You can use any other icon here
-                  ),
-                  GestureDetector(
-                    onTap: _sendMessage,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.send,
-                          color: Colors.white,
+                      Expanded(
+                        child: TextField(
+                          minLines: 1,
+                          maxLines: 7,
+                          controller: _messageController,
+                          decoration: InputDecoration(
+                            hintText: 'Type a message...',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              borderSide: BorderSide.none,
+                            ),
+                            filled: true,
+                            fillColor: Colors.grey[200],
+                            contentPadding: EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 10),
+                          ),
                         ),
                       ),
-                    ),
+                      SizedBox(
+                          width:
+                              8), // Add some space between the text field and the send button
+                      IconButton(
+                        onPressed:
+                            _sendMedia, // Call the function to open the gallery
+                        icon: Icon(
+                          Icons.image,
+                          color: Colors.blue[300],
+                        ), // You can use any other icon here
+                      ),
+                      GestureDetector(
+                        onTap: _sendMessage,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.send,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+
+                // AdmobBanner(
+                //   adUnitId: AdHelper.bannerAdUnitId,
+                //   adSize: AdmobBannerSize.ADAPTIVE_BANNER(
+                //       width: MediaQuery.of(context).size.width.toInt()),
+                // )
+                CustomBannerAd(
+                  key: UniqueKey(),
+                )
+              ],
             ),
-            // AdmobBanner(
-            //   adUnitId: AdHelper.bannerAdUnitId,
-            //   adSize: AdmobBannerSize.ADAPTIVE_BANNER(
-            //       width: MediaQuery.of(context).size.width.toInt()),
-            // )
-            CustomBannerAd(
-              key: UniqueKey(),
-            )
+            if (_uploading)
+              Center(
+                child: Container(
+                  width: 200,
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        spreadRadius: 2,
+                        blurRadius: 4,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(
+                        width: 100,
+                        height: 100,
+                        child: CircularProgressIndicator(
+                          value:
+                              _uploadProgress, // Use your upload progress variable here
+                          backgroundColor: Colors.grey[300],
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(Colors.blue),
+                          strokeWidth: 10,
+                        ),
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        'Uploading...',
+                        style: TextStyle(fontSize: 18, color: Colors.blue[300]),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
           ],
         ),
       ),
@@ -2032,15 +2137,14 @@ class MessageBubble extends StatelessWidget {
                     //   fit: BoxFit.cover,
                     // )
                     else if (mediaType == 'video')
-                 
-                    Container(
-                      width: 200,
-                      height: 200,
-                      child: VideoPlayerWidget(
-                        videoUrl: imageUrl,
-                        isCurrentUser: isCurrentUser,
-                      ),
-                    )
+                      Container(
+                        width: 200,
+                        height: 200,
+                        child: VideoPlayerWidget(
+                          videoUrl: imageUrl,
+                          isCurrentUser: isCurrentUser,
+                        ),
+                      )
                     else if (mediaType == 'text')
                       Text(
                         message,
@@ -2063,42 +2167,6 @@ class MessageBubble extends StatelessWidget {
     );
   }
 }
-
-// void _showVideo(BuildContext context, String videoUrl) {
-//   VideoPlayerController _videoPlayerController =
-//       VideoPlayerController.network(videoUrl);
-
-//   Navigator.push(
-//     context,
-//     MaterialPageRoute(
-//       builder: (context) => Scaffold(
-//         appBar: AppBar(
-//           title: Text('Video'),
-//         ),
-//         body: Center(
-//           child: AspectRatio(
-//             aspectRatio: _videoPlayerController.value.aspectRatio,
-//             child: VideoPlayer(_videoPlayerController),
-//           ),
-//         ),
-//         floatingActionButton: FloatingActionButton(
-//           onPressed: () {
-//             if (_videoPlayerController.value.isPlaying) {
-//               _videoPlayerController.pause();
-//             } else {
-//               _videoPlayerController.play();
-//             }
-//           },
-//           child: Icon(
-//             _videoPlayerController.value.isPlaying
-//                 ? Icons.pause
-//                 : Icons.play_arrow,
-//           ),
-//         ),
-//       ),
-//     ),
-//   );
-// }
 
 void _showFullImage(BuildContext context, String imageUrl) {
   Navigator.push(
@@ -2167,51 +2235,6 @@ void _playVideo(BuildContext context, String videoUrl) {
   );
 }
 
-// class VideoPlayerWidget extends StatefulWidget {
-//   final String videoUrl;
-//   final bool isCurrentUser;
-
-//   VideoPlayerWidget({
-//     required this.videoUrl,
-//     required this.isCurrentUser,
-//   });
-
-//   @override
-//   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
-// }
-
-// class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
-//   late VideoPlayerController _controller;
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     print('video url ${widget.videoUrl}');
-//     _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl))
-//       ..initialize().then((_) {
-//         setState(() {
-//           // Print debug info
-//           print('Video Player Controller Initialized Successfully');
-//         });
-//       }).catchError((error) {
-//         // Print error info
-//         print('Error initializing Video Player Controller: $error');
-//       });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return VideoPlayer(_controller);
-//   }
-
-//   @override
-//   void dispose() {
-//     super.dispose();
-//     _controller.dispose();
-//   }
-// }
-
-
 class VideoPlayerWidget extends StatefulWidget {
   final String videoUrl;
   final bool isCurrentUser;
@@ -2226,34 +2249,20 @@ class VideoPlayerWidget extends StatefulWidget {
 }
 
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
- // late VideoPlayerController _controller;
   late cachedVideoPlayer.CachedVideoPlayerController _controller;
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   print('video url ${widget.videoUrl}');
-  //   _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl))
-  //     ..initialize().then((_) {
-  //       setState(() {
-  //         // Print debug info
-  //         print('Video Player Controller Initialized Successfully');
-  //       });
-  //     }).catchError((error) {
-  //       // Print error info
-  //       print('Error initializing Video Player Controller: $error');
-  //     });
-  // }
   @override
   void initState() {
-    _controller = cachedVideoPlayer.CachedVideoPlayerController.network(
-    widget.videoUrl);
+    _controller =
+        cachedVideoPlayer.CachedVideoPlayerController.network(widget.videoUrl);
     _controller.initialize().then((value) {
+      _controller.setVolume(0.0);
       _controller.play();
       setState(() {});
     });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return cachedVideoPlayer.CachedVideoPlayer(_controller);
@@ -2265,8 +2274,6 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     _controller.dispose();
   }
 }
-
-
 
 class VideoApp extends StatefulWidget {
   final String videoUrl;

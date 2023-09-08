@@ -104,7 +104,7 @@ class _ChatState extends State<Chat> {
       });
     });
 
-  //  _refreshChat();
+      _refreshChat();
 
     checkChatStarredStatus();
   }
@@ -118,13 +118,14 @@ class _ChatState extends State<Chat> {
     super.dispose();
   }
 
-  // void _refreshChat() {
-  //   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-  //     print('Refresh ChatList');
+  void _refreshChat() {
+  print('refresh chat');
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      print('Refresh ChatList');
 
-  //     getAllMessages(widget.serverMsgId);
-  //   });
-  // }
+      getAllMessages(widget.serverMsgId);
+    });
+  }
 
   void scrollToBottom() {
     if (_scrollController.hasClients) {

@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -39,24 +43,26 @@
 	</dict>
 	<key>NSAppUsesWebKitWebViews</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>TruckChat app requires access to your camera to capture and send photos in chat.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>TruckChat app uses your location to provide accurate latitude and longitude coordinates, enabling you to discover nearby users to chat and enhance your overall experience.</string>
+	<string>TruckChat app uses your location to provide accurate latitude and longitude coordinates, enabling you to discover nearby users to chat and enhance your overall experience.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>TruckChat app uses your location to provide accurate latitude and longitude coordinates, enabling you to discover nearby users to chat and enhance your overall experience.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>TruckChat app uses your microphone to convert your voice into text for sending messages, allowing you to communicate seamlessly using voice-to-text technology.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>TruckChat app needs access to your photo library to select and send images in chat.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>TruckChat app utilizes speech recognition to transcribe voice input, enabling hands-free communication and seamless messaging experience.</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>TruckChat app uses a unique identifier to deliver personalized ads, helping to support the app's development and continue offering it for free.</string>
-	
-<key>NSWebKitWebContentUsageDescription</key>
+	<key>NSWebKitWebContentUsageDescription</key>
 	<string>TruckChat app requires permission to access web content in order to provide features like viewing sponsors and reviews, enhancing your understanding of the app's offerings.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>audio</string>
 		<string>fetch</string>
 		<string>processing</string>
 		<string>remote-notification</string>
@@ -82,15 +88,5 @@
 	<false/>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
-
-	<key>NSCameraUsageDescription</key>
-<string>TruckChat app requires access to your camera to capture and send photos in chat.</string>
-<key>NSPhotoLibraryUsageDescription</key>
-<string>TruckChat app needs access to your photo library to select and send images in chat.</string>
-
-<key>BGTaskSchedulerPermittedIdentifiers</key>
-<array>
-    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-</array>
 </dict>
 </plist>
