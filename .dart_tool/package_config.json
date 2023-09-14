@@ -14,12 +14,6 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "app_tracking_transparency",
-      "rootUri": "file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/app_tracking_transparency-2.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "args",
       "rootUri": "file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/args-2.4.2",
       "packageUri": "lib/",
@@ -351,7 +345,7 @@
     },
     {
       "name": "geolocator",
-      "rootUri": "file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/geolocator-10.0.0",
+      "rootUri": "file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/geolocator-10.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.15"
     },
@@ -896,7 +890,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-09-08T14:06:12.941723Z",
+  "generated": "2023-09-14T16:41:33.800969Z",
   "generator": "pub",
   "generatorVersion": "3.0.1"
 }

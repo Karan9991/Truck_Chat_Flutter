@@ -75,7 +75,7 @@ class _StarredChatState extends State<StarredChat> {
   void initState() {
     super.initState();
 
-   // AdHelper().showInterstitialAd();
+    // AdHelper().showInterstitialAd();
 
     _firebaseMessaging.subscribeToTopic('all');
 
@@ -305,9 +305,9 @@ class _StarredChatState extends State<StarredChat> {
     String serverMsgId,
     int userId,
   ) async {
-    setState(() {
-      sendingMessage = true; // Set sending state to true
-    });
+    // setState(() {
+    //   sendingMessage = true; // Set sending state to true
+    // });
 
     String? deviceId = SharedPrefs.getString(
           SharedPrefsKeys.SERIAL_NUMBER,
@@ -382,12 +382,12 @@ class _StarredChatState extends State<StarredChat> {
         /// print('status code $statusCode');
         await sendFCMNotification('all', 'message');
 
-        setState(() {
-          sendingMessage = false; // Set sending state to false
+        // setState(() {
+        //   sendingMessage = false; // Set sending state to false
 
-          WidgetsBinding.instance
-              ?.addPostFrameCallback((_) => scrollToBottom());
-        });
+        //   WidgetsBinding.instance
+        //       ?.addPostFrameCallback((_) => scrollToBottom());
+        // });
         if (jsonResult.containsKey(API.MESSAGE)) {
           String status_message = jsonResult[API.MESSAGE] as String;
           // print('status_message $status_message');
@@ -401,16 +401,16 @@ class _StarredChatState extends State<StarredChat> {
 
         return true;
       } else {
-        setState(() {
-          sendingMessage = false; // Set sending state to false
-        });
+        // setState(() {
+        //   sendingMessage = false; // Set sending state to false
+        // });
         status_message = 'Error: ${response.statusCode}';
       }
     } catch (e) {
       status_message = e.toString();
-      setState(() {
-        sendingMessage = false; // Set sending state to false
-      });
+      // setState(() {
+      //   sendingMessage = false; // Set sending state to false
+      // });
     }
 
     return false;
@@ -1096,14 +1096,21 @@ class _StarredChatState extends State<StarredChat> {
                         } else if (avatarId == null) {
                           showAvatarSelectionDialog(context);
                         } else {
+                          setState(() {
+                            sendingMessage = true;
+                          });
                           await sendMessage(
                             messageController.text,
                             widget.serverMsgId,
                             userId,
-                          );
+                          ).then((value) {
+                            setState(() {
+                              messageController.clear();
+                              sendingMessage = false;
 
-                          setState(() {
-                            messageController.clear();
+                              WidgetsBinding.instance?.addPostFrameCallback(
+                                  (_) => scrollToBottom());
+                            });
                           });
                         }
                       }

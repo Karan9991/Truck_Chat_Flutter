@@ -6,10 +6,6 @@ app_settings
 2.19
 file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/app_settings-5.0.0/
 file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/app_settings-5.0.0/lib/
-app_tracking_transparency
-2.12
-file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/app_tracking_transparency-2.0.4/
-file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/app_tracking_transparency-2.0.4/lib/
 args
 2.19
 file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/args-2.4.2/
@@ -220,8 +216,8 @@ file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/flutter_plugin_android_li
 file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.15/lib/
 geolocator
 2.15
-file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/geolocator-10.0.0/
-file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/geolocator-10.0.0/lib/
+file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/geolocator-10.0.1/
+file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/geolocator-10.0.1/lib/
 geolocator_android
 2.15
 file:///Users/karandeepsingh/.pub-cache/hosted/pub.dev/geolocator_android-4.2.2/

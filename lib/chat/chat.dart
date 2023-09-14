@@ -104,7 +104,7 @@ class _ChatState extends State<Chat> {
       });
     });
 
-      _refreshChat();
+    _refreshChat();
 
     checkChatStarredStatus();
   }
@@ -119,7 +119,7 @@ class _ChatState extends State<Chat> {
   }
 
   void _refreshChat() {
-  print('refresh chat');
+    print('refresh chat');
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       print('Refresh ChatList');
 
@@ -381,9 +381,9 @@ class _ChatState extends State<Chat> {
     String serverMsgId,
     int userId,
   ) async {
-    setState(() {
-      sendingMessage = true; // Set sending state to true
-    });
+    // setState(() {
+    //   sendingMessage = true; // Set sending state to true
+    // });
 
     String? deviceId = SharedPrefs.getString(
           SharedPrefsKeys.SERIAL_NUMBER,
@@ -415,12 +415,18 @@ class _ChatState extends State<Chat> {
 
     print('formatted driver name $formattedDriverName');
     print('formatted message $formattedMessage');
-
-    // print('send message');
-    // print('message $message');
-    // print('sermsgid $serverMsgId');
-    // print('userid $userId');
-    // print('emojiid $emojiId');
+    print('send message');
+    print('message $message');
+    print('formattedmessage $formattedMessage');
+    print('latitude ${latitude.toString()}');
+    print('longitude ${longitude.toString()}');
+    print('drivername $driverName');
+    print('private_chat $privateChatStatus');
+    print('device_id $deviceId');
+    print('message_device_type $deviceType');
+    print('sermsgid $serverMsgId');
+    print('userid $userId');
+    print('emojiid $emojiId');
 
 //concat username/chathandle with message
     // if (currentUserHandle != null) {
@@ -455,9 +461,11 @@ class _ChatState extends State<Chat> {
       if (response.statusCode == 200) {
         print('Message Sent');
         // setState(() {
-        // WidgetsBinding.instance
-        //     ?.addPostFrameCallback((_) => scrollToBottom());
-        //});
+        //   sendingMessage = false; // Set sending state to false
+
+        //   WidgetsBinding.instance
+        //       ?.addPostFrameCallback((_) => scrollToBottom());
+        // });
 
         final jsonResult = jsonDecode(response.body);
         print('---------------Send Message Response---------------');
@@ -468,12 +476,12 @@ class _ChatState extends State<Chat> {
         /// print('status code $statusCode');
         await sendFCMNotification('all', 'message');
 
-        setState(() {
-          sendingMessage = false; // Set sending state to false
+        // setState(() {
+        //   sendingMessage = false; // Set sending state to false
 
-          WidgetsBinding.instance
-              ?.addPostFrameCallback((_) => scrollToBottom());
-        });
+        //   WidgetsBinding.instance
+        //       ?.addPostFrameCallback((_) => scrollToBottom());
+        // });
 
         if (jsonResult.containsKey(API.MESSAGE)) {
           String status_message = jsonResult[API.MESSAGE] as String;
@@ -488,16 +496,18 @@ class _ChatState extends State<Chat> {
 
         return true;
       } else {
-        setState(() {
-          sendingMessage = false; // Set sending state to false
-        });
+        // setState(() {
+        //   sendingMessage = false; // Set sending state to false
+        // });
         status_message = 'Error: ${response.statusCode}';
       }
     } catch (e) {
       status_message = e.toString();
-      setState(() {
-        sendingMessage = false; // Set sending state to false
-      });
+      print('catch $e');
+      print('status message $status_message');
+      // setState(() {
+      //   sendingMessage = false; // Set sending state to false
+      // });
     }
 
     return false;
@@ -1187,14 +1197,23 @@ class _ChatState extends State<Chat> {
                         } else if (avatarId == null) {
                           showAvatarSelectionDialog(context);
                         } else {
+                          setState(() {
+                               sendingMessage =
+                                  true; 
+                          });
                           await sendMessage(
                             messageController.text,
                             widget.serverMsgId,
                             userId,
-                          );
+                          ).then((value) {
+                            setState(() {
+                              messageController.clear();
+                              sendingMessage =
+                                  false; 
 
-                          setState(() {
-                            messageController.clear();
+                              WidgetsBinding.instance?.addPostFrameCallback(
+                                  (_) => scrollToBottom());
+                            });
                           });
                         }
                       }

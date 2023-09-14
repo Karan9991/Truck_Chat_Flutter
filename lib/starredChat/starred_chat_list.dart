@@ -59,9 +59,11 @@ class _StarredChatListState extends State<StarredChatList>
     // InterstitialAdManager.initialize();
 
     getData().then((_) {
-      setState(() {
-        isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          isLoading = false;
+        });
+      }
     });
 
     _refreshChatListWithFCM();

@@ -118,6 +118,10 @@ class HomeScreenState extends State<HomeScreen>
     _refreshChatListWithFCM();
 
     //  _loadAndShowInterstitialAd();
+
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      // showUpdateDialog(context);
+    });
   }
 
   Future<void> loadInterstitialAd() async {
@@ -319,7 +323,6 @@ class HomeScreenState extends State<HomeScreen>
   void setupFirebaseMessaging(BuildContext context) {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       showPrivateChatSentRequestPopUp(message.data, message, context);
-      SharedPrefs.setBool('isPendingRequestScreenOpen', true);
     });
   }
 
@@ -328,6 +331,8 @@ class HomeScreenState extends State<HomeScreen>
     final notificationType = data['type'];
 
     if (notificationType == 'privatechat') {
+      SharedPrefs.setBool('isPendingRequestScreenOpen', true);
+
       //OverlayManager.showPopup(context);
       GlobalNavigator.showAlertDialog('New Private Chat Request!',
           'Open your Private Chat and view pending requests to see who wants to connect.');
@@ -351,212 +356,202 @@ class HomeScreenState extends State<HomeScreen>
     setupFirebaseMessaging(context);
 
     return OrientationBuilder(builder: (context, orientation) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: Scaffold(
-          appBar: AppBar(
-            leading: Image.asset(
-              'assets/ic_launcher.png',
-              width: 34,
-              height: 34,
+      return Scaffold(
+        appBar: AppBar(
+          leading: Image.asset(
+            'assets/ic_launcher.png',
+            width: 34,
+            height: 34,
+          ),
+          title: Text(Constants.APP_BAR_TITLE),
+          actions: [
+            IconButton(
+              icon: Image.asset(
+                'assets/add_blog.png',
+                width: 30,
+                height: 30,
+              ),
+              onPressed: () {
+                // Perform action when chat icon is pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => NewConversationScreen()),
+                );
+              },
             ),
-            title: Text(Constants.APP_BAR_TITLE),
-            actions: [
-              IconButton(
-                icon: Image.asset(
-                  'assets/add_blog.png',
-                  width: 30,
-                  height: 30,
-                ),
-                onPressed: () {
-                  // Perform action when chat icon is pressed
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => NewConversationScreen()),
-                  );
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.grid_view_rounded),
-                onPressed: () async {
-                  // InterstitialAdManager.showInterstitialAd();
+            IconButton(
+              icon: Icon(Icons.grid_view_rounded),
+              onPressed: () async {
+                // InterstitialAdManager.showInterstitialAd();
 
-                  showMarkAsReadUnreadDialog(context);
-                  // _refreshChatList();
-                  // Perform action when grid box icon is pressed
-                },
-              ),
-              PopupMenuButton(
-                itemBuilder: (BuildContext context) {
-                  return [
-                    PopupMenuItem(
-                      child: Text(Constants.SETTINGS),
-                      value: 'settings',
-                    ),
-                    PopupMenuItem(
-                      child: Text(Constants.TELL_A_FRIEND),
-                      value: 'tell a friend',
-                    ),
-                    PopupMenuItem(
-                      child: Text(Constants.HELP),
-                      value: 'help',
-                    ),
-                    PopupMenuItem(
-                      child: Text(Constants.STARRED_CHAT),
-                      value: 'starred chat',
-                    ),
-                    PopupMenuItem(
-                      child: Text(Constants.REPORT_ABUSE),
-                      value: 'report abuse',
-                    ),
-                    PopupMenuItem(
-                      child: Text(Constants.REFRESH),
-                      value: 'refresh',
-                    ),
-                    // if (!Platform.isIOS)
-                    PopupMenuItem(
-                      child: Text(Constants.EXIT),
-                      value: 'exit',
-                    ),
-                  ];
-                },
-                onSelected: (value) async {
-                  // Perform action when a pop-up menu item is selected
-                  switch (value) {
-                    case 'settings':
-                      // InterstitialAdManager.showInterstitialAd();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SettingsScreen()),
-                      );
-                      break;
-                    case 'tell a friend':
-                      String email = Uri.encodeComponent("");
-                      String subject =
-                          Uri.encodeComponent(Constants.CHECK_OUT_TRUCKCHAT);
-                      String body =
-                          Uri.encodeComponent(Constants.I_AM_USING_TRUCKCHAT);
-                      print(subject);
-                      Uri mail = Uri.parse(
-                          "mailto:$email?subject=$subject&body=$body");
-                      launchUrl(mail);
-                      break;
-                    case 'help':
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Help()),
-                      );
-                      break;
-                    case 'starred chat':
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              StarredChatList(key: UniqueKey()),
+                showMarkAsReadUnreadDialog(context);
+                // _refreshChatList();
+                // Perform action when grid box icon is pressed
+              },
+            ),
+            PopupMenuButton(
+              itemBuilder: (BuildContext context) {
+                return [
+                  PopupMenuItem(
+                    child: Text(Constants.SETTINGS),
+                    value: 'settings',
+                  ),
+                  PopupMenuItem(
+                    child: Text(Constants.TELL_A_FRIEND),
+                    value: 'tell a friend',
+                  ),
+                  PopupMenuItem(
+                    child: Text(Constants.HELP),
+                    value: 'help',
+                  ),
+                  PopupMenuItem(
+                    child: Text(Constants.STARRED_CHAT),
+                    value: 'starred chat',
+                  ),
+                  PopupMenuItem(
+                    child: Text(Constants.REPORT_ABUSE),
+                    value: 'report abuse',
+                  ),
+                  PopupMenuItem(
+                    child: Text(Constants.REFRESH),
+                    value: 'refresh',
+                  ),
+                  // if (!Platform.isIOS)
+                  PopupMenuItem(
+                    child: Text(Constants.EXIT),
+                    value: 'exit',
+                  ),
+                ];
+              },
+              onSelected: (value) async {
+                // Perform action when a pop-up menu item is selected
+                switch (value) {
+                  case 'settings':
+                    // InterstitialAdManager.showInterstitialAd();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SettingsScreen()),
+                    );
+                    break;
+                  case 'tell a friend':
+                    String email = Uri.encodeComponent("");
+                    String subject =
+                        Uri.encodeComponent(Constants.CHECK_OUT_TRUCKCHAT);
+                    String body =
+                        Uri.encodeComponent(Constants.I_AM_USING_TRUCKCHAT);
+                    print(subject);
+                    Uri mail =
+                        Uri.parse("mailto:$email?subject=$subject&body=$body");
+                    launchUrl(mail);
+                    break;
+                  case 'help':
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Help()),
+                    );
+                    break;
+                  case 'starred chat':
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StarredChatList(key: UniqueKey()),
+                      ),
+                    );
+                    break;
+                  case 'report abuse':
+                    _showReportAbuseDialog(context);
+                    break;
+                  case 'refresh':
+                    _refreshChatList();
+
+                    break;
+                  case 'exit':
+                    if (Platform.isIOS) {
+                      // Handle iOS-specific exit behavior (e.g., display an alert)
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: Text(DialogStrings.EXIT),
+                          content: Text(DialogStrings.ARE_YOU_SURE),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: Text(DialogStrings.CANCEL),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.of(context).pop(true),
+                              child: Text(DialogStrings.EXIT),
+                            ),
+                          ],
                         ),
-                      );
-                      break;
-                    case 'report abuse':
-                      _showReportAbuseDialog(context);
-                      break;
-                    case 'refresh':
-                      _refreshChatList();
-
-                      break;
-                    case 'exit':
-                      if (Platform.isIOS) {
-                        // Handle iOS-specific exit behavior (e.g., display an alert)
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title: Text(DialogStrings.EXIT),
-                            content: Text(DialogStrings.ARE_YOU_SURE),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.of(context).pop(),
-                                child: Text(DialogStrings.CANCEL),
-                              ),
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.of(context).pop(true),
-                                child: Text(DialogStrings.EXIT),
-                              ),
-                            ],
-                          ),
-                        ).then((exitConfirmed) {
-                          if (exitConfirmed ?? false) {
-                            exit(0); // Exit the app
-                          }
-                        });
-                      } else if (Platform.isAndroid) {
-                        SystemNavigator.pop();
-                      }
-                      break;
-                  }
-                },
-              ),
-            ],
-          ),
-          body: Column(
-            children: [
-              Expanded(
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    NewsTab(
-                      key: UniqueKey(),
-                    ),
-                    ChatListr(key: UniqueKey()),
-                    SponsorsTab(key: UniqueKey()),
-                    ReviewsTab(key: UniqueKey()),
-                    PrivateChatTab(
-                      key: UniqueKey(),
-                    ),
-                  ],
-                ),
-              ),
-              BottomAppBar(
-                //color: Colors.blue, // Set background color of the TabBar
-                child: TabBar(
-                  controller: _tabController,
-                  tabs: [
-                    Tab(
-                      icon: Icon(Icons.article),
-                      text: Constants.NEWS,
-                    ),
-                    Tab(icon: Icon(Icons.chat), text: Constants.CHATS),
-                    Tab(icon: Icon(Icons.star), text: Constants.SPONSORS),
-                    Tab(icon: Icon(Icons.rate_review), text: Constants.REVIEWS),
-                    Tab(icon: Icon(Icons.person), text: 'Private'),
-                  ],
-
-                  unselectedLabelColor:
-                      Colors.grey, // Color of unselected tab icon and text
-                  labelColor:
-                      Colors.blue, // Color of selected tab icon and text
-                  labelPadding: EdgeInsets.symmetric(
-                      horizontal: 6.0,
-                      vertical: 0.0), // Add padding around the tab labels
-                ),
-              ),
-            ],
-          ),
-          bottomNavigationBar: CustomBannerAd(
-            key: UniqueKey(),
-          ),
-
-          // bottomNavigationBar: AdmobBanner(
-          //   adUnitId: AdHelper.bannerAdUnitId,
-          //   adSize: AdmobBannerSize.ADAPTIVE_BANNER(
-          //     width: MediaQuery.of(context).size.width.toInt(),
-          //   ),
-          // ),
+                      ).then((exitConfirmed) {
+                        if (exitConfirmed ?? false) {
+                          exit(0); // Exit the app
+                        }
+                      });
+                    } else if (Platform.isAndroid) {
+                      SystemNavigator.pop();
+                    }
+                    break;
+                }
+              },
+            ),
+          ],
         ),
+        body: Column(
+          children: [
+            Expanded(
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  NewsTab(
+                    key: UniqueKey(),
+                  ),
+                  ChatListr(key: UniqueKey()),
+                  SponsorsTab(key: UniqueKey()),
+                  ReviewsTab(key: UniqueKey()),
+                  PrivateChatTab(
+                    key: UniqueKey(),
+                  ),
+                ],
+              ),
+            ),
+            BottomAppBar(
+              //color: Colors.blue, // Set background color of the TabBar
+              child: TabBar(
+                controller: _tabController,
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.article),
+                    text: Constants.NEWS,
+                  ),
+                  Tab(icon: Icon(Icons.chat), text: Constants.CHATS),
+                  Tab(icon: Icon(Icons.star), text: Constants.SPONSORS),
+                  Tab(icon: Icon(Icons.rate_review), text: Constants.REVIEWS),
+                  Tab(icon: Icon(Icons.person), text: 'Private'),
+                ],
+
+                unselectedLabelColor:
+                    Colors.grey, // Color of unselected tab icon and text
+                labelColor: Colors.blue, // Color of selected tab icon and text
+                labelPadding: EdgeInsets.symmetric(
+                    horizontal: 6.0,
+                    vertical: 0.0), // Add padding around the tab labels
+              ),
+            ),
+          ],
+        ),
+        bottomNavigationBar: CustomBannerAd(
+          key: UniqueKey(),
+        ),
+
+        // bottomNavigationBar: AdmobBanner(
+        //   adUnitId: AdHelper.bannerAdUnitId,
+        //   adSize: AdmobBannerSize.ADAPTIVE_BANNER(
+        //     width: MediaQuery.of(context).size.width.toInt(),
+        //   ),
+        // ),
       );
     });
   }

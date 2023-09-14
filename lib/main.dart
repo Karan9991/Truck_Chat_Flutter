@@ -28,7 +28,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:chat/utils/navigator_key.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 
 Future<void> backgroundHandler(RemoteMessage message) async {
   print("backgroundHandler: ${message.notification}");
@@ -58,8 +57,6 @@ loadAppOpenAd() {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
-  await AppTrackingTransparency.requestTrackingAuthorization();
 
   MobileAds.instance.initialize();
 
@@ -138,21 +135,24 @@ class _MyAppState extends State<MyApp> {
               initialTabIndex: 1,
             ),
         '/privateChat': (context) => PrivateChatTab(key: UniqueKey()),
-        '/chat': (context) => ChatScreen(
-              userId: 'sd',
-              receiverUserName: 'sd',
-              receiverId: 'adsf',
-              receiverEmojiId: 'ds',
-            ),
+   
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
+        
+       // useMaterial3: true,
+        primarySwatch: Colors.blue
+    //         colorScheme: ColorScheme.fromSeed(
+    //   seedColor: Colors.blue,
+    // ),
+        
       ),
     );
   }
 }
+
+  // primaryColor: Colors.blue,
+  //       colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
 
 Future<String?> getFCMToken(String receiverId) async {
   DatabaseReference fcmTokenRef = FirebaseDatabase.instance

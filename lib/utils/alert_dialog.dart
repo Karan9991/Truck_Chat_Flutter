@@ -851,3 +851,6 @@ void showLocationPermissionDialog(BuildContext context) {
 Future<void> _openAppSettings() async {
   await AppSettings.openAppSettings(type: AppSettingsType.location);
 }
+
+
+
