@@ -1,206 +1,206 @@
 [
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-mdpi_notification_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-mdpi/notification_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-hdpi_notification_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-hdpi/notification_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xhdpi/ic_launcher_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxhdpi_notification_icon_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxhdpi/notification_icon_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxhdpi_app_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxhdpi/app_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-mdpi_app_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-mdpi/app_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-anydpi-v26_notification_icon_round.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-anydpi-v26/notification_icon_round.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-anydpi-v26_notification_icon_round.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-anydpi-v26/notification_icon_round.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-mdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-mdpi_notification_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-mdpi/notification_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxxhdpi_notification_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxxhdpi/notification_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-anydpi-v26_notification_icon.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-anydpi-v26/notification_icon.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/drawable_ic_launcher.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/drawable/ic_launcher.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xhdpi_notification_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xhdpi/notification_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxhdpi_app_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxhdpi/app_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-hdpi_notification_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-hdpi/notification_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxxhdpi_notification_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxxhdpi/notification_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxhdpi_notification_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxhdpi/notification_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxhdpi_notification_icon_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxhdpi/notification_icon_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxhdpi_notification_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxhdpi/notification_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxxhdpi_app_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxxhdpi/app_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-anydpi-v26_notification_icon.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-anydpi-v26/notification_icon.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-hdpi_app_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-hdpi/app_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/drawable_app_icon_foreground.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/drawable/app_icon_foreground.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxxhdpi/ic_launcher_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxxhdpi_app_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxxhdpi/app_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xhdpi_notification_icon_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xhdpi/notification_icon_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxhdpi/ic_launcher_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxxhdpi_app_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxxhdpi/app_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xhdpi_app_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xhdpi/app_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/drawable-v21_launch_background.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/drawable-v21/launch_background.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-anydpi-v26_app_icon.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-anydpi-v26/app_icon.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xhdpi_notification_icon_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xhdpi/notification_icon_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/drawable_app_icon_foreground.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/drawable/app_icon_foreground.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-anydpi-v26_app_icon.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-anydpi-v26/app_icon.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxhdpi_notification_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxhdpi/notification_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/drawable-v21_launch_background.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/drawable-v21/launch_background.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-hdpi_app_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-hdpi/app_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xhdpi_notification_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xhdpi/notification_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-mdpi_app_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-mdpi/app_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-mdpi_notification_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-mdpi/notification_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xhdpi_app_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xhdpi/app_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-anydpi-v26_app_icon_round.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-anydpi-v26/app_icon_round.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-hdpi_notification_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-hdpi/notification_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxxhdpi_notification_icon_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxxhdpi/notification_icon_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-hdpi_notification_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-hdpi/notification_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-anydpi-v26_app_icon_round.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-anydpi-v26/app_icon_round.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xhdpi_app_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xhdpi/app_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-hdpi_notification_icon_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-hdpi/notification_icon_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-hdpi_app_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-hdpi/app_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxxhdpi_app_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxxhdpi/app_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/drawable_app_icon_background.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/drawable/app_icon_background.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-mdpi_app_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-mdpi/app_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxhdpi_notification_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxhdpi/notification_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxxhdpi_notification_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxxhdpi/notification_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxhdpi_app_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxhdpi/app_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-mdpi_app_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-mdpi/app_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/drawable_app_icon_background.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/drawable/app_icon_background.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxxhdpi_notification_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxxhdpi/notification_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-hdpi_app_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-hdpi/app_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xxhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxhdpi_app_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxhdpi/app_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xhdpi_notification_icon.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xhdpi/notification_icon.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-mdpi_notification_icon.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-mdpi/notification_icon.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xxxhdpi_notification_icon_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xxxhdpi/notification_icon_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-mdpi_notification_icon_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-mdpi/notification_icon_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-hdpi_notification_icon_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-hdpi/notification_icon_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-hdpi_ic_launcher_foreground.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-hdpi/ic_launcher_foreground.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xhdpi_app_icon_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xhdpi/app_icon_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xhdpi_notification_icon_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xhdpi/notification_icon_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-hdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/drawable_ic_launcher.png.flat",
-        "source": "com.teletype.truckchat.app-main-37:/drawable/ic_launcher.png"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-xhdpi/ic_launcher_foreground.png"
     },
     {
-        "merged": "com.teletype.truckchat.app-merged_res-44:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.teletype.truckchat.app-main-37:/drawable/ic_launcher_background.xml"
+        "merged": "com.teletype.truckchat.app-merged_res-40:/mipmap-mdpi_notification_icon_foreground.png.flat",
+        "source": "com.teletype.truckchat.app-main-33:/mipmap-mdpi/notification_icon_foreground.png"
     }
 ]

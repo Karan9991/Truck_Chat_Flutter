@@ -49,9 +49,9 @@ class _NewsTabState extends State<NewsTab> with AutomaticKeepAliveClientMixin {
 
     if (response.statusCode == 200) {
       final jsonData = json.decode(response.body);
-      print('---------------News---------------');
-      print('News response body $jsonData');
-      print('------------------------------');
+      debugPrint('---------------News---------------');
+      debugPrint('News response body $jsonData');
+      debugPrint('------------------------------');
 
       if (jsonData[API.STATUS] == 200) {
         final newsList = jsonData[API.NEWS_LIST] as List<dynamic>;
@@ -61,13 +61,13 @@ class _NewsTabState extends State<NewsTab> with AutomaticKeepAliveClientMixin {
           _isLoading = false;
         });
       } else {
-        print('Error: ${response.statusCode}');
+        debugPrint('Error: ${response.statusCode}');
         setState(() {
           _isLoading = false;
         });
       }
     } else {
-      print('Error: ${response.statusCode}');
+      debugPrint('Error: ${response.statusCode}');
       setState(() {
         _isLoading = false;
       });

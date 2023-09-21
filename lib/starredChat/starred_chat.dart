@@ -93,7 +93,7 @@ class _StarredChatState extends State<StarredChat> {
 
     currentUserId = SharedPrefs.getString(SharedPrefsKeys.USER_ID);
 
-    print('init state');
+    debugPrint('init state');
     getData(widget.serverMsgId).then((_) {
       setState(() {
         isLoading = false;
@@ -118,7 +118,7 @@ class _StarredChatState extends State<StarredChat> {
 
   void _refreshChat() {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('Refresh ChatList');
+      debugPrint('Refresh ChatList');
 
       getAllMessages(widget.serverMsgId);
     });
@@ -135,8 +135,8 @@ class _StarredChatState extends State<StarredChat> {
   }
 
   void filterReplyMsgs() {
-    // print('reply messges in fliter replymsf');
-    // print(replyMsgs);
+    // debugPrint('reply messges in fliter replymsf');
+    // debugPrint(replyMsgs);
     filteredReplyMsgs =
         replyMsgs.where((reply) => reply.topic == widget.topic).toList();
   }
@@ -181,18 +181,18 @@ class _StarredChatState extends State<StarredChat> {
       final response =
           await http.post(url, headers: headers, body: jsonEncode(body));
       if (response.statusCode == 200) {
-        print('FCM notification sent successfully');
+        debugPrint('FCM notification sent successfully');
       } else {
-        print('Failed to send FCM notification');
+        debugPrint('Failed to send FCM notification');
       }
     } catch (e) {
-      print('Error sending FCM notification: $e');
+      debugPrint('Error sending FCM notification: $e');
     }
   }
 
   Future<bool> getAllMessages(dynamic conversationId) async {
-    print('getAllMessages method called');
-    print('Conversation Id  $conversationId');
+    debugPrint('getAllMessages method called');
+    debugPrint('Conversation Id  $conversationId');
     int statusCode = 0;
     String counts = '';
 
@@ -211,13 +211,13 @@ class _StarredChatState extends State<StarredChat> {
         body: jsonEncode(requestBody),
       );
       if (response.statusCode == 200) {
-        // print('200');
+        // debugPrint('200');
         final result = response.body;
 
-        print('---------------Chat Response---------------');
-        print(result);
+        debugPrint('---------------Chat Response---------------');
+        debugPrint(result);
 
-        //print('response body $result');
+        //debugPrint('response body $result');
 
         try {
           final jsonResult = jsonDecode(result);
@@ -226,12 +226,12 @@ class _StarredChatState extends State<StarredChat> {
 
           final jsonReplyList = jsonResult[API.MESSAGE_REPLY_LIST];
 
-          // print('jsonreplylist');
-          // print(jsonReplyList);
+          // debugPrint('jsonreplylist');
+          // debugPrint(jsonReplyList);
 
           int countValue = int.parse(counts);
 
-          // print(jsonReplyList.length);
+          // debugPrint(jsonReplyList.length);
           // Clear the replyMsgs list before adding new messages
           replyMsgs.clear();
 
@@ -245,21 +245,21 @@ class _StarredChatState extends State<StarredChat> {
             final driverName = jsonReply['driver_name'];
             final privateChat = jsonReply['private_chat'];
 
-            print("server_msg_reply_id  $rid");
-            print("reply_msg $replyMsg");
-            print("user id  $uid");
-            print("emoji_id $emojiId");
-            print("driver_name $driverName");
+            debugPrint("server_msg_reply_id  $rid");
+            debugPrint("reply_msg $replyMsg");
+            debugPrint("user id  $uid");
+            debugPrint("emoji_id $emojiId");
+            debugPrint("driver_name $driverName");
 
-            print('--------------------------');
+            debugPrint('--------------------------');
             int timestamp;
             try {
               //  timestamp = int.tryParse(jsonReply['timestamp']) ?? 0;
               timestamp = jsonReply[API.TIMESTAMP] ?? 0;
-              // print('try in for $timestamp');
+              // debugPrint('try in for $timestamp');
             } catch (e) {
               timestamp = 0;
-              //print('catch $timestamp');
+              //debugPrint('catch $timestamp');
             }
 
             String decodedMessage = replyMsg.replaceAll('%3A', ':');
@@ -277,14 +277,14 @@ class _StarredChatState extends State<StarredChat> {
                 ?.addPostFrameCallback((_) => scrollToBottom());
           });
         } catch (e) {
-          print('catch 2 $e');
+          debugPrint('catch 2 $e');
           statusMessage = e.toString();
         }
       } else {
         statusMessage = 'Connection Error';
       }
     } catch (e) {
-      print('${Constants.ERROR} $e');
+      debugPrint('${Constants.ERROR} $e');
     }
 
     return false;
@@ -319,10 +319,10 @@ class _StarredChatState extends State<StarredChat> {
     if (SharedPrefs.getInt(SharedPrefsKeys.CURRENT_USER_AVATAR_ID) != null) {
       emojiId =
           SharedPrefs.getInt(SharedPrefsKeys.CURRENT_USER_AVATAR_ID).toString();
-      // print('new conversation emoji id $emojiId');
+      // debugPrint('new conversation emoji id $emojiId');
     } else {
       emojiId = '0';
-      // print('new conversation emoji id $emojiId');
+      // debugPrint('new conversation emoji id $emojiId');
     }
 
     driverName =
@@ -336,11 +336,11 @@ class _StarredChatState extends State<StarredChat> {
 
     String formattedDriverName = formatUserHandle(driverName!);
     String formattedMessage = formattedDriverName + encodedMessage;
-    // print('send message');
-    // print('message $message');
-    // print('sermsgid $serverMsgId');
-    // print('userid $userId');
-    // print('emojiid $emojiId');
+    // debugPrint('send message');
+    // debugPrint('message $message');
+    // debugPrint('sermsgid $serverMsgId');
+    // debugPrint('userid $userId');
+    // debugPrint('emojiid $emojiId');
 
 //concat username/chathandle with message
     // if (currentUserHandle != null) {
@@ -368,18 +368,18 @@ class _StarredChatState extends State<StarredChat> {
       final response =
           await http.post(Uri.parse(url), headers: headers, body: body);
 
-      print(response.body);
+      debugPrint(response.body);
 
       if (response.statusCode == 200) {
-        print('Message Sent');
+        debugPrint('Message Sent');
 
         final jsonResult = jsonDecode(response.body);
-        print('---------------Send Message Response---------------');
+        debugPrint('---------------Send Message Response---------------');
 
-        print(response.body);
+        debugPrint(response.body);
         int statusCode = jsonResult[API.STATUS] as int;
 
-        /// print('status code $statusCode');
+        /// debugPrint('status code $statusCode');
         await sendFCMNotification('all', 'message');
 
         // setState(() {
@@ -390,7 +390,7 @@ class _StarredChatState extends State<StarredChat> {
         // });
         if (jsonResult.containsKey(API.MESSAGE)) {
           String status_message = jsonResult[API.MESSAGE] as String;
-          // print('status_message $status_message');
+          // debugPrint('status_message $status_message');
 
           // Add the sent message to the list
           // sentMessages.add(ReplyMsgg(serverMsgId, userId, message,
@@ -441,9 +441,9 @@ class _StarredChatState extends State<StarredChat> {
         storedStarredConversations,
       );
 
-      print('Starred conversations saved successfully');
+      debugPrint('Starred conversations saved successfully');
     } catch (e) {
-      print('Failed to save starred conversations: $e');
+      debugPrint('Failed to save starred conversations: $e');
     }
   }
 
@@ -573,7 +573,7 @@ class _StarredChatState extends State<StarredChat> {
                         Uri.encodeComponent(Constants.CHECK_OUT_TRUCKCHAT);
                     String body =
                         Uri.encodeComponent(Constants.I_AM_USING_TRUCKCHAT);
-                    print(subject);
+                    debugPrint(subject);
                     Uri mail =
                         Uri.parse("mailto:$email?subject=$subject&body=$body");
                     launchUrl(mail);
@@ -671,8 +671,8 @@ class _StarredChatState extends State<StarredChat> {
                               (avatar) => avatar.id == int.parse(reply.emojiId),
                               orElse: () => Avatar(id: 0, imagePath: ''),
                             );
-                            // print('emoji id $emoji_id');
-                            // print('matching avatar id ${matchingAvatar.id}');
+                            // debugPrint('emoji id $emoji_id');
+                            // debugPrint('matching avatar id ${matchingAvatar.id}');
 
                             return Padding(
                               padding: EdgeInsets.all(8.0),
@@ -842,7 +842,8 @@ class _StarredChatState extends State<StarredChat> {
                                               // // Handle Start Private Chat action
                                               // // Implement the logic for starting a private chat here
 
-                                              print('driver name $driverName ');
+                                              debugPrint(
+                                                  'driver name $driverName ');
 
                                               String receiverUserName = '';
                                               if (driverName == '') {
@@ -853,13 +854,14 @@ class _StarredChatState extends State<StarredChat> {
                                                 receiverUserName = driverName;
                                               }
 
-                                              print(
+                                              debugPrint(
                                                   'private chat $receiverUserName');
 
                                               String? chatHandle = SharedPrefs
                                                   .getString(SharedPrefsKeys
                                                       .CURRENT_USER_CHAT_HANDLE);
-                                              print('chat handle $chatHandle');
+                                              debugPrint(
+                                                  'chat handle $chatHandle');
                                               int? avatarId = SharedPrefs
                                                   .getInt(SharedPrefsKeys
                                                       .CURRENT_USER_AVATAR_ID);
@@ -874,7 +876,7 @@ class _StarredChatState extends State<StarredChat> {
                                                 String realChatHandle =
                                                     currentUserHandle ??
                                                         chatHandle;
-                                                print(
+                                                debugPrint(
                                                     'real emoji id $realEmojiId');
                                                 sendRequest(
                                                     currentUserId!,
@@ -1083,7 +1085,8 @@ class _StarredChatState extends State<StarredChat> {
                     ),
                   ),
                   SizedBox(width: 8.0),
-                  FloatingActionButton(
+                 ClipOval(
+  child:  FloatingActionButton(
                     onPressed: () async {
                       String message = messageController.text.trim();
                       if (!message.isEmpty) {
@@ -1096,21 +1099,24 @@ class _StarredChatState extends State<StarredChat> {
                         } else if (avatarId == null) {
                           showAvatarSelectionDialog(context);
                         } else {
-                          setState(() {
-                            sendingMessage = true;
-                          });
+                          if (mounted) {
+                            setState(() {
+                              sendingMessage = true;
+                            });
+                          }
                           await sendMessage(
                             messageController.text,
                             widget.serverMsgId,
                             userId,
                           ).then((value) {
-                            setState(() {
-                              messageController.clear();
-                              sendingMessage = false;
-
-                              WidgetsBinding.instance?.addPostFrameCallback(
-                                  (_) => scrollToBottom());
-                            });
+                            if (mounted) {
+                              setState(() {
+                                messageController.clear();
+                                sendingMessage = false;
+                                WidgetsBinding.instance?.addPostFrameCallback(
+                                    (_) => scrollToBottom());
+                              });
+                            }
                           });
                         }
                       }
@@ -1121,8 +1127,8 @@ class _StarredChatState extends State<StarredChat> {
                             valueColor:
                                 AlwaysStoppedAnimation<Color>(Colors.white),
                           ) // Show progress indicator
-                        : Icon(Icons.send),
-                  ),
+                        : Icon(Icons.send, color: Colors.white),
+                  ),),
                 ],
               ),
             ),
@@ -1161,8 +1167,8 @@ class _StarredChatState extends State<StarredChat> {
     );
     requestsRef.push().set(request.toJson());
 
-    print('senderid $senderId');
-    print('receiver id $receiverId');
+    debugPrint('senderid $senderId');
+    debugPrint('receiver id $receiverId');
 
     final receiverFCMToken = await getFCMToken(receiverId);
     // Send notification to the receiver
@@ -1170,7 +1176,7 @@ class _StarredChatState extends State<StarredChat> {
       await sendPrivateChatNotification(
           receiverFCMToken ?? '', senderId, receiverId);
     } else {
-      print('receiverFCMToken $receiverFCMToken');
+      debugPrint('receiverFCMToken $receiverFCMToken');
     }
 
     sendPrivateChatRequest(context, 'Your request has been sent.',
@@ -1179,7 +1185,7 @@ class _StarredChatState extends State<StarredChat> {
 
   Future<void> sendPrivateChatNotification(
       String receiverFCMToken, String senderId, String receiverId) async {
-    print('receiver token $receiverFCMToken');
+    debugPrint('receiver token $receiverFCMToken');
     // Replace 'YOUR_SERVER_KEY' with your FCM server key
     String serverKey = MyFirebase.FIREBASE_CLOUD_MESSAGING_KEY_NOTIFICATION;
     String url = MyFirebase.FIREBASE_NOTIFICATION_URL;
@@ -1210,13 +1216,13 @@ class _StarredChatState extends State<StarredChat> {
       );
 
       if (response.statusCode == 200) {
-        print('Notification sent successfully');
+        debugPrint('Notification sent successfully');
       } else {
-        print(
+        debugPrint(
             'Failed to send notification. StatusCode: ${response.statusCode}');
       }
     } catch (e) {
-      print('Failed to send notification. Error: $e');
+      debugPrint('Failed to send notification. Error: $e');
     }
   }
 
@@ -1252,9 +1258,9 @@ class _StarredChatState extends State<StarredChat> {
     String post_id,
     String user_notes,
   ) async {
-    print('flagger_user_id $flagger_user_id');
-    print('post_id $post_id');
-    print('user_notes $user_notes');
+    debugPrint('flagger_user_id $flagger_user_id');
+    debugPrint('post_id $post_id');
+    debugPrint('user_notes $user_notes');
 
     int status_code = 0;
     final url = Uri.parse(API.REPORT_ABUSE);
@@ -1274,9 +1280,9 @@ class _StarredChatState extends State<StarredChat> {
 
       if (response.statusCode == 200) {
         final jsonResult = json.decode(response.body);
-        print('json body ${response.body}');
+        debugPrint('json body ${response.body}');
         status_code = jsonResult['status'];
-        print('status_code $status_code');
+        debugPrint('status_code $status_code');
 
         if (status_code == 200) {
           showReportDialog(context, () {
@@ -1284,7 +1290,7 @@ class _StarredChatState extends State<StarredChat> {
             String subject = Uri.encodeComponent("Report Abuse Truck Chat");
             String body = Uri.encodeComponent(
                 "User Id:- $flagger_user_id \n\n Message Id:- $post_id \n\n Message:- $user_notes");
-            print(subject);
+            debugPrint(subject);
             Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
             launchUrl(mail);
           });
@@ -1296,7 +1302,7 @@ class _StarredChatState extends State<StarredChat> {
             String subject = Uri.encodeComponent("Report Abuse Truck Chat");
             String body = Uri.encodeComponent(
                 "User Id:- $flagger_user_id \n\n Message Id:- $post_id \n\n Message:- $user_notes");
-            print(subject);
+            debugPrint(subject);
             Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
             launchUrl(mail);
           });
@@ -1306,7 +1312,7 @@ class _StarredChatState extends State<StarredChat> {
 
         if (jsonResult.containsKey('message')) {
           status_message = jsonResult['message'];
-          print('status_message $status_message');
+          debugPrint('status_message $status_message');
         } else {
           status_message = '';
         }
@@ -1327,8 +1333,8 @@ class _StarredChatState extends State<StarredChat> {
     final url = Uri.parse(API.IGNORE_USER);
     final headers = {'Content-Type': 'application/json'};
 
-    print('deviceType $deviceType');
-    print('ignoredUserId $ignoredUserId');
+    debugPrint('deviceType $deviceType');
+    debugPrint('ignoredUserId $ignoredUserId');
 
     int status_code = 0;
 
@@ -1346,10 +1352,10 @@ class _StarredChatState extends State<StarredChat> {
 
       if (response.statusCode == 200) {
         final jsonResult = json.decode(response.body);
-        print('json body ${response.body}');
+        debugPrint('json body ${response.body}');
 
         status_code = jsonResult['status'];
-        print('status_code $status_code');
+        debugPrint('status_code $status_code');
 
         if (status_code == 200) {
           showIgnoreUserSuccessDialog(context, 'User added in ignored list.');
@@ -1359,7 +1365,7 @@ class _StarredChatState extends State<StarredChat> {
 
         if (jsonResult.containsKey('message')) {
           status_message = jsonResult['message'];
-          print('status_message $status_message');
+          debugPrint('status_message $status_message');
         } else {
           status_message = '';
         }

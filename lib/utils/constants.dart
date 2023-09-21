@@ -181,7 +181,7 @@ class Constants {
       '© TeleType Co. All Rights Reserved';
   static const String VISIT_THE_WEBSITE = 'Visit the website';
   static const String CONTACT_US = 'Contact us';
-  static const String VERSION = 'Version 65.4.0.0';
+  static const String VERSION = 'Version 67.5.0.0';
   static const String TERMS_OF_SERVICE = 'Terms of Service';
   static const String MESSAGES = 'Messages';
   static const String NOTIFICATIONS_AND_SOUND = 'Notifications and Sound';

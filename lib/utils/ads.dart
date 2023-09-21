@@ -258,53 +258,107 @@ class AppOpenAdManager {
   }
 }
 
+// class CustomBannerAd extends StatefulWidget {
+//   const CustomBannerAd({Key? key}) : super(key: key);
+
+//   @override
+//   State<CustomBannerAd> createState() => _CustomBannerAdState();
+// }
+
+// class _CustomBannerAdState extends State<CustomBannerAd> {
+//   late BannerAd bannerAd;
+//   bool isBannerAdLoaded = false;
+
+//   double _adHeight = 0;
+
+//   @override
+//   void didChangeDependencies() {
+//     // TODO: implement didChangeDependencies
+//     super.didChangeDependencies();
+//     bannerAd = BannerAd(
+//       size: AdSize.getInlineAdaptiveBannerAdSize(
+//           MediaQuery.of(context).size.width.toInt(), 60),
+//       //  size: AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(MediaQuery.of(context).size.width.toInt(),),
+
+//       adUnitId: AdHelper.bannerAdUnitId,
+//       listener: BannerAdListener(onAdFailedToLoad: (ad, error) {
+//         print("Ad Failed to Load");
+//         ad.dispose();
+//       }, onAdLoaded: (ad) {
+//         print("Ad Loaded");
+//         setState(() {
+//           isBannerAdLoaded = true;
+//         });
+//       }),
+//       request: const AdRequest(),
+//     );
+//     bannerAd.load();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return isBannerAdLoaded
+//         ? SizedBox(
+//             width: double.infinity,
+//             height: 60,
+//             child: AdWidget(
+//               ad: bannerAd,
+//             ),
+//           )
+//         : SizedBox();
+//   }
+// }
+
+//performance and profiling
+
+
+
+
+//2
 class CustomBannerAd extends StatefulWidget {
   const CustomBannerAd({Key? key}) : super(key: key);
 
   @override
-  State<CustomBannerAd> createState() => _CustomBannerAdState();
+  _CustomBannerAdState createState() => _CustomBannerAdState();
 }
 
 class _CustomBannerAdState extends State<CustomBannerAd> {
   late BannerAd bannerAd;
-  bool isBannerAdLoaded = false;
 
-  double _adHeight = 0;
-
+  
   @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
     bannerAd = BannerAd(
-      size: AdSize.getInlineAdaptiveBannerAdSize(
-          MediaQuery.of(context).size.width.toInt(), 60),
-      //  size: AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(MediaQuery.of(context).size.width.toInt(),),
-
+      size: AdSize.banner,
       adUnitId: AdHelper.bannerAdUnitId,
-      listener: BannerAdListener(onAdFailedToLoad: (ad, error) {
-        print("Ad Failed to Load");
-        ad.dispose();
-      }, onAdLoaded: (ad) {
-        print("Ad Loaded");
-        setState(() {
-          isBannerAdLoaded = true;
-        });
-      }),
+      listener: BannerAdListener(
+        onAdFailedToLoad: (ad, error) {
+          debugPrint("Ad Failed to Load: $error");
+          ad.dispose();
+        },
+        onAdLoaded: (ad) {
+       
+          debugPrint("Ad Loaded");
+        },
+      ),
       request: const AdRequest(),
     );
     bannerAd.load();
   }
 
   @override
+  void dispose() {
+    bannerAd.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return isBannerAdLoaded
-        ? SizedBox(
-            width: double.infinity,
-            height: 60,
-            child: AdWidget(
-              ad: bannerAd,
-            ),
-          )
-        : SizedBox();
+    return SizedBox(
+      width: double.infinity,
+      height: 60,
+      child: AdWidget(ad: bannerAd),
+    );
   }
 }

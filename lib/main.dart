@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:chat/chat/conversation_data.dart';
+import 'package:chat/chat/new_conversation.dart';
 import 'package:chat/home_screen.dart';
 import 'package:chat/privateChat/chat.dart';
 import 'package:chat/privateChat/pending_requests.dart';
@@ -27,10 +28,10 @@ import 'package:flutter/services.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:chat/utils/navigator_key.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:geolocator/geolocator.dart';
+//import 'package:geolocator/geolocator.dart';
 
 Future<void> backgroundHandler(RemoteMessage message) async {
-  print("backgroundHandler: ${message.notification}");
+  debugPrint("backgroundHandler: ${message.notification}");
   // Handle the background message here
   await SharedPrefs.init();
   bool? notifications = SharedPrefs.getBool(SharedPrefsKeys.NOTIFICATIONS);
@@ -60,7 +61,7 @@ void main() async {
 
   MobileAds.instance.initialize();
 
-  //await loadAppOpenAd();
+  await loadAppOpenAd();
 
   configLocalNotification();
   _configureFCM();
@@ -79,7 +80,7 @@ void main() async {
 
   //await AdHelper().createInterstitialAd();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -101,14 +102,14 @@ class _MyAppState extends State<MyApp> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Location Data'),
-          content: Text('Would you like to share your location data?'),
+          title: const Text('Location Data'),
+          content: const Text('Would you like to share your location data?'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(context); // Close the dialog
               },
-              child: Text('No'),
+              child: const Text('No'),
             ),
             TextButton(
               onPressed: () {
@@ -116,7 +117,7 @@ class _MyAppState extends State<MyApp> {
                 // Handle user's decision to share location data
                 // You can perform any necessary actions here
               },
-              child: Text('Yes'),
+              child: const Text('Yes'),
             ),
           ],
         );
@@ -128,6 +129,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Truck Chat',
+      
       navigatorKey: navigatorKey,
       initialRoute: '/',
       routes: {
@@ -135,16 +137,16 @@ class _MyAppState extends State<MyApp> {
               initialTabIndex: 1,
             ),
         '/privateChat': (context) => PrivateChatTab(key: UniqueKey()),
-   
+    '/newConversation': (context) => NewConversationScreen(),
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         
-       // useMaterial3: true,
-        primarySwatch: Colors.blue
-    //         colorScheme: ColorScheme.fromSeed(
-    //   seedColor: Colors.blue,
-    // ),
+      //   useMaterial3: true,
+      //   primarySwatch: Colors.blue,
+      //       colorScheme: ColorScheme.fromSeed(
+      // seedColor: Colors.blue,
+   // ),
         
       ),
     );
@@ -200,8 +202,8 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 void _configureFCM() {
   _firebaseMessaging.requestPermission();
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-    print('Foreground notification received');
-    print('data ${message.data}');
+    debugPrint('Foreground notification received');
+    debugPrint('data ${message.data}');
 
     bool? notifications = SharedPrefs.getBool(SharedPrefsKeys.NOTIFICATIONS);
     if (notifications!) {
@@ -209,12 +211,12 @@ void _configureFCM() {
     }
   });
   FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-    print('onMessageOpenedApp----------------->');
+    debugPrint('onMessageOpenedApp----------------->');
   });
 }
 
 void handleFCMMessage(Map<String, dynamic> data, RemoteMessage message) async {
-  print('--------------------------Notification-----------------------------');
+  debugPrint('--------------------------Notification-----------------------------');
   String title = 'There are new messages!';
   String body = 'Tap here to open TruckChat';
   final senderId = data['senderUserId'];
@@ -222,9 +224,9 @@ void handleFCMMessage(Map<String, dynamic> data, RemoteMessage message) async {
   final conversationId = data[
       'conversationId']; // Assuming you receive the conversation ID in the notification data
 
-  print('sender id $senderId');
-  print('type $notificationType');
-  print('--------------------------Notification-----------------------------');
+  debugPrint('sender id $senderId');
+  debugPrint('type $notificationType');
+  debugPrint('--------------------------Notification-----------------------------');
 
   if (message.notification != null) {
     title = message.notification!.title ?? 'There are new messages!';
@@ -237,54 +239,54 @@ void handleFCMMessage(Map<String, dynamic> data, RemoteMessage message) async {
   String? currentUserId = SharedPrefs.getString(SharedPrefsKeys.USER_ID);
 
   if (notificationType == 'public') {
-    print('if public');
+    debugPrint('if public');
     if (!SharedPrefs.getBool('isUserOnPublicChatScreen')!) {
-      print('if isUserOnPublicChatScreen');
+      debugPrint('if isUserOnPublicChatScreen');
 
       if (currentUserId != senderId) {
         List<Conversation> storedConversations = await getStoredConversations();
         Conversation? conversationToRefresh; // Initialize as nullable
-        print('if curren');
+        debugPrint('if curren');
 
         for (var conversation in storedConversations) {
           if (conversation.conversationId == conversationId &&
               !conversation.isDeleted) {
-            print('if conversationToRefresh ${conversation.isDeleted}');
+            debugPrint('if conversationToRefresh ${conversation.isDeleted}');
 
             conversationToRefresh = conversation;
             break;
           } else {
-            print(
+            debugPrint(
                 'else conversationid  ${conversation.conversationId} $conversationId ${conversation.isDeleted} ${conversation.topic}');
           }
         }
 
         if (conversationToRefresh != null) {
-          print('if conversationToRefresh nulled $conversationToRefresh');
+          debugPrint('if conversationToRefresh nulled $conversationToRefresh');
 
           showNotification(Constants.FCM_NOTIFICATION_TITLE,
               Constants.FCM_NOTIFICATION_BODY);
         } else {
-          print('else conversationToRefresh $conversationToRefresh');
+          debugPrint('else conversationToRefresh $conversationToRefresh');
         }
       }
     }
   } else if (notificationType == 'private') {
-    print('if private');
+    debugPrint('if private');
 
     if (!SharedPrefs.getBool('isUserOnChatScreen')!) {
       showNotification(title, body);
     }
   } else if (notificationType == 'privatechat') {
-    print('if privatechat');
+    debugPrint('if privatechat');
 
     showNotification(title, body);
   } else if (notificationType == 'newchat') {
-    print('if newchat');
+    debugPrint('if newchat');
 
     showNotification(title, body);
   } else if (notificationType == null) {
-    print('null notificatoin');
+    debugPrint('null notificatoin');
 
     // if (!SharedPrefs.getBool('isUserOnPublicChatScreen')!) {
     //   showNotification(title, body);
@@ -346,7 +348,7 @@ void showNotification(String? title, String? body) async {
   );
 
   DarwinNotificationDetails iOSPlatformChannelSpecifics =
-      DarwinNotificationDetails();
+      const DarwinNotificationDetails();
 
   NotificationDetails platformChannelSpecifics = NotificationDetails(
     android: androidPlatformChannelSpecifics,
@@ -364,9 +366,9 @@ void showNotification(String? title, String? body) async {
 
 void configLocalNotification() {
   AndroidInitializationSettings initializationSettingsAndroid =
-      AndroidInitializationSettings('@drawable/ic_launcher');
+      const AndroidInitializationSettings('@drawable/ic_launcher');
   DarwinInitializationSettings initializationSettingsIOS =
-      DarwinInitializationSettings();
+      const DarwinInitializationSettings();
   InitializationSettings initializationSettings = InitializationSettings(
     android: initializationSettingsAndroid,
     iOS: initializationSettingsIOS,

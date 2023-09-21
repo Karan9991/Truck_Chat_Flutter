@@ -79,6 +79,8 @@ class _ChatState extends State<Chat> {
   bool _isInterstitialAdReady = false; // Track whether the ad is loaded
   static const int maxFailedLoadAttempts = 3;
   int _numInterstitialLoadAttempts = 0;
+  // late BannerAd bannerAd;
+  // bool isBannerAdLoaded = false;
 
   @override
   void initState() {
@@ -109,9 +111,35 @@ class _ChatState extends State<Chat> {
     checkChatStarredStatus();
   }
 
+  // @override
+  // void didChangeDependencies() {
+  //   // TODO: implement didChangeDependencies
+
+  //   bannerAd = BannerAd(
+  //     size: AdSize.getInlineAdaptiveBannerAdSize(
+  //         MediaQuery.of(context).size.width.toInt(), 60),
+  //     adUnitId: AdHelper.bannerAdUnitId,
+  //     listener: BannerAdListener(onAdFailedToLoad: (ad, error) {
+  //       debugPrint("Ad Failed to Load");
+  //       ad.dispose();
+  //     }, onAdLoaded: (ad) {
+  //       debugPrint("Ad Loaded");
+  //       setState(() {
+  //         isBannerAdLoaded = true;
+  //       });
+  //     }),
+  //     request: const AdRequest(),
+  //   );
+  //   bannerAd.load();
+
+  //   super.didChangeDependencies();
+  // }
+
   @override
   void dispose() {
     _scrollController.dispose();
+
+   // bannerAd.dispose();
 
     SharedPrefs.setBool('isUserOnPublicChatScreen', false);
 
@@ -119,9 +147,9 @@ class _ChatState extends State<Chat> {
   }
 
   void _refreshChat() {
-    print('refresh chat');
+    debugPrint('refresh chat');
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('Refresh ChatList');
+      debugPrint('Refresh ChatList');
 
       getAllMessages(widget.serverMsgId);
     });
@@ -138,8 +166,8 @@ class _ChatState extends State<Chat> {
   }
 
   void filterReplyMsgs() {
-    // print('reply messges in fliter replymsf');
-    // print(replyMsgs);
+    // debugPrint('reply messges in fliter replymsf');
+    // debugPrint(replyMsgs);
     filteredReplyMsgs =
         replyMsgs.where((reply) => reply.topic == widget.topic).toList();
   }
@@ -187,18 +215,18 @@ class _ChatState extends State<Chat> {
       final response =
           await http.post(url, headers: headers, body: jsonEncode(body));
       if (response.statusCode == 200) {
-        print('FCM notification sent successfully');
+        debugPrint('FCM notification sent successfully');
       } else {
-        print('Failed to send FCM notification');
+        debugPrint('Failed to send FCM notification');
       }
     } catch (e) {
-      print('Error sending FCM notification: $e');
+      debugPrint('Error sending FCM notification: $e');
     }
   }
 
   Future<void> sendPrivateChatNotification(
       String receiverFCMToken, String senderId, String receiverId) async {
-    print('receiver token $receiverFCMToken');
+    debugPrint('receiver token $receiverFCMToken');
     // Replace 'YOUR_SERVER_KEY' with your FCM server key
     String serverKey = MyFirebase.FIREBASE_CLOUD_MESSAGING_KEY_NOTIFICATION;
     String url = MyFirebase.FIREBASE_NOTIFICATION_URL;
@@ -229,13 +257,13 @@ class _ChatState extends State<Chat> {
       );
 
       if (response.statusCode == 200) {
-        print('Notification sent successfully');
+        debugPrint('Notification sent successfully');
       } else {
-        print(
+        debugPrint(
             'Failed to send notification. StatusCode: ${response.statusCode}');
       }
     } catch (e) {
-      print('Failed to send notification. Error: $e');
+      debugPrint('Failed to send notification. Error: $e');
     }
   }
 
@@ -256,8 +284,8 @@ class _ChatState extends State<Chat> {
   }
 
   Future<bool> getAllMessages(dynamic conversationId) async {
-    print('getAllMessages method called');
-    print('Conversation Id  $conversationId');
+    debugPrint('getAllMessages method called');
+    debugPrint('Conversation Id  $conversationId');
     int statusCode = 0;
     String counts = '';
 
@@ -276,13 +304,13 @@ class _ChatState extends State<Chat> {
         body: jsonEncode(requestBody),
       );
       if (response.statusCode == 200) {
-        // print('200');
+        // debugPrint('200');
         final result = response.body;
 
-        print('---------------Chat Response---------------');
-        print(result);
+        debugPrint('---------------Chat Response---------------');
+        debugPrint(result);
 
-        print('response body $result');
+        debugPrint('response body $result');
 
         try {
           final jsonResult = jsonDecode(result);
@@ -291,12 +319,12 @@ class _ChatState extends State<Chat> {
 
           final jsonReplyList = jsonResult[API.MESSAGE_REPLY_LIST];
 
-          // print('jsonreplylist');
-          // print(jsonReplyList);
+          // debugPrint('jsonreplylist');
+          // debugPrint(jsonReplyList);
 
           int countValue = int.parse(counts);
 
-          // print(jsonReplyList.length);
+          // debugPrint(jsonReplyList.length);
           // Clear the replyMsgs list before adding new messages
           replyMsgs.clear();
 
@@ -310,22 +338,22 @@ class _ChatState extends State<Chat> {
             final driverName = jsonReply['driver_name'] ?? '';
             final privateChat = jsonReply['private_chat'];
 
-            print("server_msg_reply_id  $rid");
-            print("reply_msg $replyMsg");
-            print("user id  $uid");
-            print("emoji_id $emojiId");
-            print("driver_name $driverName");
-            print("private_chat $privateChat");
+            debugPrint("server_msg_reply_id  $rid");
+            debugPrint("reply_msg $replyMsg");
+            debugPrint("user id  $uid");
+            debugPrint("emoji_id $emojiId");
+            debugPrint("driver_name $driverName");
+            debugPrint("private_chat $privateChat");
 
-            print('--------------------------');
+            debugPrint('--------------------------');
             int timestamp;
             try {
               //  timestamp = int.tryParse(jsonReply['timestamp']) ?? 0;
               timestamp = jsonReply[API.TIMESTAMP] ?? 0;
-              print('try in for $timestamp');
+              debugPrint('try in for $timestamp');
             } catch (e) {
               timestamp = 0;
-              print('catch $timestamp');
+              debugPrint('catch $timestamp');
             }
             //format code to separate chat handle with colon : with message
 
@@ -348,10 +376,10 @@ class _ChatState extends State<Chat> {
                 ?.addPostFrameCallback((_) => scrollToBottom());
           });
         } catch (e) {
-          print('catch 2 $e');
+          debugPrint('catch 2 $e');
           statusMessage = e.toString();
 //  final lineNumber = stackTrace.toString().split("\n")[1];
-//       print("Error occurred at: $lineNumber");
+//       debugPrint("Error occurred at: $lineNumber");
           //     final errorDetails = FlutterErrorDetails(exception: e, stack: stackTrace);
           // FlutterError.reportError(errorDetails);
         }
@@ -359,7 +387,7 @@ class _ChatState extends State<Chat> {
         statusMessage = 'Connection Error';
       }
     } catch (e) {
-      print('${Constants.ERROR} $e');
+      debugPrint('${Constants.ERROR} $e');
     }
     //  }
 
@@ -395,10 +423,10 @@ class _ChatState extends State<Chat> {
     if (SharedPrefs.getInt(SharedPrefsKeys.CURRENT_USER_AVATAR_ID) != null) {
       emojiId =
           SharedPrefs.getInt(SharedPrefsKeys.CURRENT_USER_AVATAR_ID).toString();
-      // print('new conversation emoji id $emojiId');
+      // debugPrint('new conversation emoji id $emojiId');
     } else {
       emojiId = '0';
-      // print('new conversation emoji id $emojiId');
+      // debugPrint('new conversation emoji id $emojiId');
     }
 
     driverName =
@@ -413,20 +441,20 @@ class _ChatState extends State<Chat> {
     String formattedDriverName = formatUserHandle(driverName!);
     String formattedMessage = formattedDriverName + encodedMessage;
 
-    print('formatted driver name $formattedDriverName');
-    print('formatted message $formattedMessage');
-    print('send message');
-    print('message $message');
-    print('formattedmessage $formattedMessage');
-    print('latitude ${latitude.toString()}');
-    print('longitude ${longitude.toString()}');
-    print('drivername $driverName');
-    print('private_chat $privateChatStatus');
-    print('device_id $deviceId');
-    print('message_device_type $deviceType');
-    print('sermsgid $serverMsgId');
-    print('userid $userId');
-    print('emojiid $emojiId');
+    debugPrint('formatted driver name $formattedDriverName');
+    debugPrint('formatted message $formattedMessage');
+    debugPrint('send message');
+    debugPrint('message $message');
+    debugPrint('formattedmessage $formattedMessage');
+    debugPrint('latitude ${latitude.toString()}');
+    debugPrint('longitude ${longitude.toString()}');
+    debugPrint('drivername $driverName');
+    debugPrint('private_chat $privateChatStatus');
+    debugPrint('device_id $deviceId');
+    debugPrint('message_device_type $deviceType');
+    debugPrint('sermsgid $serverMsgId');
+    debugPrint('userid $userId');
+    debugPrint('emojiid $emojiId');
 
 //concat username/chathandle with message
     // if (currentUserHandle != null) {
@@ -456,10 +484,10 @@ class _ChatState extends State<Chat> {
       final response =
           await http.post(Uri.parse(url), headers: headers, body: body);
 
-      print(response.body);
+      debugPrint(response.body);
 
       if (response.statusCode == 200) {
-        print('Message Sent');
+        debugPrint('Message Sent');
         // setState(() {
         //   sendingMessage = false; // Set sending state to false
 
@@ -468,12 +496,12 @@ class _ChatState extends State<Chat> {
         // });
 
         final jsonResult = jsonDecode(response.body);
-        print('---------------Send Message Response---------------');
+        debugPrint('---------------Send Message Response---------------');
 
-        print('send message response ${response.body}');
+        debugPrint('send message response ${response.body}');
         int statusCode = jsonResult[API.STATUS] as int;
 
-        /// print('status code $statusCode');
+        /// debugPrint('status code $statusCode');
         await sendFCMNotification('all', 'message');
 
         // setState(() {
@@ -485,7 +513,7 @@ class _ChatState extends State<Chat> {
 
         if (jsonResult.containsKey(API.MESSAGE)) {
           String status_message = jsonResult[API.MESSAGE] as String;
-          // print('status_message $status_message');
+          // debugPrint('status_message $status_message');
 
           // Add the sent message to the list
           // sentMessages.add(ReplyMsgg(serverMsgId, userId, message,
@@ -503,8 +531,8 @@ class _ChatState extends State<Chat> {
       }
     } catch (e) {
       status_message = e.toString();
-      print('catch $e');
-      print('status message $status_message');
+      debugPrint('catch $e');
+      debugPrint('status message $status_message');
       // setState(() {
       //   sendingMessage = false; // Set sending state to false
       // });
@@ -538,9 +566,9 @@ class _ChatState extends State<Chat> {
         storedStarredConversations,
       );
 
-      print('Starred conversations saved successfully');
+      debugPrint('Starred conversations saved successfully');
     } catch (e) {
-      print('Failed to save starred conversations: $e');
+      debugPrint('Failed to save starred conversations: $e');
     }
   }
 
@@ -583,21 +611,22 @@ class _ChatState extends State<Chat> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.white, // Set the color of the back arrow here
           ),
-          title: Text(
+          title: const Text(
             Constants.APP_BAR_TITLE,
             style: TextStyle(color: Colors.white),
           ),
           actions: [
             IconButton(
               icon: isStar
-                  ? Icon(
+                  ? const Icon(
                       Icons.star,
                       color: Colors.yellow,
                     )
-                  : Icon(Icons.star_border), // Toggle between the star icons
+                  : const Icon(
+                      Icons.star_border), // Toggle between the star icons
               onPressed: () {
                 setState(() {
                   isStar = !isStar; // Toggle the starred status
@@ -628,25 +657,25 @@ class _ChatState extends State<Chat> {
             PopupMenuButton(
               itemBuilder: (BuildContext context) {
                 return [
-                  PopupMenuItem(
-                    child: Text(Constants.SETTINGS),
+                  const PopupMenuItem(
                     value: 'settings',
+                    child: Text(Constants.SETTINGS),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.TELL_A_FRIEND),
+                  const PopupMenuItem(
                     value: 'tell a friend',
+                    child: Text(Constants.TELL_A_FRIEND),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.HELP),
+                  const PopupMenuItem(
                     value: 'help',
+                    child: Text(Constants.HELP),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.STARRED_CHAT),
+                  const PopupMenuItem(
                     value: 'starred chat',
+                    child: Text(Constants.STARRED_CHAT),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.REPORT_ABUSE),
+                  const PopupMenuItem(
                     value: 'report abuse',
+                    child: Text(Constants.REPORT_ABUSE),
                   ),
                 ];
               },
@@ -666,7 +695,7 @@ class _ChatState extends State<Chat> {
                         Uri.encodeComponent(Constants.CHECK_OUT_TRUCKCHAT);
                     String body =
                         Uri.encodeComponent(Constants.I_AM_USING_TRUCKCHAT);
-                    print(subject);
+                    debugPrint(subject);
                     Uri mail =
                         Uri.parse("mailto:$email?subject=$subject&body=$body");
                     launchUrl(mail);
@@ -697,16 +726,18 @@ class _ChatState extends State<Chat> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 8),
+              padding:
+                  const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 8),
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                 decoration: BoxDecoration(
                   color: Colors.blue[300],
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Text(
                   widget.topic,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -716,7 +747,7 @@ class _ChatState extends State<Chat> {
             ),
             Expanded(
               child: isLoading
-                  ? Center(
+                  ? const Center(
                       child: CircularProgressIndicator(),
                     )
                   : ListView.builder(
@@ -737,6 +768,15 @@ class _ChatState extends State<Chat> {
                             key: UniqueKey(),
                           );
                           // return Container();
+                          // isBannerAdLoaded
+                          //     ? SizedBox(
+                          //         width: double.infinity,
+                          //         height: 60,
+                          //         child: AdWidget(
+                          //           ad: bannerAd,
+                          //         ),
+                          //       )
+                          //     : const SizedBox();
                         } else {
                           // Calculate the actual index in the news list
                           final newIndex = index - (index ~/ 5);
@@ -748,7 +788,7 @@ class _ChatState extends State<Chat> {
                             final driverName = reply.driverName;
                             final privateChat = reply.privateChat;
 
-                            print(' private chat $privateChat');
+                            debugPrint(' private chat $privateChat');
 
                             DateTime dateTime =
                                 DateTime.fromMillisecondsSinceEpoch(timestampp);
@@ -769,11 +809,11 @@ class _ChatState extends State<Chat> {
                               (avatar) => avatar.id == int.parse(reply.emojiId),
                               orElse: () => Avatar(id: 0, imagePath: ''),
                             );
-                            // print('emoji id $emoji_id');
-                            // print('matching avatar id ${matchingAvatar.id}');
+                            // debugPrint('emoji id $emoji_id');
+                            // debugPrint('matching avatar id ${matchingAvatar.id}');
 
                             return Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: isCurrentUser
                                   ? ChatBubble(
                                       clipper: ChatBubbleClipper6(
@@ -783,13 +823,14 @@ class _ChatState extends State<Chat> {
                                       alignment: isCurrentUser
                                           ? Alignment.topRight
                                           : Alignment.topLeft,
-                                      margin: EdgeInsets.only(bottom: 16.0),
+                                      margin:
+                                          const EdgeInsets.only(bottom: 16.0),
                                       backGroundColor: isCurrentUser
                                           ? Colors.blue[100]
                                           : Colors.blue[300],
                                       child: isCurrentUser
                                           ? Container(
-                                              constraints: BoxConstraints(
+                                              constraints: const BoxConstraints(
                                                   maxWidth: 250.0),
                                               child: Column(
                                                 crossAxisAlignment:
@@ -811,7 +852,8 @@ class _ChatState extends State<Chat> {
                                                           width: 30,
                                                           height: 30,
                                                         ),
-                                                      SizedBox(width: 8.0),
+                                                      const SizedBox(
+                                                          width: 8.0),
                                                       Expanded(
                                                         child: Column(
                                                           crossAxisAlignment:
@@ -820,12 +862,12 @@ class _ChatState extends State<Chat> {
                                                           children: [
                                                             Text(
                                                               replyMsg,
-                                                              style: TextStyle(
+                                                              style: const TextStyle(
                                                                   color: Colors
                                                                       .black,
                                                                   fontSize: 20),
                                                             ),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                                 height: 4.0),
                                                             Text(
                                                               timestamp,
@@ -839,7 +881,7 @@ class _ChatState extends State<Chat> {
                                               ),
                                             )
                                           : Container(
-                                              constraints: BoxConstraints(
+                                              constraints: const BoxConstraints(
                                                   maxWidth: 250.0),
                                               child: Column(
                                                 crossAxisAlignment:
@@ -853,9 +895,10 @@ class _ChatState extends State<Chat> {
                                                       if (matchingAvatar.id !=
                                                           0)
                                                         Stack(
-                                                          alignment: Alignment(
-                                                              2.6,
-                                                              -2.4), // Adjust the alignment here
+                                                          alignment:
+                                                              const Alignment(
+                                                                  2.6,
+                                                                  -2.4), // Adjust the alignment here
 
                                                           children: [
                                                             Image.asset(
@@ -869,7 +912,8 @@ class _ChatState extends State<Chat> {
                                                       if (privateChat ==
                                                           '1') // Check if privateChat is 1 to show the indicator
                                                         Padding(
-                                                          padding: EdgeInsets.only(
+                                                          padding: const EdgeInsets
+                                                              .only(
                                                               top: 0.0,
                                                               right: 0.0,
                                                               left: 10,
@@ -887,7 +931,8 @@ class _ChatState extends State<Chat> {
                                                             ),
                                                           ),
                                                         ),
-                                                      SizedBox(width: 8.0),
+                                                      const SizedBox(
+                                                          width: 8.0),
                                                       Expanded(
                                                         child: Column(
                                                           crossAxisAlignment:
@@ -896,13 +941,14 @@ class _ChatState extends State<Chat> {
                                                           children: [
                                                             Text(
                                                               replyMsg,
-                                                              style: TextStyle(
+                                                              style:
+                                                                  const TextStyle(
                                                                 color: Colors
                                                                     .black,
                                                                 fontSize: 20,
                                                               ),
                                                             ),
-                                                            SizedBox(
+                                                            const SizedBox(
                                                                 height: 4.0),
                                                             Text(timestamp),
                                                           ],
@@ -939,7 +985,8 @@ class _ChatState extends State<Chat> {
                                               // Handle Start Private Chat action
                                               // Implement the logic for starting a private chat here
 
-                                              print('driver name $driverName ');
+                                              debugPrint(
+                                                  'driver name $driverName ');
 
                                               String receiverUserName = '';
                                               if (driverName == '') {
@@ -953,14 +1000,15 @@ class _ChatState extends State<Chat> {
                                               String? chatHandle = SharedPrefs
                                                   .getString(SharedPrefsKeys
                                                       .CURRENT_USER_CHAT_HANDLE);
-                                              print('chat handle $chatHandle');
+                                              debugPrint(
+                                                  'chat handle $chatHandle');
                                               int? avatarId = SharedPrefs
                                                   .getInt(SharedPrefsKeys
                                                       .CURRENT_USER_AVATAR_ID);
 
-                                              print(
+                                              debugPrint(
                                                   'current user emojiid $currentUserEmojiId');
-                                              print('avatar id $avatarId');
+                                              debugPrint('avatar id $avatarId');
 
                                               if (chatHandle == null) {
                                                 showChatHandleDialog(context);
@@ -974,7 +1022,7 @@ class _ChatState extends State<Chat> {
                                                     currentUserHandle ??
                                                         chatHandle;
 
-                                                print(
+                                                debugPrint(
                                                     'real emoji id $realEmojiId');
                                                 sendRequest(
                                                     currentUserId!,
@@ -1017,14 +1065,16 @@ class _ChatState extends State<Chat> {
                                         alignment: isCurrentUser
                                             ? Alignment.topRight
                                             : Alignment.topLeft,
-                                        margin: EdgeInsets.only(bottom: 16.0),
+                                        margin:
+                                            const EdgeInsets.only(bottom: 16.0),
                                         backGroundColor: isCurrentUser
                                             ? Colors.blue[100]
                                             : Colors.blue[300],
                                         child: isCurrentUser
                                             ? Container(
-                                                constraints: BoxConstraints(
-                                                    maxWidth: 250.0),
+                                                constraints:
+                                                    const BoxConstraints(
+                                                        maxWidth: 250.0),
                                                 child: Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
@@ -1045,7 +1095,8 @@ class _ChatState extends State<Chat> {
                                                             width: 30,
                                                             height: 30,
                                                           ),
-                                                        SizedBox(width: 8.0),
+                                                        const SizedBox(
+                                                            width: 8.0),
                                                         Expanded(
                                                           child: Column(
                                                             crossAxisAlignment:
@@ -1054,13 +1105,13 @@ class _ChatState extends State<Chat> {
                                                             children: [
                                                               Text(
                                                                 replyMsg,
-                                                                style: TextStyle(
+                                                                style: const TextStyle(
                                                                     color: Colors
                                                                         .black,
                                                                     fontSize:
                                                                         20),
                                                               ),
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                   height: 4.0),
                                                               Text(
                                                                 timestamp,
@@ -1074,8 +1125,9 @@ class _ChatState extends State<Chat> {
                                                 ),
                                               )
                                             : Container(
-                                                constraints: BoxConstraints(
-                                                    maxWidth: 250.0),
+                                                constraints:
+                                                    const BoxConstraints(
+                                                        maxWidth: 250.0),
                                                 child: Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
@@ -1088,9 +1140,10 @@ class _ChatState extends State<Chat> {
                                                         if (matchingAvatar.id !=
                                                             0)
                                                           Stack(
-                                                            alignment: Alignment(
-                                                                2.6,
-                                                                -2.4), // Adjust the alignment here
+                                                            alignment:
+                                                                const Alignment(
+                                                                    2.6,
+                                                                    -2.4), // Adjust the alignment here
 
                                                             children: [
                                                               Image.asset(
@@ -1105,7 +1158,8 @@ class _ChatState extends State<Chat> {
                                                             '1') // Check if privateChat is 1 to show the indicator
                                                           Padding(
                                                             padding:
-                                                                EdgeInsets.only(
+                                                                const EdgeInsets
+                                                                    .only(
                                                                     top: 0.0,
                                                                     right: 0.0,
                                                                     left: 0,
@@ -1123,7 +1177,8 @@ class _ChatState extends State<Chat> {
                                                               ),
                                                             ),
                                                           ),
-                                                        SizedBox(width: 8.0),
+                                                        const SizedBox(
+                                                            width: 8.0),
                                                         Expanded(
                                                           child: Column(
                                                             crossAxisAlignment:
@@ -1133,13 +1188,13 @@ class _ChatState extends State<Chat> {
                                                               Text(
                                                                 replyMsg,
                                                                 style:
-                                                                    TextStyle(
+                                                                    const TextStyle(
                                                                   color: Colors
                                                                       .black,
                                                                   fontSize: 20,
                                                                 ),
                                                               ),
-                                                              SizedBox(
+                                                              const SizedBox(
                                                                   height: 4.0),
                                                               Text(timestamp),
                                                             ],
@@ -1159,7 +1214,8 @@ class _ChatState extends State<Chat> {
                     ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               decoration: BoxDecoration(
                 color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(24.0),
@@ -1167,7 +1223,7 @@ class _ChatState extends State<Chat> {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.mic),
+                    icon: const Icon(Icons.mic),
                     onPressed: () {
                       _toggleListening();
                     },
@@ -1177,54 +1233,60 @@ class _ChatState extends State<Chat> {
                       minLines: 1,
                       maxLines: 7,
                       controller: messageController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: Constants.COMPOSE_MESSAGE,
                         border: InputBorder.none,
                       ),
                     ),
                   ),
-                  SizedBox(width: 8.0),
-                  FloatingActionButton(
-                    onPressed: () async {
-                      String message = messageController.text.trim();
-                      if (!message.isEmpty) {
-                        String? chatHandle = SharedPrefs.getString(
-                            SharedPrefsKeys.CURRENT_USER_CHAT_HANDLE);
-                        int? avatarId = SharedPrefs.getInt(
-                            SharedPrefsKeys.CURRENT_USER_AVATAR_ID);
-                        if (chatHandle == null) {
-                          showChatHandleDialog(context);
-                        } else if (avatarId == null) {
-                          showAvatarSelectionDialog(context);
-                        } else {
-                          setState(() {
-                               sendingMessage =
-                                  true; 
-                          });
-                          await sendMessage(
-                            messageController.text,
-                            widget.serverMsgId,
-                            userId,
-                          ).then((value) {
-                            setState(() {
-                              messageController.clear();
-                              sendingMessage =
-                                  false; 
-
-                              WidgetsBinding.instance?.addPostFrameCallback(
-                                  (_) => scrollToBottom());
+                  const SizedBox(width: 8.0),
+                  ClipOval(
+                    child: FloatingActionButton(
+                      onPressed: () async {
+                        String message = messageController.text.trim();
+                        if (!message.isEmpty) {
+                          String? chatHandle = SharedPrefs.getString(
+                              SharedPrefsKeys.CURRENT_USER_CHAT_HANDLE);
+                          int? avatarId = SharedPrefs.getInt(
+                              SharedPrefsKeys.CURRENT_USER_AVATAR_ID);
+                          if (chatHandle == null) {
+                            showChatHandleDialog(context);
+                          } else if (avatarId == null) {
+                            showAvatarSelectionDialog(context);
+                          } else {
+                            if (mounted) {
+                              setState(() {
+                                sendingMessage = true;
+                              });
+                            }
+                            await sendMessage(
+                              messageController.text,
+                              widget.serverMsgId,
+                              userId,
+                            ).then((value) {
+                              if (mounted) {
+                                setState(() {
+                                  messageController.clear();
+                                  sendingMessage = false;
+                                  WidgetsBinding.instance?.addPostFrameCallback(
+                                      (_) => scrollToBottom());
+                                });
+                              }
                             });
-                          });
+                          }
                         }
-                      }
-                    },
-                    backgroundColor: Colors.blue,
-                    child: sendingMessage // Check sending state
-                        ? CircularProgressIndicator(
-                            valueColor:
-                                AlwaysStoppedAnimation<Color>(Colors.white),
-                          ) // Show progress indicator
-                        : Icon(Icons.send),
+                      },
+                      backgroundColor: Colors.blue,
+                      child: sendingMessage // Check sending state
+                          ? const CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.white),
+                            ) // Show progress indicator
+                          : const Icon(
+                              Icons.send,
+                              color: Colors.white,
+                            ),
+                    ),
                   ),
                 ],
               ),
@@ -1259,8 +1321,8 @@ class _ChatState extends State<Chat> {
     );
     requestsRef.push().set(request.toJson());
 
-    print('senderid $senderId');
-    print('receiver id $receiverId');
+    debugPrint('senderid $senderId');
+    debugPrint('receiver id $receiverId');
 
     final receiverFCMToken = await getFCMToken(receiverId);
     // Send notification to the receiver
@@ -1268,7 +1330,7 @@ class _ChatState extends State<Chat> {
       await sendPrivateChatNotification(
           receiverFCMToken ?? '', senderId, receiverId);
     } else {
-      print('receiverFCMToken $receiverFCMToken');
+      debugPrint('receiverFCMToken $receiverFCMToken');
     }
 
     sendPrivateChatRequest(context, 'Your request has been sent.',
@@ -1285,9 +1347,9 @@ class _ChatState extends State<Chat> {
     String post_id,
     String user_notes,
   ) async {
-    print('flagger_user_id $flagger_user_id');
-    print('post_id $post_id');
-    print('user_notes $user_notes');
+    debugPrint('flagger_user_id $flagger_user_id');
+    debugPrint('post_id $post_id');
+    debugPrint('user_notes $user_notes');
 
     int status_code = 0;
     final url = Uri.parse(API.REPORT_ABUSE);
@@ -1306,9 +1368,9 @@ class _ChatState extends State<Chat> {
 
       if (response.statusCode == 200) {
         final jsonResult = json.decode(response.body);
-        print('json body ${response.body}');
+        debugPrint('json body ${response.body}');
         status_code = jsonResult['status'];
-        print('status_code $status_code');
+        debugPrint('status_code $status_code');
 
         if (status_code == 200) {
           showReportDialog(context, () {
@@ -1316,7 +1378,7 @@ class _ChatState extends State<Chat> {
             String subject = Uri.encodeComponent("Report Abuse Truck Chat");
             String body = Uri.encodeComponent(
                 "User Id:- $flagger_user_id \n\n Message Id:- $post_id \n\n Message:- $user_notes");
-            print(subject);
+            debugPrint(subject);
             Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
             launchUrl(mail);
           });
@@ -1328,7 +1390,7 @@ class _ChatState extends State<Chat> {
             String subject = Uri.encodeComponent("Report Abuse Truck Chat");
             String body = Uri.encodeComponent(
                 "User Id:- $flagger_user_id \n\n Message Id:- $post_id \n\n Message:- $user_notes");
-            print(subject);
+            debugPrint(subject);
             Uri mail = Uri.parse("mailto:$email?subject=$subject&body=$body");
             launchUrl(mail);
           });
@@ -1338,7 +1400,7 @@ class _ChatState extends State<Chat> {
 
         if (jsonResult.containsKey('message')) {
           status_message = jsonResult['message'];
-          print('status_message $status_message');
+          debugPrint('status_message $status_message');
         } else {
           status_message = '';
         }
@@ -1359,8 +1421,8 @@ class _ChatState extends State<Chat> {
     final url = Uri.parse(API.IGNORE_USER);
     final headers = {'Content-Type': 'application/json'};
 
-    print('deviceType $deviceType');
-    print('ignoredUserId $ignoredUserId');
+    debugPrint('deviceType $deviceType');
+    debugPrint('ignoredUserId $ignoredUserId');
 
     int status_code = 0;
 
@@ -1378,10 +1440,10 @@ class _ChatState extends State<Chat> {
 
       if (response.statusCode == 200) {
         final jsonResult = json.decode(response.body);
-        print('json body ${response.body}');
+        debugPrint('json body ${response.body}');
 
         status_code = jsonResult['status'];
-        print('status_code $status_code');
+        debugPrint('status_code $status_code');
 
         if (status_code == 200) {
           showIgnoreUserSuccessDialog(context, 'User added in ignored list.');
@@ -1391,7 +1453,7 @@ class _ChatState extends State<Chat> {
 
         if (jsonResult.containsKey('message')) {
           status_message = jsonResult['message'];
-          print('status_message $status_message');
+          debugPrint('status_message $status_message');
         } else {
           status_message = '';
         }
@@ -1413,11 +1475,11 @@ class _ChatState extends State<Chat> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text(Constants.REPORT_ABUSE),
-          content: Text(DialogStrings.TO_REPORT_ABUSE),
+          title: const Text(Constants.REPORT_ABUSE),
+          content: const Text(DialogStrings.TO_REPORT_ABUSE),
           actions: [
             TextButton(
-              child: Text(DialogStrings.GOT_IT),
+              child: const Text(DialogStrings.GOT_IT),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -1443,7 +1505,7 @@ class _ChatState extends State<Chat> {
           });
         },
         listenMode: stt.ListenMode.dictation,
-        pauseFor: Duration(seconds: 2),
+        pauseFor: const Duration(seconds: 2),
       );
       setState(() {
         _isListening = true;

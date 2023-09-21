@@ -115,9 +115,11 @@ class _StarredChatListState extends State<StarredChatList>
 
         if (conversationToRefresh != null) {
           getData().then((_) {
-            setState(() {
-              isLoading = false;
-            });
+            if (mounted) {
+              setState(() {
+                isLoading = false;
+              });
+            }
           });
           if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
             FlutterBeep.beep();
@@ -125,22 +127,26 @@ class _StarredChatListState extends State<StarredChatList>
         }
       } else if (notificationType == 'newchat') {
         getData().then((_) {
-          setState(() {
-            isLoading = false;
-          });
+          if (mounted) {
+            setState(() {
+              isLoading = false;
+            });
+          }
         });
         if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
           FlutterBeep.beep();
         }
       } else if (notificationType == null) {
         getData().then((_) {
-          setState(() {
-            isLoading = false;
-          });
+          if (mounted) {
+            setState(() {
+              isLoading = false;
+            });
+          }
         });
-        if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
-          FlutterBeep.beep();
-        }
+        // if (SharedPrefs.getBool(SharedPrefsKeys.CHAT_TONES)!) {
+        //   FlutterBeep.beep();
+        // }
       }
     });
   }

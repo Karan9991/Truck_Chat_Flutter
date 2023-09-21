@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.teletype.truckchat.app-mergeDebugResources-42:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "com.teletype.truckchat.app-mergeDebugResources-38:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/karandeepsingh/.gradle/caches/transforms-3/bd1c79c5812417eb58705badfbb86e2a/transformed/appcompat-1.5.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/karandeepsingh/.gradle/caches/transforms-3/bcb71054ade2de7f4dfaf698597f55fe/transformed/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

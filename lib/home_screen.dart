@@ -17,7 +17,7 @@ import 'package:chat/utils/snackbar.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+// import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:io' show Platform;
 import 'package:provider/provider.dart';
@@ -39,6 +39,7 @@ import 'package:chat/utils/navigator_global.dart';
 
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:geolocator/geolocator.dart';
+//import 'package:location/location.dart';
 
 class HomeScreen extends StatefulWidget {
   final int initialTabIndex; // Add this parameter to the constructor
@@ -118,10 +119,6 @@ class HomeScreenState extends State<HomeScreen>
     _refreshChatListWithFCM();
 
     //  _loadAndShowInterstitialAd();
-
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
-      // showUpdateDialog(context);
-    });
   }
 
   Future<void> loadInterstitialAd() async {
@@ -130,7 +127,6 @@ class HomeScreenState extends State<HomeScreen>
 
   Future<void> registAndreqPermis() async {
     await reqPermisioLocation();
-
     _refreshChatList();
   }
 
@@ -139,10 +135,13 @@ class HomeScreenState extends State<HomeScreen>
   }
 
   Future<void> reqPermisioLocation() async {
-    final permissionStatus = await Geolocator.requestPermission();
+    await Geolocator.requestPermission();
 
-    print('---------------permission test');
-    print('permission status $permissionStatus');
+    // Location location = Location();
+    // await location.requestPermission();
+
+    // print('---------------permission test');
+    // print('permission status $permissionStatus');
     // final accuracyStatus = await Geolocator.getLocationAccuracy();
     // switch (accuracyStatus) {
     //   case LocationAccuracyStatus.reduced:
@@ -161,32 +160,32 @@ class HomeScreenState extends State<HomeScreen>
     //     // The platform doesn't support this feature, for example an Android device.
     //     break;
     // }
-    print('---------------permission test check location permission');
+    //print('---------------permission test check location permission');
 
     // await checkLocationPermission();
   }
 
-  Future<void> checkLocationPermission() async {
-    final permissionStatus = await Geolocator.checkPermission();
+  // Future<void> checkLocationPermission() async {
+  //   final permissionStatus = await Geolocator.checkPermission();
 
-    switch (permissionStatus) {
-      case LocationPermission.denied:
-        print("Location permission is denied.");
-        break;
-      case LocationPermission.deniedForever:
-        print("Location permission is permanently denied.");
-        break;
-      case LocationPermission.unableToDetermine:
-        print("Location permission is unableToDetermine.");
-        break;
-      case LocationPermission.whileInUse:
-        print("Location permission is granted only while in use.");
-        break;
-      case LocationPermission.always:
-        print("Location permission is granted always.");
-        break;
-    }
-  }
+  //   switch (permissionStatus) {
+  //     case LocationPermission.denied:
+  //       print("Location permission is denied.");
+  //       break;
+  //     case LocationPermission.deniedForever:
+  //       print("Location permission is permanently denied.");
+  //       break;
+  //     case LocationPermission.unableToDetermine:
+  //       print("Location permission is unableToDetermine.");
+  //       break;
+  //     case LocationPermission.whileInUse:
+  //       print("Location permission is granted only while in use.");
+  //       break;
+  //     case LocationPermission.always:
+  //       print("Location permission is granted always.");
+  //       break;
+  //   }
+  // }
 
   Future<void> getFirebaseTokenn() async {
     bool isAppInstall = await isAppInstalled();
@@ -358,12 +357,24 @@ class HomeScreenState extends State<HomeScreen>
     return OrientationBuilder(builder: (context, orientation) {
       return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.blue,
+          iconTheme: const IconThemeData(
+            color: Colors.white, // Set the color of the back arrow here
+          ),
           leading: Image.asset(
             'assets/ic_launcher.png',
             width: 34,
             height: 34,
           ),
-          title: Text(Constants.APP_BAR_TITLE),
+          title: const Text(
+            Constants.APP_BAR_TITLE,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight:
+                  FontWeight.bold, // Use predefined styles like FontWeight.bold
+              fontSize: 23,
+            ),
+          ),
           actions: [
             IconButton(
               icon: Image.asset(
@@ -373,15 +384,16 @@ class HomeScreenState extends State<HomeScreen>
               ),
               onPressed: () {
                 // Perform action when chat icon is pressed
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => NewConversationScreen()),
-                );
+                Navigator.pushNamed(context, '/newConversation');
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) => NewConversationScreen()),
+                // );
               },
             ),
             IconButton(
-              icon: Icon(Icons.grid_view_rounded),
+              icon: const Icon(Icons.grid_view_rounded),
               onPressed: () async {
                 // InterstitialAdManager.showInterstitialAd();
 
@@ -393,34 +405,34 @@ class HomeScreenState extends State<HomeScreen>
             PopupMenuButton(
               itemBuilder: (BuildContext context) {
                 return [
-                  PopupMenuItem(
-                    child: Text(Constants.SETTINGS),
+                  const PopupMenuItem(
                     value: 'settings',
+                    child: Text(Constants.SETTINGS),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.TELL_A_FRIEND),
+                  const PopupMenuItem(
                     value: 'tell a friend',
+                    child: Text(Constants.TELL_A_FRIEND),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.HELP),
+                  const PopupMenuItem(
                     value: 'help',
+                    child: Text(Constants.HELP),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.STARRED_CHAT),
+                  const PopupMenuItem(
                     value: 'starred chat',
+                    child: Text(Constants.STARRED_CHAT),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.REPORT_ABUSE),
+                  const PopupMenuItem(
                     value: 'report abuse',
+                    child: Text(Constants.REPORT_ABUSE),
                   ),
-                  PopupMenuItem(
-                    child: Text(Constants.REFRESH),
+                  const PopupMenuItem(
                     value: 'refresh',
+                    child: Text(Constants.REFRESH),
                   ),
                   // if (!Platform.isIOS)
-                  PopupMenuItem(
-                    child: Text(Constants.EXIT),
+                  const PopupMenuItem(
                     value: 'exit',
+                    child: Text(Constants.EXIT),
                   ),
                 ];
               },
@@ -472,16 +484,16 @@ class HomeScreenState extends State<HomeScreen>
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          title: Text(DialogStrings.EXIT),
-                          content: Text(DialogStrings.ARE_YOU_SURE),
+                          title: const Text(DialogStrings.EXIT),
+                          content: const Text(DialogStrings.ARE_YOU_SURE),
                           actions: [
                             TextButton(
                               onPressed: () => Navigator.of(context).pop(),
-                              child: Text(DialogStrings.CANCEL),
+                              child: const Text(DialogStrings.CANCEL),
                             ),
                             TextButton(
                               onPressed: () => Navigator.of(context).pop(true),
-                              child: Text(DialogStrings.EXIT),
+                              child: const Text(DialogStrings.EXIT),
                             ),
                           ],
                         ),
@@ -521,7 +533,7 @@ class HomeScreenState extends State<HomeScreen>
               //color: Colors.blue, // Set background color of the TabBar
               child: TabBar(
                 controller: _tabController,
-                tabs: [
+                tabs: const [
                   Tab(
                     icon: Icon(Icons.article),
                     text: Constants.NEWS,
@@ -535,7 +547,7 @@ class HomeScreenState extends State<HomeScreen>
                 unselectedLabelColor:
                     Colors.grey, // Color of unselected tab icon and text
                 labelColor: Colors.blue, // Color of selected tab icon and text
-                labelPadding: EdgeInsets.symmetric(
+                labelPadding: const EdgeInsets.symmetric(
                     horizontal: 6.0,
                     vertical: 0.0), // Add padding around the tab labels
               ),
@@ -557,23 +569,61 @@ class HomeScreenState extends State<HomeScreen>
   }
 }
 
-class SponsorsTab extends StatelessWidget {
-  final Key key;
+// class SponsorsTab extends StatelessWidget {
+//   final Key key;
 
-  SponsorsTab({
-    required this.key,
-  });
+//   SponsorsTab({
+//     required this.key,
+//   });
 
+//   final String sponsorUrl = API.SPONSORS;
+//   final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers = {
+//     Factory(() => EagerGestureRecognizer())
+//   };
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//     // return Container(
+//     //   child: InAppWebView(
+//     //     gestureRecognizers: gestureRecognizers,
+//     //     initialUrlRequest: URLRequest(url: WebUri(sponsorUrl)),
+//     //   ),
+//     // );
+//   }
+// }
+
+class SponsorsTab extends StatefulWidget {
+  const SponsorsTab({super.key});
+
+  @override
+  State<SponsorsTab> createState() => _SponsorsTabState();
+}
+
+class _SponsorsTabState extends State<SponsorsTab> {
+  late final WebViewController controller;
   final String sponsorUrl = API.SPONSORS;
   final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers = {
     Factory(() => EagerGestureRecognizer())
   };
   @override
+  void initState() {
+    super.initState();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(
+        Uri.parse(sponsorUrl),
+      );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      child: InAppWebView(
-        gestureRecognizers: gestureRecognizers,
-        initialUrlRequest: URLRequest(url: Uri.parse(sponsorUrl)),
+    return Scaffold(
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height, // Set explicit height
+        child: WebViewWidget(
+          gestureRecognizers: gestureRecognizers,
+          controller: controller,
+        ),
       ),
     );
   }
@@ -615,14 +665,53 @@ class _ReviewsTabState extends State<ReviewsTab> {
   }
 }
 
-class Help extends StatelessWidget {
+// class Help extends StatelessWidget {
+//   final String sponsorUrl = API.HELP;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       // child: InAppWebView(
+//       //   initialUrlRequest: URLRequest(url: WebUri(sponsorUrl)),
+//       // ),
+//     );
+//   }
+// }
+
+class Help extends StatefulWidget {
+  const Help({super.key});
+
+  @override
+  State<Help> createState() => _HelpState();
+}
+
+class _HelpState extends State<Help> {
+  late final WebViewController controller;
   final String sponsorUrl = API.HELP;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers = {
+    Factory(() => EagerGestureRecognizer())
+  };
+  @override
+  void initState() {
+    super.initState();
+    controller = WebViewController()
+      ..loadRequest(
+        Uri.parse(sponsorUrl),
+      );
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: InAppWebView(
-        initialUrlRequest: URLRequest(url: Uri.parse(sponsorUrl)),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Help'),
+      ),
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height, // Set explicit height
+        child: WebViewWidget(
+          gestureRecognizers: gestureRecognizers,
+          controller: controller,
+        ),
       ),
     );
   }

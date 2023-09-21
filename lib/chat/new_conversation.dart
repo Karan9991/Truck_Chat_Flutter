@@ -12,7 +12,7 @@ import 'package:chat/utils/lat_lng.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:chat/utils/ads.dart';
 import 'package:flutter/services.dart'; // Import SystemChrome
-import 'package:geolocator/geolocator.dart';
+//import 'package:geolocator/geolocator.dart';
 
 class NewConversationScreen extends StatefulWidget {
   @override
@@ -53,7 +53,7 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text(Constants.CONVERSATION),
+        title: const Text(Constants.CONVERSATION),
       ),
       body: Column(
         children: [
@@ -61,16 +61,16 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
             child: SingleChildScrollView(
               // Wrap this section with SingleChildScrollView
               child: Container(
-                padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
+                padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
                 child: Row(
                   children: [
                     IconButton(
-                      icon: Icon(Icons.mic),
+                      icon: const Icon(Icons.mic),
                       onPressed: () {
                         _toggleListening();
                       },
                     ),
-                    SizedBox(width: 8.0),
+                    const SizedBox(width: 8.0),
                     Expanded(
                       child: TextField(
                         controller: _textEditingController,
@@ -85,21 +85,21 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15.0),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors
                                   .green, // Change the selected border color here
                             ),
                           ),
                           filled: true,
                           fillColor: Colors.grey[200],
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                             vertical: 12.0,
                             horizontal: 16.0,
                           ),
                         ),
                       ),
                     ),
-                    SizedBox(width: 8.0),
+                    const SizedBox(width: 8.0),
                     Material(
                       borderRadius: BorderRadius.circular(24.0),
                       color: Colors.blue,
@@ -113,14 +113,14 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
                           }
                         },
                         child: Container(
-                          padding: EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(12.0),
                           child: _isSending
-                              ? CircularProgressIndicator(
+                              ? const CircularProgressIndicator(
                                   valueColor: AlwaysStoppedAnimation<Color>(
                                     Colors.white,
                                   ),
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.send,
                                   color: Colors.white,
                                 ),
@@ -230,7 +230,7 @@ class _NewConversationScreenState extends State<NewConversationScreen> {
     print('send conversation');
     // Location location = Location();
     // PermissionStatus _permissionGranted;
-    final _locationPermission = await Geolocator.checkPermission();
+   // final _locationPermission = await Geolocator.checkPermission();
 
     // _permissionGranted = await location.hasPermission();
 

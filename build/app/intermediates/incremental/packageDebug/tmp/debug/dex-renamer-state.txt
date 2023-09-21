@@ -1,11 +1,11 @@
-#Thu Sep 14 14:54:43 ADT 2023
-base.0=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
-base.2=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.3=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.4=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
-base.5=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
-base.6=/Users/karandeepsingh/Downloads/githubTruckChat/Truck_Chat/build/app/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
+#Thu Sep 21 19:21:02 ADT 2023
+base.0=/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.2=/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.3=/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.4=/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
+base.5=/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.6=/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex
