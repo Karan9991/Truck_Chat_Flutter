@@ -30,34 +30,34 @@ com.teletype.truckchat.app-jetified-profileinstaller-1.3.0-28 /Users/karandeepsi
 com.teletype.truckchat.app-jetified-play-services-base-18.1.0-29 /Users/karandeepsingh/.gradle/caches/transforms-3/f4c0500116144bc04cff0b0b27625b15/transformed/jetified-play-services-base-18.1.0/res
 com.teletype.truckchat.app-webkit-1.7.0-30 /Users/karandeepsingh/.gradle/caches/transforms-3/f6701cdb803a2ca6a6bf85dbd0573235/transformed/webkit-1.7.0/res
 com.teletype.truckchat.app-lifecycle-runtime-2.6.1-31 /Users/karandeepsingh/.gradle/caches/transforms-3/fd2525d8e729e998fcd94c2fe920a70e/transformed/lifecycle-runtime-2.6.1/res
-com.teletype.truckchat.app-debug-32 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/debug/res
-com.teletype.truckchat.app-main-33 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/res
-com.teletype.truckchat.app-google-services-34 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/res/google-services/debug
-com.teletype.truckchat.app-pngs-35 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/res/pngs/debug
-com.teletype.truckchat.app-resValues-36 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/res/resValues/debug
-com.teletype.truckchat.app-rs-37 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/res/rs/debug
-com.teletype.truckchat.app-mergeDebugResources-38 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
-com.teletype.truckchat.app-mergeDebugResources-39 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
-com.teletype.truckchat.app-merged_res-40 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/merged_res/debug
-com.teletype.truckchat.app-packaged_res-41 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app_settings/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-42 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cached_video_player/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-43 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cloud_firestore/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-44 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/device_info/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-45 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_auth/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-46 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_core/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-47 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-48 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-49 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_storage/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-50 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_beep/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-51 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-52 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-53 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-54 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/google_mobile_ads/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-55 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-56 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/path_provider_android/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-57 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/shared_preferences_android/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-58 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/speech_to_text/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-59 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/sqflite/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-60 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/url_launcher_android/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-61 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/video_player_android/intermediates/packaged_res/debug
-com.teletype.truckchat.app-packaged_res-62 /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/webview_flutter_android/intermediates/packaged_res/debug
+com.teletype.truckchat.app-debug-32 /Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/debug/res
+com.teletype.truckchat.app-main-33 /Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/res
+com.teletype.truckchat.app-google-services-34 /Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/res/google-services/debug
+com.teletype.truckchat.app-pngs-35 /Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/res/pngs/debug
+com.teletype.truckchat.app-resValues-36 /Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/res/resValues/debug
+com.teletype.truckchat.app-rs-37 /Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/res/rs/debug
+com.teletype.truckchat.app-mergeDebugResources-38 /Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.teletype.truckchat.app-mergeDebugResources-39 /Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.teletype.truckchat.app-merged_res-40 /Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/merged_res/debug
+com.teletype.truckchat.app-packaged_res-41 /Users/karandeepsingh/Downloads/Truck_Chat/build/app_settings/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-42 /Users/karandeepsingh/Downloads/Truck_Chat/build/cached_video_player/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-43 /Users/karandeepsingh/Downloads/Truck_Chat/build/cloud_firestore/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-44 /Users/karandeepsingh/Downloads/Truck_Chat/build/device_info/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-45 /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_auth/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-46 /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_core/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-47 /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-48 /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-49 /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_storage/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-50 /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_beep/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-51 /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-52 /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-53 /Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-54 /Users/karandeepsingh/Downloads/Truck_Chat/build/google_mobile_ads/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-55 /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-56 /Users/karandeepsingh/Downloads/Truck_Chat/build/path_provider_android/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-57 /Users/karandeepsingh/Downloads/Truck_Chat/build/shared_preferences_android/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-58 /Users/karandeepsingh/Downloads/Truck_Chat/build/speech_to_text/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-59 /Users/karandeepsingh/Downloads/Truck_Chat/build/sqflite/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-60 /Users/karandeepsingh/Downloads/Truck_Chat/build/url_launcher_android/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-61 /Users/karandeepsingh/Downloads/Truck_Chat/build/video_player_android/intermediates/packaged_res/debug
+com.teletype.truckchat.app-packaged_res-62 /Users/karandeepsingh/Downloads/Truck_Chat/build/webview_flutter_android/intermediates/packaged_res/debug

@@ -4,9 +4,9 @@
     minSdkVersion="21"
     targetSdkVersion="33"
     shrinking="true"
-    mergedManifest="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/merged_manifest/release/AndroidManifest.xml"
-    proguardFiles="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.3.0:/Users/karandeepsingh/FlutterDev/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro:proguard-rules.pro"
-    partialResultsDir="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/lint_vital_partial_results/release/out"
+    mergedManifest="/Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/merged_manifest/release/AndroidManifest.xml"
+    proguardFiles="/Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.3.0:/Users/karandeepsingh/FlutterDev/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro:proguard-rules.pro"
+    partialResultsDir="/Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/lint_vital_partial_results/release/out"
     desugaredMethodsFiles="/Users/karandeepsingh/.gradle/caches/transforms-3/83f5296fc52387c493d1c5ebca9303d3/transformed/D8BackportedDesugaredMethods.txt">
   <buildFeatures
       namespacing="REQUIRED"/>
@@ -32,9 +32,9 @@
         value="android.app.Application" />
   </manifestPlaceholders>
   <mainArtifact
-      classOutputs="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/javac/release/classes:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/tmp/kotlin-classes/release:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/kotlinToolingMetadata:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/release/R.jar"
+      classOutputs="/Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/javac/release/classes:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/tmp/kotlin-classes/release:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/kotlinToolingMetadata:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/release/R.jar"
       applicationId="com.teletype.truckchat"
-      generatedSourceFolders="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/ap_generated_sources/release/out:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/aidl_source_output_dir/release/out:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/source/buildConfig/release:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/renderscript_source_output_dir/release/out"
-      generatedResourceFolders="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/res/google-services/release:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/res/rs/release:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/generated/res/resValues/release">
+      generatedSourceFolders="/Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/ap_generated_sources/release/out:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/aidl_source_output_dir/release/out:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/source/buildConfig/release:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/renderscript_source_output_dir/release/out"
+      generatedResourceFolders="/Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/res/google-services/release:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/res/rs/release:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/generated/res/resValues/release">
   </mainArtifact>
 </variant>

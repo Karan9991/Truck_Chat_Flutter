@@ -1,11 +1,11 @@
 <lint-module
     format="1"
-    dir="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app"
+    dir="/Users/karandeepsingh/Downloads/Truck_Chat/android/app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.3.0"
-    buildFolder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app"
+    buildFolder="/Users/karandeepsingh/Downloads/Truck_Chat/build/app"
     bootClassPath="/Users/karandeepsingh/Library/Android/sdk/platforms/android-33/android.jar:/Users/karandeepsingh/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-33">

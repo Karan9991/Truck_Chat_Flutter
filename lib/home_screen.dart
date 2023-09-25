@@ -3,6 +3,7 @@ import 'package:chat/chat/new_conversation.dart';
 import 'package:chat/main.dart';
 import 'package:chat/privateChat/pending_requests.dart';
 import 'package:chat/privateChat/private_chat_homescreen.dart';
+import 'package:chat/sponsors.dart';
 import 'package:chat/starredChat/starred_chat_list.dart';
 import 'package:chat/news_tab.dart';
 import 'package:chat/chat/chat_list.dart';
@@ -68,7 +69,7 @@ class HomeScreenState extends State<HomeScreen>
     ChatListr(
       key: UniqueKey(),
     ),
-    SponsorsTab(key: UniqueKey()),
+    Sponsors(key: UniqueKey()),
     ReviewsTab(key: UniqueKey()),
     PrivateChatTab(key: UniqueKey()),
   ];
@@ -287,7 +288,7 @@ class HomeScreenState extends State<HomeScreen>
       case 1:
         return ChatListr(key: UniqueKey());
       case 2:
-        return SponsorsTab(key: UniqueKey());
+        return Sponsors(key: UniqueKey());
       case 3:
         return ReviewsTab(key: UniqueKey());
       case 4:
@@ -521,7 +522,7 @@ class HomeScreenState extends State<HomeScreen>
                     key: UniqueKey(),
                   ),
                   ChatListr(key: UniqueKey()),
-                  SponsorsTab(key: UniqueKey()),
+                  Sponsors(key: UniqueKey()),
                   ReviewsTab(key: UniqueKey()),
                   PrivateChatTab(
                     key: UniqueKey(),
@@ -539,9 +540,9 @@ class HomeScreenState extends State<HomeScreen>
                     text: Constants.NEWS,
                   ),
                   Tab(icon: Icon(Icons.chat), text: Constants.CHATS),
-                  Tab(icon: Icon(Icons.star), text: Constants.SPONSORS),
+                  Tab(icon: Icon(Icons.star), text: Constants.SMART_TRUCK),
                   Tab(icon: Icon(Icons.rate_review), text: Constants.REVIEWS),
-                  Tab(icon: Icon(Icons.person), text: 'Private'),
+                  Tab(icon: Icon(Icons.person), text: Constants.PRIVATE),
                 ],
 
                 unselectedLabelColor:

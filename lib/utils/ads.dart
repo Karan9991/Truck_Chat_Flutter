@@ -258,56 +258,56 @@ class AppOpenAdManager {
   }
 }
 
-// class CustomBannerAd extends StatefulWidget {
-//   const CustomBannerAd({Key? key}) : super(key: key);
+class CustomBannerAd extends StatefulWidget {
+  const CustomBannerAd({Key? key}) : super(key: key);
 
-//   @override
-//   State<CustomBannerAd> createState() => _CustomBannerAdState();
-// }
+  @override
+  State<CustomBannerAd> createState() => _CustomBannerAdState();
+}
 
-// class _CustomBannerAdState extends State<CustomBannerAd> {
-//   late BannerAd bannerAd;
-//   bool isBannerAdLoaded = false;
+class _CustomBannerAdState extends State<CustomBannerAd> {
+  late BannerAd bannerAd;
+  bool isBannerAdLoaded = false;
 
-//   double _adHeight = 0;
+  double _adHeight = 0;
 
-//   @override
-//   void didChangeDependencies() {
-//     // TODO: implement didChangeDependencies
-//     super.didChangeDependencies();
-//     bannerAd = BannerAd(
-//       size: AdSize.getInlineAdaptiveBannerAdSize(
-//           MediaQuery.of(context).size.width.toInt(), 60),
-//       //  size: AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(MediaQuery.of(context).size.width.toInt(),),
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+    bannerAd = BannerAd(
+      size: AdSize.getInlineAdaptiveBannerAdSize(
+          MediaQuery.of(context).size.width.toInt(), 60),
+      //  size: AdSize.getCurrentOrientationInlineAdaptiveBannerAdSize(MediaQuery.of(context).size.width.toInt(),),
 
-//       adUnitId: AdHelper.bannerAdUnitId,
-//       listener: BannerAdListener(onAdFailedToLoad: (ad, error) {
-//         print("Ad Failed to Load");
-//         ad.dispose();
-//       }, onAdLoaded: (ad) {
-//         print("Ad Loaded");
-//         setState(() {
-//           isBannerAdLoaded = true;
-//         });
-//       }),
-//       request: const AdRequest(),
-//     );
-//     bannerAd.load();
-//   }
+      adUnitId: AdHelper.bannerAdUnitId,
+      listener: BannerAdListener(onAdFailedToLoad: (ad, error) {
+        print("Ad Failed to Load");
+        ad.dispose();
+      }, onAdLoaded: (ad) {
+        print("Ad Loaded");
+        setState(() {
+          isBannerAdLoaded = true;
+        });
+      }),
+      request: const AdRequest(),
+    );
+    bannerAd.load();
+  }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return isBannerAdLoaded
-//         ? SizedBox(
-//             width: double.infinity,
-//             height: 60,
-//             child: AdWidget(
-//               ad: bannerAd,
-//             ),
-//           )
-//         : SizedBox();
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return isBannerAdLoaded
+        ? SizedBox(
+            width: double.infinity,
+            height: 60,
+            child: AdWidget(
+              ad: bannerAd,
+            ),
+          )
+        : SizedBox();
+  }
+}
 
 //performance and profiling
 
@@ -315,50 +315,50 @@ class AppOpenAdManager {
 
 
 //2
-class CustomBannerAd extends StatefulWidget {
-  const CustomBannerAd({Key? key}) : super(key: key);
+// class CustomBannerAd extends StatefulWidget {
+//   const CustomBannerAd({Key? key}) : super(key: key);
 
-  @override
-  _CustomBannerAdState createState() => _CustomBannerAdState();
-}
+//   @override
+//   _CustomBannerAdState createState() => _CustomBannerAdState();
+// }
 
-class _CustomBannerAdState extends State<CustomBannerAd> {
-  late BannerAd bannerAd;
+// class _CustomBannerAdState extends State<CustomBannerAd> {
+//   late BannerAd bannerAd;
 
   
-  @override
-  void initState() {
-    super.initState();
-    bannerAd = BannerAd(
-      size: AdSize.banner,
-      adUnitId: AdHelper.bannerAdUnitId,
-      listener: BannerAdListener(
-        onAdFailedToLoad: (ad, error) {
-          debugPrint("Ad Failed to Load: $error");
-          ad.dispose();
-        },
-        onAdLoaded: (ad) {
+//   @override
+//   void initState() {
+//     super.initState();
+//     bannerAd = BannerAd(
+//       size: AdSize.banner,
+//       adUnitId: AdHelper.bannerAdUnitId,
+//       listener: BannerAdListener(
+//         onAdFailedToLoad: (ad, error) {
+//           debugPrint("Ad Failed to Load: $error");
+//           ad.dispose();
+//         },
+//         onAdLoaded: (ad) {
        
-          debugPrint("Ad Loaded");
-        },
-      ),
-      request: const AdRequest(),
-    );
-    bannerAd.load();
-  }
+//           debugPrint("Ad Loaded");
+//         },
+//       ),
+//       request: const AdRequest(),
+//     );
+//     bannerAd.load();
+//   }
 
-  @override
-  void dispose() {
-    bannerAd.dispose();
-    super.dispose();
-  }
+//   @override
+//   void dispose() {
+//     bannerAd.dispose();
+//     super.dispose();
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 60,
-      child: AdWidget(ad: bannerAd),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       width: double.infinity,
+//       height: 60,
+//       child: AdWidget(ad: bannerAd),
+//     );
+//   }
+// }

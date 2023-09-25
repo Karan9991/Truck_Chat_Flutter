@@ -1,60 +1,60 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.teletype.truckchat"
-4    android:versionCode="67"
+4    android:versionCode="68"
 5    android:versionName="5.0.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml
+8-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="33" />
-9-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml
+9-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:3:1-63
-11-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:3:18-60
+11-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:3:1-63
+11-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:3:18-60
 12    <uses-permission android:name="android.permission.VIBRATE" />
-12-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:4:1-62
-12-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:4:18-59
+12-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:4:1-62
+12-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:4:18-59
 13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-13-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:5:1-73
-13-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:5:18-70
+13-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:5:1-73
+13-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:5:18-70
 14    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-14-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:6:5-71
-14-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:6:22-68
+14-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:6:5-71
+14-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:6:22-68
 15    <uses-permission android:name="android.permission.CAMERA" />
-15-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:7:1-61
-15-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:7:18-58
+15-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:7:1-61
+15-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:7:18-58
 16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-16-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:8:1-77
-16-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:8:18-74
+16-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:8:1-77
+16-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:8:18-74
 17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-17-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:9:1-76
-17-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:9:18-73
+17-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:9:1-76
+17-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:9:18-73
 18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-18-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:10:1-77
-18-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:10:18-74
+18-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:10:1-77
+18-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:10:18-74
 19    <uses-permission android:name="android.permission.WAKE_LOCK" />
-19-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-68
-19-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:10:22-65
+19-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-68
+19-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:10:22-65
 20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permissions options for the `notification` group -->
-20-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-79
-20-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:11:22-76
+20-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-79
+20-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:11:22-76
 21    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-21-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-77
-21-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-74
+21-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-77
+21-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-74
 22    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-22-->[:speech_to_text] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/speech_to_text/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-76
-22-->[:speech_to_text] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/speech_to_text/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-73
+22-->[:speech_to_text] /Users/karandeepsingh/Downloads/Truck_Chat/build/speech_to_text/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-76
+22-->[:speech_to_text] /Users/karandeepsingh/Downloads/Truck_Chat/build/speech_to_text/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-73
 23    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-23-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-81
-23-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-78
+23-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-81
+23-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-78
 24    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
-24-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-81
-24-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:11:22-78
+24-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-81
+24-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:11:22-78
 25    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-25-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:12:5-79
-25-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:12:22-76
+25-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:12:5-79
+25-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:12:22-76
 26    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 26-->[com.google.firebase:firebase-iid:21.1.0] /Users/karandeepsingh/.gradle/caches/transforms-3/7a3c4ebf2397b283885d676a98badbb2/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:26:5-82
 26-->[com.google.firebase:firebase-iid:21.1.0] /Users/karandeepsingh/.gradle/caches/transforms-3/7a3c4ebf2397b283885d676a98badbb2/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:26:22-79
@@ -111,33 +111,33 @@
 57    -->
 58    <application
 59        android:name="android.app.Application"
-59-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:17:9-42
+59-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:17:9-42
 60        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 60-->[androidx.core:core:1.10.1] /Users/karandeepsingh/.gradle/caches/transforms-3/17c44a9ee9728471e88635da67cac57c/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
 61        android:icon="@mipmap/ic_launcher"
-61-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:21:9-43
+61-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:21:9-43
 62        android:label="Truck Chat"
-62-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:16:9-35
+62-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:16:9-35
 63        android:requestLegacyExternalStorage="true"
-63-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:19:11-54
+63-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:19:11-54
 64        android:usesCleartextTraffic="true" >
-64-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:18:9-44
+64-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:18:9-44
 65        <activity
-65-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:22:9-46:20
+65-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:22:9-46:20
 66            android:name="com.teletype.truckchat.MainActivity"
-66-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:23:13-41
+66-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:23:13-41
 67            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-67-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:27:13-163
+67-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:27:13-163
 68            android:exported="true"
-68-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:24:13-36
+68-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:24:13-36
 69            android:hardwareAccelerated="true"
-69-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:28:13-47
+69-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:28:13-47
 70            android:launchMode="singleTop"
-70-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:25:13-43
+70-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:25:13-43
 71            android:theme="@style/LaunchTheme"
-71-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:26:13-47
+71-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:26:13-47
 72            android:windowSoftInputMode="adjustResize" >
-72-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:29:13-55
+72-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:29:13-55
 73
 74            <!--
 75                 Specifies an Android theme to apply to this Activity as soon as
@@ -146,31 +146,31 @@
 78                 to determine the Window background behind the Flutter UI.
 79            -->
 80            <meta-data
-80-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:34:13-37:17
+80-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:34:13-37:17
 81                android:name="io.flutter.embedding.android.NormalTheme"
-81-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:35:15-70
+81-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:35:15-70
 82                android:resource="@style/NormalTheme" />
-82-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:36:15-52
+82-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:36:15-52
 83
 84            <intent-filter>
-84-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:38:13-41:29
+84-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:38:13-41:29
 85                <action android:name="android.intent.action.MAIN" />
-85-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:39:17-68
-85-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:39:25-66
+85-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:39:17-68
+85-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:39:25-66
 86
 87                <category android:name="android.intent.category.LAUNCHER" />
-87-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:40:17-76
-87-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:40:27-74
+87-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:40:17-76
+87-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:40:27-74
 88            </intent-filter>
 89            <intent-filter>
-89-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:42:16-45:29
+89-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:42:16-45:29
 90                <action android:name="FLUTTER_NOTIFICATION_CLICK" />
-90-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:43:17-69
-90-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:43:25-66
+90-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:43:17-69
+90-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:43:25-66
 91
 92                <category android:name="android.intent.category.DEFAULT" />
-92-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:17-76
-92-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:27-73
+92-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:17-76
+92-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:27-73
 93            </intent-filter>
 94        </activity>
 95        <!--
@@ -179,34 +179,34 @@
 98           android:resource="@drawable/app_icon_foreground" />
 99        -->
 100        <meta-data
-100-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:50:12-52:46
+100-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:50:12-52:46
 101            android:name="com.google.firebase.messaging.default_notification_icon"
-101-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:51:5-75
+101-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:51:5-75
 102            android:resource="@mipmap/ic_launcher" />
-102-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:52:5-43
+102-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:52:5-43
 103
 104        <!--
 105             Don't delete the meta-data below.
 106             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 107        -->
 108        <meta-data
-108-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:56:9-58:33
+108-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:56:9-58:33
 109            android:name="flutterEmbedding"
-109-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:57:13-44
+109-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:57:13-44
 110            android:value="2" />
-110-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:58:13-30
+110-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:58:13-30
 111        <meta-data
-111-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:60:14-62:63
+111-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:60:14-62:63
 112            android:name="com.google.android.gms.ads.APPLICATION_ID"
-112-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:61:7-63
+112-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:61:7-63
 113            android:value="ca-app-pub-7181343877669077~4700650074" />
-113-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:62:7-61
+113-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:62:7-61
 114        <meta-data
-114-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:63:1-65:45
+114-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:63:1-65:45
 115            android:name="com.google.firebase.messaging.default_notification_channel_id"
-115-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:64:3-79
+115-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:64:3-79
 116            android:value="tone_and_vibrate_channel" />
-116-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:65:3-43
+116-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:65:3-43
 117
 118        <!-- ca-app-pub-7181343877669077~4700650074 -->
 119        <!-- ca-app-pub-3940256099942544~3347511713 -->
@@ -218,49 +218,49 @@
 125        <!-- working app id ca-app-pub-7181343877669077~1517092948 -->
 126
 127        <service
-127-->[:firebase_database] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-14:19
+127-->[:firebase_database] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-14:19
 128            android:name="com.google.firebase.components.ComponentDiscoveryService"
-128-->[:firebase_database] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:10:18-89
+128-->[:firebase_database] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:10:18-89
 129            android:directBootAware="true"
 129-->[com.google.firebase:firebase-common:20.3.3] /Users/karandeepsingh/.gradle/caches/transforms-3/97ba536cb97715cf3a6afeff735547bd/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:34:13-43
 130            android:exported="false" >
 130-->[com.google.firebase:firebase-analytics-ktx:21.3.0] /Users/karandeepsingh/.gradle/caches/transforms-3/0ea85b99a798b95213d2ffb4988fd4b4/transformed/jetified-firebase-analytics-ktx-21.3.0/AndroidManifest.xml:10:13-37
 131            <meta-data
-131-->[:firebase_database] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+131-->[:firebase_database] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
 132                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
-132-->[:firebase_database] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-127
+132-->[:firebase_database] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-127
 133                android:value="com.google.firebase.components.ComponentRegistrar" />
-133-->[:firebase_database] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+133-->[:firebase_database] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
 134            <meta-data
-134-->[:cloud_firestore] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+134-->[:cloud_firestore] /Users/karandeepsingh/Downloads/Truck_Chat/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
 135                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-135-->[:cloud_firestore] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-134
+135-->[:cloud_firestore] /Users/karandeepsingh/Downloads/Truck_Chat/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-134
 136                android:value="com.google.firebase.components.ComponentRegistrar" />
-136-->[:cloud_firestore] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+136-->[:cloud_firestore] /Users/karandeepsingh/Downloads/Truck_Chat/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
 137            <meta-data
-137-->[:firebase_auth] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+137-->[:firebase_auth] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
 138                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-138-->[:firebase_auth] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+138-->[:firebase_auth] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
 139                android:value="com.google.firebase.components.ComponentRegistrar" />
-139-->[:firebase_auth] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+139-->[:firebase_auth] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_auth/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
 140            <meta-data
-140-->[:firebase_storage] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+140-->[:firebase_storage] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
 141                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-141-->[:firebase_storage] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-126
+141-->[:firebase_storage] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-126
 142                android:value="com.google.firebase.components.ComponentRegistrar" />
-142-->[:firebase_storage] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+142-->[:firebase_storage] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_storage/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
 143            <meta-data
-143-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:38:13-40:85
+143-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:38:13-40:85
 144                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
-144-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:39:17-128
+144-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:39:17-128
 145                android:value="com.google.firebase.components.ComponentRegistrar" />
-145-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:40:17-82
+145-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:40:17-82
 146            <meta-data
-146-->[:firebase_core] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+146-->[:firebase_core] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
 147                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-147-->[:firebase_core] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+147-->[:firebase_core] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
 148                android:value="com.google.firebase.components.ComponentRegistrar" />
-148-->[:firebase_core] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+148-->[:firebase_core] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
 149            <meta-data
 149-->[com.google.firebase:firebase-analytics-ktx:21.3.0] /Users/karandeepsingh/.gradle/caches/transforms-3/0ea85b99a798b95213d2ffb4988fd4b4/transformed/jetified-firebase-analytics-ktx-21.3.0/AndroidManifest.xml:11:13-13:85
 150                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
@@ -329,133 +329,133 @@
 181-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/karandeepsingh/.gradle/caches/transforms-3/b7e8a2b8dfcc6e63342ab44b2dbe8c44/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
 182        </service>
 183        <service
-183-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-19:72
+183-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-19:72
 184            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
-184-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-107
+184-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-107
 185            android:exported="false"
-185-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-37
+185-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-37
 186            android:permission="android.permission.BIND_JOB_SERVICE" />
-186-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-69
+186-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-69
 187        <service
-187-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:20:9-26:19
+187-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:20:9-26:19
 188            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
-188-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-97
+188-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-97
 189            android:exported="false" >
-189-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-37
+189-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-37
 190            <intent-filter>
-190-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:29
+190-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:29
 191                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-191-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-78
-191-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:25-75
+191-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-78
+191-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:25-75
 192            </intent-filter>
 193        </service>
 194
 195        <receiver
-195-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:28:9-35:20
+195-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:28:9-35:20
 196            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
-196-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:29:13-98
+196-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:29:13-98
 197            android:exported="true"
-197-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:30:13-36
+197-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:30:13-36
 198            android:permission="com.google.android.c2dm.permission.SEND" >
-198-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:31:13-73
+198-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:31:13-73
 199            <intent-filter>
-199-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:32:13-34:29
+199-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:32:13-34:29
 200                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-200-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:17-81
-200-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:25-78
+200-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:17-81
+200-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:25-78
 201            </intent-filter>
 202        </receiver>
 203
 204        <provider
-204-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:43:9-47:38
+204-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:43:9-47:38
 205            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
-205-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:44:13-102
+205-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:44:13-102
 206            android:authorities="com.teletype.truckchat.flutterfirebasemessaginginitprovider"
-206-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:45:13-88
+206-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:45:13-88
 207            android:exported="false"
-207-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:46:13-37
+207-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:46:13-37
 208            android:initOrder="99" />
-208-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:47:13-35
+208-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:47:13-35
 209
 210        <service
-210-->[:geolocator_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-14:56
+210-->[:geolocator_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-14:56
 211            android:name="com.baseflow.geolocator.GeolocatorLocationService"
-211-->[:geolocator_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-77
+211-->[:geolocator_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-77
 212            android:enabled="true"
-212-->[:geolocator_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-35
+212-->[:geolocator_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-35
 213            android:exported="false"
-213-->[:geolocator_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+213-->[:geolocator_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
 214            android:foregroundServiceType="location" />
-214-->[:geolocator_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-53
+214-->[:geolocator_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-53
 215
 216        <provider
-216-->[:image_picker_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+216-->[:image_picker_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
 217            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-217-->[:image_picker_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-82
+217-->[:image_picker_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-82
 218            android:authorities="com.teletype.truckchat.flutter.image_provider"
-218-->[:image_picker_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-74
+218-->[:image_picker_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-74
 219            android:exported="false"
-219-->[:image_picker_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+219-->[:image_picker_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
 220            android:grantUriPermissions="true" >
-220-->[:image_picker_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+220-->[:image_picker_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
 221            <meta-data
-221-->[:image_picker_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-17:75
+221-->[:image_picker_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-17:75
 222                android:name="android.support.FILE_PROVIDER_PATHS"
-222-->[:image_picker_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-67
+222-->[:image_picker_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-67
 223                android:resource="@xml/flutter_image_picker_file_paths" />
-223-->[:image_picker_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-72
+223-->[:image_picker_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-72
 224        </provider>
 225
 226        <receiver
-226-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-18:40
+226-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-18:40
 227            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"
-227-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-91
+227-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-91
 228            android:exported="false" />
-228-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-37
+228-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-37
 229        <receiver
-229-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:19:9-21:40
+229-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:19:9-21:40
 230            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
-230-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-97
+230-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-97
 231            android:exported="false" />
-231-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-37
+231-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-37
 232        <receiver
-232-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:22:9-31:20
+232-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:22:9-31:20
 233            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
-233-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-101
+233-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-101
 234            android:exported="false" >
-234-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:24:13-37
+234-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:24:13-37
 235            <intent-filter>
-235-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:25:13-30:29
+235-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:25:13-30:29
 236                <action android:name="android.intent.action.BOOT_COMPLETED" />
-236-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:17-79
-236-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:25-76
+236-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:17-79
+236-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:25-76
 237                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-237-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:27:17-84
-237-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:27:25-81
+237-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:27:17-84
+237-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:27:25-81
 238                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-238-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:28:17-82
-238-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:28:25-79
+238-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:28:17-82
+238-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:28:25-79
 239                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-239-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:29:17-82
-239-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:29:25-79
+239-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:29:17-82
+239-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:29:25-79
 240            </intent-filter>
 241        </receiver>
 242
 243        <activity
-243-->[:url_launcher_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
+243-->[:url_launcher_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
 244            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-244-->[:url_launcher_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+244-->[:url_launcher_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
 245            android:exported="false"
-245-->[:url_launcher_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+245-->[:url_launcher_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
 246            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-246-->[:url_launcher_android] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
+246-->[:url_launcher_android] /Users/karandeepsingh/Downloads/Truck_Chat/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
 247
 248        <meta-data
-248-->[:google_mobile_ads] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/google_mobile_ads/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-14:36
+248-->[:google_mobile_ads] /Users/karandeepsingh/Downloads/Truck_Chat/build/google_mobile_ads/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-14:36
 249            android:name="io.flutter.embedded_views_preview"
-249-->[:google_mobile_ads] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/google_mobile_ads/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-61
+249-->[:google_mobile_ads] /Users/karandeepsingh/Downloads/Truck_Chat/build/google_mobile_ads/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-61
 250            android:value="true" />
-250-->[:google_mobile_ads] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/google_mobile_ads/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-33
+250-->[:google_mobile_ads] /Users/karandeepsingh/Downloads/Truck_Chat/build/google_mobile_ads/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-33
 251
 252        <activity
 252-->[com.google.firebase:firebase-auth:22.1.1] /Users/karandeepsingh/.gradle/caches/transforms-3/013977f773ffa7f588a4a066bf9a9246/transformed/jetified-firebase-auth-22.1.1/AndroidManifest.xml:29:9-46:20
@@ -476,8 +476,8 @@
 259-->[com.google.firebase:firebase-auth:22.1.1] /Users/karandeepsingh/.gradle/caches/transforms-3/013977f773ffa7f588a4a066bf9a9246/transformed/jetified-firebase-auth-22.1.1/AndroidManifest.xml:36:25-66
 260
 261                <category android:name="android.intent.category.DEFAULT" />
-261-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:17-76
-261-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:27-73
+261-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:17-76
+261-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:27-73
 262                <category android:name="android.intent.category.BROWSABLE" />
 262-->[com.google.firebase:firebase-auth:22.1.1] /Users/karandeepsingh/.gradle/caches/transforms-3/013977f773ffa7f588a4a066bf9a9246/transformed/jetified-firebase-auth-22.1.1/AndroidManifest.xml:39:17-78
 262-->[com.google.firebase:firebase-auth:22.1.1] /Users/karandeepsingh/.gradle/caches/transforms-3/013977f773ffa7f588a4a066bf9a9246/transformed/jetified-firebase-auth-22.1.1/AndroidManifest.xml:39:27-75
@@ -511,8 +511,8 @@
 277-->[com.google.firebase:firebase-auth:22.1.1] /Users/karandeepsingh/.gradle/caches/transforms-3/013977f773ffa7f588a4a066bf9a9246/transformed/jetified-firebase-auth-22.1.1/AndroidManifest.xml:36:25-66
 278
 279                <category android:name="android.intent.category.DEFAULT" />
-279-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:17-76
-279-->/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:27-73
+279-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:17-76
+279-->/Users/karandeepsingh/Downloads/Truck_Chat/android/app/src/main/AndroidManifest.xml:44:27-73
 280                <category android:name="android.intent.category.BROWSABLE" />
 280-->[com.google.firebase:firebase-auth:22.1.1] /Users/karandeepsingh/.gradle/caches/transforms-3/013977f773ffa7f588a4a066bf9a9246/transformed/jetified-firebase-auth-22.1.1/AndroidManifest.xml:39:17-78
 280-->[com.google.firebase:firebase-auth:22.1.1] /Users/karandeepsingh/.gradle/caches/transforms-3/013977f773ffa7f588a4a066bf9a9246/transformed/jetified-firebase-auth-22.1.1/AndroidManifest.xml:39:27-75
@@ -537,10 +537,10 @@
 292            android:permission="com.google.android.c2dm.permission.SEND" >
 292-->[com.google.firebase:firebase-messaging:23.2.1] /Users/karandeepsingh/.gradle/caches/transforms-3/842d49315d7f9e4a6106246239144de6/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:32:13-73
 293            <intent-filter>
-293-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:32:13-34:29
+293-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:32:13-34:29
 294                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-294-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:17-81
-294-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:25-78
+294-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:17-81
+294-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:25-78
 295            </intent-filter>
 296        </receiver>
 297        <!--
@@ -556,10 +556,10 @@
 304            android:exported="false" >
 304-->[com.google.firebase:firebase-messaging:23.2.1] /Users/karandeepsingh/.gradle/caches/transforms-3/842d49315d7f9e4a6106246239144de6/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:45:13-37
 305            <intent-filter android:priority="-500" >
-305-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:29
+305-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:29
 306                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-306-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-78
-306-->[:firebase_messaging] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:25-75
+306-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-78
+306-->[:firebase_messaging] /Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:25-75
 307            </intent-filter>
 308        </service>
 309
@@ -834,8 +834,8 @@
 451            <intent-filter>
 451-->[androidx.work:work-runtime:2.7.0] /Users/karandeepsingh/.gradle/caches/transforms-3/d304f874685416bc3e20c7127876ac19/transformed/work-runtime-2.7.0/AndroidManifest.xml:116:13-120:29
 452                <action android:name="android.intent.action.BOOT_COMPLETED" />
-452-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:17-79
-452-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:25-76
+452-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:17-79
+452-->[:flutter_local_notifications] /Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:25-76
 453                <action android:name="android.intent.action.TIME_SET" />
 453-->[androidx.work:work-runtime:2.7.0] /Users/karandeepsingh/.gradle/caches/transforms-3/d304f874685416bc3e20c7127876ac19/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:17-73
 453-->[androidx.work:work-runtime:2.7.0] /Users/karandeepsingh/.gradle/caches/transforms-3/d304f874685416bc3e20c7127876ac19/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:25-70

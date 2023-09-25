@@ -1,13 +1,13 @@
 <libraries>
   <library
-      name="__local_aars__:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/flutter/release/libs.jar:unspecified@jar"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/flutter/release/libs.jar"
-      resolved="__local_aars__:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
+      name="__local_aars__:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/flutter/release/libs.jar:unspecified@jar"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/flutter/release/libs.jar"
+      resolved="__local_aars__:/Users/karandeepsingh/Downloads/Truck_Chat/build/app/intermediates/flutter/release/libs.jar:unspecified"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:firebase_database::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/.transforms/631cfadd695b5ca8c7425c1c55e048a4/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/.transforms/631cfadd695b5ca8c7425c1c55e048a4/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:firebase_database::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/.transforms/69cc2886011232de1b46c86e76e9c806/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/.transforms/69cc2886011232de1b46c86e76e9c806/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.firebase.database:firebase_database:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_database/.transforms/631cfadd695b5ca8c7425c1c55e048a4/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_database/.transforms/69cc2886011232de1b46c86e76e9c806/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -17,10 +17,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:cloud_firestore::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cloud_firestore/.transforms/14bfbd9d9286086f0571782d3b293677/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cloud_firestore/.transforms/14bfbd9d9286086f0571782d3b293677/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:cloud_firestore::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/cloud_firestore/.transforms/4cfe4cbfcae360459f24ca86dd2ba5ae/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/cloud_firestore/.transforms/4cfe4cbfcae360459f24ca86dd2ba5ae/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.firebase.cloudfirestore:cloud_firestore:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cloud_firestore/.transforms/14bfbd9d9286086f0571782d3b293677/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/cloud_firestore/.transforms/4cfe4cbfcae360459f24ca86dd2ba5ae/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -30,10 +30,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:firebase_auth::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_auth/.transforms/383d73371e4c764ff89fe194f6cc0cde/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_auth/.transforms/383d73371e4c764ff89fe194f6cc0cde/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:firebase_auth::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_auth/.transforms/89c54a59f08a1579f1aab7a151bb8121/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_auth/.transforms/89c54a59f08a1579f1aab7a151bb8121/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.firebase.auth:firebase_auth:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_auth/.transforms/383d73371e4c764ff89fe194f6cc0cde/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_auth/.transforms/89c54a59f08a1579f1aab7a151bb8121/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -43,10 +43,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:firebase_storage::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_storage/.transforms/397968ef2365331aa19b148d7502d7f6/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_storage/.transforms/397968ef2365331aa19b148d7502d7f6/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:firebase_storage::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_storage/.transforms/e492ff7b009aaf2056763a25ac6dd2af/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_storage/.transforms/e492ff7b009aaf2056763a25ac6dd2af/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.firebase.storage:firebase_storage:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_storage/.transforms/397968ef2365331aa19b148d7502d7f6/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_storage/.transforms/e492ff7b009aaf2056763a25ac6dd2af/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -56,10 +56,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:firebase_messaging::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/.transforms/e37e91c813a7542fa50b9494d49acf7e/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/.transforms/e37e91c813a7542fa50b9494d49acf7e/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:firebase_messaging::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/.transforms/b5a6651e8ff9626917de27f3a170c00b/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/.transforms/b5a6651e8ff9626917de27f3a170c00b/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.firebasemessaging:firebase_messaging:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_messaging/.transforms/e37e91c813a7542fa50b9494d49acf7e/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_messaging/.transforms/b5a6651e8ff9626917de27f3a170c00b/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -69,10 +69,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:firebase_core::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_core/.transforms/97c45d53e356c592536d498df3b8c6da/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_core/.transforms/97c45d53e356c592536d498df3b8c6da/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:firebase_core::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_core/.transforms/e41bc6f23e2641d924174e9849b63c02/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_core/.transforms/e41bc6f23e2641d924174e9849b63c02/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.firebase.core:firebase_core:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/firebase_core/.transforms/97c45d53e356c592536d498df3b8c6da/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/firebase_core/.transforms/e41bc6f23e2641d924174e9849b63c02/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -82,10 +82,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:speech_to_text::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/speech_to_text/.transforms/29c5eda61f875f0bcf2a1dd7ee63bc1e/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/speech_to_text/.transforms/29c5eda61f875f0bcf2a1dd7ee63bc1e/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:speech_to_text::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/speech_to_text/.transforms/e5e10ff5b1091dc6fe5fd74ef88eabaf/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/speech_to_text/.transforms/e5e10ff5b1091dc6fe5fd74ef88eabaf/transformed/out/jars/libs/R.jar"
       resolved="com.csdcorp.speech_to_text:speech_to_text:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/speech_to_text/.transforms/29c5eda61f875f0bcf2a1dd7ee63bc1e/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/speech_to_text/.transforms/e5e10ff5b1091dc6fe5fd74ef88eabaf/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -95,10 +95,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:cached_video_player::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cached_video_player/.transforms/7b86cd1eeeaa980890e68feb752f8ea3/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cached_video_player/.transforms/7b86cd1eeeaa980890e68feb752f8ea3/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:cached_video_player::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/cached_video_player/.transforms/b3933ada7cff19991cafb2f85b9f9090/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/cached_video_player/.transforms/b3933ada7cff19991cafb2f85b9f9090/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.videoplayer:cached_video_player:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/cached_video_player/.transforms/7b86cd1eeeaa980890e68feb752f8ea3/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/cached_video_player/.transforms/b3933ada7cff19991cafb2f85b9f9090/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -108,10 +108,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:geolocator_android::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/.transforms/e28580a7d27a9ef9f899efb30f84f272/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/.transforms/e28580a7d27a9ef9f899efb30f84f272/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:geolocator_android::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/.transforms/eb161646fa4c715e022d6e33466aa894/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/.transforms/eb161646fa4c715e022d6e33466aa894/transformed/out/jars/libs/R.jar"
       resolved="com.baseflow.geolocator:geolocator_android:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/geolocator_android/.transforms/e28580a7d27a9ef9f899efb30f84f272/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/geolocator_android/.transforms/eb161646fa4c715e022d6e33466aa894/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -121,10 +121,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:flutter_plugin_android_lifecycle::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_plugin_android_lifecycle/.transforms/6abd883182ab910df4824e76b774d997/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_plugin_android_lifecycle/.transforms/6abd883182ab910df4824e76b774d997/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:flutter_plugin_android_lifecycle::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_plugin_android_lifecycle/.transforms/a2381ba114d033b4e06ebace1840e689/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_plugin_android_lifecycle/.transforms/a2381ba114d033b4e06ebace1840e689/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.flutter_plugin_android_lifecycle:flutter_plugin_android_lifecycle:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_plugin_android_lifecycle/.transforms/6abd883182ab910df4824e76b774d997/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_plugin_android_lifecycle/.transforms/a2381ba114d033b4e06ebace1840e689/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -134,10 +134,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:app_settings::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app_settings/.transforms/cd0923e6bcaf7bab13041546eb260446/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app_settings/.transforms/cd0923e6bcaf7bab13041546eb260446/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:app_settings::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/app_settings/.transforms/7f97dd7f1e19747aa6922af59f95f586/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/app_settings/.transforms/7f97dd7f1e19747aa6922af59f95f586/transformed/out/jars/libs/R.jar"
       resolved="com.spencerccf.app_settings:app_settings:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/app_settings/.transforms/cd0923e6bcaf7bab13041546eb260446/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/app_settings/.transforms/7f97dd7f1e19747aa6922af59f95f586/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -147,10 +147,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:sqflite::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/sqflite/.transforms/9b0ed76ab9f802ebbd0e245922012774/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/sqflite/.transforms/9b0ed76ab9f802ebbd0e245922012774/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:sqflite::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/sqflite/.transforms/bd6147200125da31e8170404530b18c9/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/sqflite/.transforms/bd6147200125da31e8170404530b18c9/transformed/out/jars/libs/R.jar"
       resolved="com.tekartik.sqflite:sqflite:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/sqflite/.transforms/9b0ed76ab9f802ebbd0e245922012774/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/sqflite/.transforms/bd6147200125da31e8170404530b18c9/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -160,10 +160,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:flutter_local_notifications::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/.transforms/1ea6e6d0ec436a3bbbd4dfec3f1b3ef8/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/.transforms/1ea6e6d0ec436a3bbbd4dfec3f1b3ef8/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:flutter_local_notifications::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/.transforms/0df3080e590678ea847a27e9a587a04d/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/.transforms/0df3080e590678ea847a27e9a587a04d/transformed/out/jars/libs/R.jar"
       resolved="com.dexterous.flutterlocalnotifications:flutter_local_notifications:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_local_notifications/.transforms/1ea6e6d0ec436a3bbbd4dfec3f1b3ef8/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_local_notifications/.transforms/0df3080e590678ea847a27e9a587a04d/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -173,10 +173,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:url_launcher_android::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/url_launcher_android/.transforms/12fb489ed80e6789c23484ea9139d8e9/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/url_launcher_android/.transforms/12fb489ed80e6789c23484ea9139d8e9/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:url_launcher_android::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/url_launcher_android/.transforms/27e96e88e4be32bcb3e9a35a517b71ec/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/url_launcher_android/.transforms/27e96e88e4be32bcb3e9a35a517b71ec/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.urllauncher:url_launcher_android:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/url_launcher_android/.transforms/12fb489ed80e6789c23484ea9139d8e9/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/url_launcher_android/.transforms/27e96e88e4be32bcb3e9a35a517b71ec/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -186,10 +186,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:path_provider_android::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/path_provider_android/.transforms/b0bf953ebe8b88dae741bbc4305ffb8c/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/path_provider_android/.transforms/b0bf953ebe8b88dae741bbc4305ffb8c/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:path_provider_android::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/path_provider_android/.transforms/03f83ffeca4717663b2e9659e0172a48/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/path_provider_android/.transforms/03f83ffeca4717663b2e9659e0172a48/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/path_provider_android/.transforms/b0bf953ebe8b88dae741bbc4305ffb8c/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/path_provider_android/.transforms/03f83ffeca4717663b2e9659e0172a48/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -199,10 +199,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:webview_flutter_android::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/webview_flutter_android/.transforms/ce73f57cecaf7908b18c3141940f74d6/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/webview_flutter_android/.transforms/ce73f57cecaf7908b18c3141940f74d6/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:webview_flutter_android::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/webview_flutter_android/.transforms/07ee3baa3282c3ef407d7cf1484369b4/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/webview_flutter_android/.transforms/07ee3baa3282c3ef407d7cf1484369b4/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.webviewflutter:webview_flutter_android:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/webview_flutter_android/.transforms/ce73f57cecaf7908b18c3141940f74d6/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/webview_flutter_android/.transforms/07ee3baa3282c3ef407d7cf1484369b4/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -212,10 +212,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:shared_preferences_android::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/shared_preferences_android/.transforms/99009892721c4710cf66b429a023965c/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/shared_preferences_android/.transforms/99009892721c4710cf66b429a023965c/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:shared_preferences_android::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/shared_preferences_android/.transforms/b608c15967de7d699201225311cc3db8/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/shared_preferences_android/.transforms/b608c15967de7d699201225311cc3db8/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.sharedpreferences:shared_preferences_android:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/shared_preferences_android/.transforms/99009892721c4710cf66b429a023965c/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/shared_preferences_android/.transforms/b608c15967de7d699201225311cc3db8/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -225,10 +225,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:device_info::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/device_info/.transforms/943276838a0e65b668df2e4d50c07709/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/device_info/.transforms/943276838a0e65b668df2e4d50c07709/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:device_info::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/device_info/.transforms/e9ec4ecee35697ff5a4fb78c398a1ac9/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/device_info/.transforms/e9ec4ecee35697ff5a4fb78c398a1ac9/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.deviceinfo:device_info:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/device_info/.transforms/943276838a0e65b668df2e4d50c07709/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/device_info/.transforms/e9ec4ecee35697ff5a4fb78c398a1ac9/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -238,10 +238,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:flutter_beep::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_beep/.transforms/2b343a96f970d6ef5ed84164ccfdb261/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_beep/.transforms/2b343a96f970d6ef5ed84164ccfdb261/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:flutter_beep::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_beep/.transforms/87da2db898b78d62062af1a0a65eb502/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_beep/.transforms/87da2db898b78d62062af1a0a65eb502/transformed/out/jars/libs/R.jar"
       resolved="com.gonoter.flutter_beep:flutter_beep:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/flutter_beep/.transforms/2b343a96f970d6ef5ed84164ccfdb261/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/flutter_beep/.transforms/87da2db898b78d62062af1a0a65eb502/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -251,10 +251,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:google_mobile_ads::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/google_mobile_ads/.transforms/b99c412447a962fcaa866ac0c24d3656/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/google_mobile_ads/.transforms/b99c412447a962fcaa866ac0c24d3656/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:google_mobile_ads::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/google_mobile_ads/.transforms/facf424b7db6ab1da9ba47586955c7f1/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/google_mobile_ads/.transforms/facf424b7db6ab1da9ba47586955c7f1/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.googlemobileads:google_mobile_ads:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/google_mobile_ads/.transforms/b99c412447a962fcaa866ac0c24d3656/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/google_mobile_ads/.transforms/facf424b7db6ab1da9ba47586955c7f1/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -264,10 +264,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:image_picker_android::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/.transforms/ec8a80c0638c546d2eeb49b4daa8b20a/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/.transforms/ec8a80c0638c546d2eeb49b4daa8b20a/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:image_picker_android::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/.transforms/65f0c777073a01d4621565d5d0fc84c2/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/.transforms/65f0c777073a01d4621565d5d0fc84c2/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.imagepicker:image_picker_android:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/image_picker_android/.transforms/ec8a80c0638c546d2eeb49b4daa8b20a/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/image_picker_android/.transforms/65f0c777073a01d4621565d5d0fc84c2/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -277,10 +277,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/android@@:video_player_android::release"
-      jars="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/video_player_android/.transforms/8931e52c82dcea7d50e4c46e80f24227/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/video_player_android/.transforms/8931e52c82dcea7d50e4c46e80f24227/transformed/out/jars/libs/R.jar"
+      name="/Users/karandeepsingh/Downloads/Truck_Chat/android@@:video_player_android::release"
+      jars="/Users/karandeepsingh/Downloads/Truck_Chat/build/video_player_android/.transforms/84a90def2ff7c888700ba7bc65cd2ed5/transformed/out/jars/classes.jar:/Users/karandeepsingh/Downloads/Truck_Chat/build/video_player_android/.transforms/84a90def2ff7c888700ba7bc65cd2ed5/transformed/out/jars/libs/R.jar"
       resolved="io.flutter.plugins.videoplayer:video_player_android:unspecified"
-      folder="/Users/karandeepsingh/Downloads/update libraries/Truck_Chat/build/video_player_android/.transforms/8931e52c82dcea7d50e4c46e80f24227/transformed/out"
+      folder="/Users/karandeepsingh/Downloads/Truck_Chat/build/video_player_android/.transforms/84a90def2ff7c888700ba7bc65cd2ed5/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
